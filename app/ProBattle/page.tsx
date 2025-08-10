@@ -1,4 +1,4 @@
-export default function Home() {
+export default function ProBattle() {
   return (
     <div className="font-title colour-bg">
       <h1 className="font-heading colour-primary">Welcome to IBA Computer Science Society</h1>

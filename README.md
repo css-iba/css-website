@@ -1,4 +1,55 @@
+# File Structure
+
+```
+css/
+├── app/
+│   ├── Codex/
+│   │   └── page.tsx
+│   ├── Forms/
+│   │   └── page.tsx
+│   ├── ProBattle/
+│   │   └── page.tsx
+│   ├── favicon.ico
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+├── components/
+│   ├── Codex/
+│   ├── Forms/
+│   ├── Home/
+│   ├── ProBattle/
+│   ├── Footer.tsx
+│   ├── NavBar.tsx
+│   └── ui/
+│       └── card.tsx
+├── lib/
+│   └── utils.ts
+├── public/
+│   ├── file.svg
+│   ├── globe.svg
+│   ├── next.svg
+│   ├── vercel.svg
+│   └── window.svg
+├── components.json
+├── eslint.config.mjs
+├── next-env.d.ts
+├── next.config.ts
+├── package-lock.json
+├── package.json
+├── postcss.config.mjs
+├── README.md
+└── tsconfig.json
+```
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+## Understanding the file structure
+Inside the app folder each page has its own folder such as "Codex". Inside that folder will be a page.tsx file which combines all the components of that page.
+Apart from that there can be other files with the extension .ts which will be used to store the constants only.
+
+In the components folder you will again see the same name folders of each page. This time these will contain the components themselves.
+"ui" folder should not be changed since it will contain the code for the ShadCN ui itself.
+
+"public" folder will contain folders again for each page which will then contain the assets used on that page.
 
 ## Getting Started
 
