@@ -6,6 +6,7 @@ css/
 │   ├── Codex/
 │   │   └── page.tsx
 │   ├── Forms/
+        ├── constants.ts
 │   │   └── page.tsx
 │   ├── ProBattle/
 │   │   └── page.tsx
@@ -17,6 +18,8 @@ css/
 │   ├── Codex/
 │   ├── Forms/
 │   ├── Home/
+│   ├── Lottie
+│   │   └── DisplayLottie.tsx
 │   ├── ProBattle/
 │   ├── Footer.tsx
 │   ├── NavBar.tsx
@@ -30,6 +33,8 @@ css/
 │   ├── next.svg
 │   ├── vercel.svg
 │   └── window.svg
+├── types/
+│   └── react-lottie.d.ts
 ├── components.json
 ├── eslint.config.mjs
 ├── next-env.d.ts
@@ -42,7 +47,7 @@ css/
 ```
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Understanding the file structure
+## Understanding The File Structure
 Inside the app folder each page has its own folder such as "Codex". Inside that folder will be a page.tsx file which combines all the components of that page.
 Apart from that there can be other files with the extension .ts which will be used to store the constants only.
 
@@ -50,6 +55,29 @@ In the components folder you will again see the same name folders of each page. 
 "ui" folder should not be changed since it will contain the code for the ShadCN ui itself.
 
 "public" folder will contain folders again for each page which will then contain the assets used on that page.
+
+## The Tailwind Classes
+Use these classes for example `className="font-text colour-text"`
+
+### Custom Font Classes
+
+| Class         | Font Name      | Description                                 |
+|---------------|----------------|---------------------------------------------|
+| .font-title   | Title Font     | Used for main titles and headings.          |
+| .font-heading | Heading Font   | Used for main and section headings.         |
+| .font-text    | Text Font      | Used for body and paragraph text.           |
+
+### Custom Colour Classes
+
+| Class                | Variable Name          | Description                                 |
+|----------------------|------------------------|---------------------------------------------|
+| .colour-text         | --colour-text          | Main text color.                            |
+| .colour-bg           | --colour-bg            | Main background color.                      |
+| .colour-primary      | --colour-primary       | Primary text color (e.g., links, highlights)|
+| .colour-box-primary  | --colour-box-primary   | Primary background for boxes/cards.         |
+| .colour-secondary    | --colour-secondary     | Secondary text color.                       |
+| .colour-box-secondary| --colour-box-secondary | Secondary background for boxes/cards.       |
+| .colour-accent       | --colour-accent        | Accent color for emphasis.                  |
 
 ## Getting Started
 

@@ -1,6 +1,31 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@layer components {
+  .border-animation {
+    position: relative;
+    overflow: hidden;
+  }
+  .border-animation::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: all 0.3s;
+  }
+  .border-animation:hover::after {
+    width: 50%;
+  }
+  .dim {
+    opacity: 0.5 !important;
+    transition: opacity 0.3s;
+  }
+}
+
 /* Custom font and color utility classes for Tailwind */
 @layer utilities {
   .font-title {
@@ -22,13 +47,20 @@
   .colour-primary {
     color: var(--colour-primary);
   }
+  .colour-box-primary {
+    background-color: var(--colour-box-primary);
+  }
   .colour-secondary {
     color: var(--colour-secondary);
+  }
+  .colour-box-secondary {
+    background-color: var(--colour-box-secondary);
   }
   .colour-accent {
     color: var(--colour-accent);
   }
 }
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -109,7 +141,9 @@
     --colour-text: #dddad0;
     --colour-bg: #110119;
     --colour-primary: #797972;
+    --colour-box-primary: #797972;
     --colour-secondary: #dddbff;
+    --colour-box-secondary: #dddbff;
     --colour-accent: #f8f3ce;
 }
 
@@ -154,4 +188,21 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* This will affect the scrollbar globally */
+::-webkit-scrollbar {
+    width: 6px; /* width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #110119; /* color of the tracking area */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #dddbff; /* color of the scroll thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #dddbff; /* color of the scroll thumb on hover */
 }

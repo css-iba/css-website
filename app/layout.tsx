@@ -1,31 +1,41 @@
 import type { Metadata } from "next";
-import { Arvo, Varela_Round } from "next/font/google";
-import { Bitcount_Grid_Double } from "next/font/google";
+import localFont from "next/font/local";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
+import AnnouncementBar from "@/components/Announcement";
 import "./globals.css";
 
-const bitcountPropDouble = Bitcount_Grid_Double({
+const movatif = localFont({
+  src: "./Fonts/Movatif W00 Light.ttf",
   variable: "--font-title",
-  subsets: ["latin"],
-  weight: ["400"],
+  display: "swap",
 });
 
-const arvo = Arvo({
+const premint = localFont({
+  src: "./Fonts/premint-Regular.otf",
   variable: "--font-heading",
-  subsets: ["latin"],
-  weight: ["400", "700"],
+  display: "swap",
 });
 
-const varelaRound = Varela_Round({
+const lemonMilk = localFont({
+  src: "./Fonts/Weissenhof_Grotesk.ttf",
   variable: "--font-text",
-  subsets: ["latin"],
-  weight: ["400"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "IBA Computer Science Society",
   description: "A community for computer science enthusiasts at IBA.",
+  icons: {
+    icon: [
+      { url: '/icon.png', sizes: '32x32', type: 'image/png' },
+      { url: '/icon.png', sizes: '16x16', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    shortcut: '/icon.png',
+  },
 };
 
 export default function RootLayout({
@@ -34,15 +44,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`
-          ${bitcountPropDouble.variable} 
-          ${arvo.variable} 
-          ${varelaRound.variable} 
+          ${movatif.variable}
+          ${premint.variable}
+          ${lemonMilk.variable}
           antialiased
         `}
       >
+        <AnnouncementBar />
         <NavBar />
         {children}
         <Footer />
