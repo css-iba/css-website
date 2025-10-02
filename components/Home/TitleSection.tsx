@@ -17,7 +17,22 @@ const TitleSection: React.FC = () => {
         <section className="relative flex md:min-h-screen flex-col md:flex-row items-center justify-between py-12 px-4 md:px-12 gap-8 overflow-visible">
             
             {/* Background pattern */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.2)_1px,transparent_1px)] bg-[length:40px_40px]" />
+            <div
+                className="
+                    absolute inset-0
+                    bg-[linear-gradient(to_right,rgba(255,255,255,0.25)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.25)_1px,transparent_1px)]
+                    bg-[size:55px_55px]
+                    [mask-image:linear-gradient(to_bottom_left,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0.7)_15%,rgba(255,255,255,0.3)_60%,transparent_100%),linear-gradient(to_bottom,transparent_0%,rgba(255,255,255,0.8)_20%,rgba(255,255,255,1)_40%)]
+                    [mask-composite:intersect]
+                    [-webkit-mask-composite:destination-in]
+                    [mask-repeat:no-repeat]
+                    [mask-size:100%_100%]
+                    animate-gridGlow
+                "
+            />
+
+
+
 
             {/* Lottie animation top left on desktop */}
             <div className="absolute z-20 -top-16 -left-24 md:-top-16 md:-left-0 w-40 h-40 md:w-70 md:h-70 pointer-events-none select-none hidden md:block">
