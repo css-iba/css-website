@@ -61,6 +61,20 @@
   }
 }
 
+@keyframes gridGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.6));
+  }
+}
+
+.animate-gridGlow {
+  animation: gridGlow 3s ease-in-out infinite alternate;
+}
+
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
