@@ -20,8 +20,20 @@ const CodexTitle: React.FC = () => (
   <div className="relative flex flex-col h-140 md:min-h-screen items-center py-10 px-4 md:px-12 overflow-hidden">
     
     {/* Background pattern */}
-    <div className="z-0 absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.2)_1px,transparent_1px)] bg-[length:40px_40px]" />
-            
+    <div
+        className="
+            absolute inset-0
+            bg-[linear-gradient(to_right,rgba(255,255,255,0.25)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.25)_1px,transparent_1px)]
+            bg-[size:55px_55px]
+            [mask-image:linear-gradient(to_bottom_left,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0.3)_15%,rgba(255,255,255,0.15)_60%,transparent_100%),linear-gradient(to_bottom,transparent_0%,rgba(255,255,255,0.8)_20%,rgba(255,255,255,1)_40%)]
+            [mask-composite:intersect]
+            [-webkit-mask-composite:destination-in]
+            [mask-repeat:no-repeat]
+            [mask-size:100%_100%]
+            animate-gridGlow
+        "
+    />
+
     {/* Wave Animation - behind all content */}
     <div className="
       absolute
