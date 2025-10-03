@@ -25,12 +25,12 @@ interface Resource {
 }
 
 const events: Events[] = [
-  { 
-    name: "Tech Carnival 2025",
-    detail: "Join us for a day of competitive programming, gaming tournaments, and fun tech activities. Open to all skill levels!",
-    link: "/Codex/TechCarnival",
-    link_text: "Register Now"
-  }
+//   { 
+//     name: "Tech Carnival 2025",
+//     detail: "Join us for a day of competitive programming, gaming tournaments, and fun tech activities. Open to all skill levels!",
+//     link: "/Codex/TechCarnival",
+//     link_text: "Register Now"
+//   }
 ];
 
 const data: Data[] = [
