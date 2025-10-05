@@ -186,7 +186,7 @@ const MovingLines: React.FC = () => {
       tail: number;
     }
 
-    let opt: Opt = {
+    const opt: Opt = {
       particles: window.innerWidth > 500 ? 1000 : 500,
       noiseScale: 0.009,
       angle: deg(-90),
@@ -200,7 +200,7 @@ const MovingLines: React.FC = () => {
       tail: 82,
     };
 
-    let Particles: Particle[] = [];
+    const Particles: Particle[] = [];
     let time = 0;
 
     // particle class
