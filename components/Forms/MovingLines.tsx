@@ -145,29 +145,6 @@ const MovingLines: React.FC = () => {
       return { h: h * 360, s: s * 100, l: l * 100 };
     }
 
-    function hslToRgb(h: number, s: number, l: number) {
-      h /= 360;
-      s /= 100;
-      l /= 100;
-      if (s === 0) {
-        const v = Math.round(l * 255);
-        return { r: v, g: v, b: v };
-      }
-      const hue2rgb = (p: number, q: number, t: number) => {
-        if (t < 0) t += 1;
-        if (t > 1) t -= 1;
-        if (t < 1 / 6) return p + (q - p) * 6 * t;
-        if (t < 1 / 2) return q;
-        if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
-        return p;
-      };
-      const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
-      const p = 2 * l - q;
-      const r = Math.round(hue2rgb(p, q, h + 1 / 3) * 255);
-      const g = Math.round(hue2rgb(p, q, h) * 255);
-      const b = Math.round(hue2rgb(p, q, h - 1 / 3) * 255);
-      return { r, g, b };
-    }
 
     function rgbaStringFromRgb(
       rgb: { r: number; g: number; b: number; a?: number },
@@ -195,7 +172,21 @@ const MovingLines: React.FC = () => {
     const lightB = darkBg ? 75 : 45;
 
     // options (mapped from user snippet) — hues derived from complement of --colour-bg
-    const opt: any = {
+    interface Opt {
+      particles: number;
+      noiseScale: number;
+      angle: number;
+      h1: number;
+      h2: number;
+      s1: number;
+      s2: number;
+      l1: number;
+      l2: number;
+      strokeWeight: number;
+      tail: number;
+    }
+
+    let opt: Opt = {
       particles: window.innerWidth > 500 ? 1000 : 500,
       noiseScale: 0.009,
       angle: deg(-90),
@@ -209,7 +200,7 @@ const MovingLines: React.FC = () => {
       tail: 82,
     };
 
-    const Particles: any[] = [];
+    let Particles: Particle[] = [];
     let time = 0;
 
     // particle class
@@ -222,7 +213,7 @@ const MovingLines: React.FC = () => {
       vy: number;
       ax: number;
       ay: number;
-      hueSemen: number;
+      hueSeed: number;
       hue: number;
       sat: number;
       light: number;
@@ -237,18 +228,18 @@ const MovingLines: React.FC = () => {
         this.vy = 0;
         this.ax = 0;
         this.ay = 0;
-        this.hueSemen = Math.random();
-        this.hue = this.hueSemen > 0.5 ? 20 + opt.h1 : 20 + opt.h2;
-        this.sat = this.hueSemen > 0.5 ? opt.s1 : opt.s2;
-        this.light = this.hueSemen > 0.5 ? opt.l1 : opt.l2;
-        this.maxSpeed = this.hueSemen > 0.5 ? 3 : 2;
+        this.hueSeed = Math.random();
+        this.hue = this.hueSeed > 0.5 ? 20 + opt.h1 : 20 + opt.h2;
+        this.sat = this.hueSeed > 0.5 ? opt.s1 : opt.s2;
+        this.light = this.hueSeed > 0.5 ? opt.l1 : opt.l2;
+        this.maxSpeed = this.hueSeed > 0.5 ? 3 : 2;
       }
       randomize() {
-        this.hueSemen = Math.random();
-        this.hue = this.hueSemen > 0.5 ? 20 + opt.h1 : 20 + opt.h2;
-        this.sat = this.hueSemen > 0.5 ? opt.s1 : opt.s2;
-        this.light = this.hueSemen > 0.5 ? opt.l1 : opt.l2;
-        this.maxSpeed = this.hueSemen > 0.5 ? 3 : 2;
+        this.hueSeed = Math.random();
+        this.hue = this.hueSeed > 0.5 ? 20 + opt.h1 : 20 + opt.h2;
+        this.sat = this.hueSeed > 0.5 ? opt.s1 : opt.s2;
+        this.light = this.hueSeed > 0.5 ? opt.l1 : opt.l2;
+        this.maxSpeed = this.hueSeed > 0.5 ? 3 : 2;
       }
       follow() {
         const angle =
@@ -370,7 +361,7 @@ const MovingLines: React.FC = () => {
     // init
     resize();
     generate();
-    ctx.lineWidth = opt.strokeWeight;
+  ctx2.lineWidth = opt.strokeWeight;
     window.addEventListener("resize", resize);
     document.body.addEventListener("click", onClick);
     rafRef.current = requestAnimationFrame(step);
