@@ -149,7 +149,7 @@ const CodeX: React.FC = () => {
           alt="Events"
           width={320}
           height={320}
-          className="rounded-xl border-2 border-[var(--colour-secondary)] w-84 h-48 md:w-110 md:h-80 object-cover"
+          className="rounded-xl border-2 border-[var(--colour-secondary)] w-84 h-48 md:w-130 md:h-90 object-cover"
         />
       </motion.div>
     </section>
