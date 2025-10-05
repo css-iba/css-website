@@ -109,7 +109,7 @@ export default function Footer() {
 
       </div>
 
-      <Separator className="border-t border-[#110119]" />
+      <Separator className="bg-[#232323]" />
 
       <div className="w-full flex items-center justify-between">
         <p className="colour-secondary text-[15px] md:ml-2 text-center py-4">&copy; 2025 IBA Computer Science Society. All rights reserved.</p>
