@@ -24,7 +24,7 @@ const FAQ: React.FC = () => {
           {faqs.map((faq, idx) => (
             <div key={idx}>
               <button
-                className="w-full flex items-center justify-between pr-4 gap-1 py-4 focus:outline-none"
+                className="w-full flex items-center justify-between pr-4 gap-1 py-4 focus:outline-none cursor-pointer"
                 onClick={() => handleToggle(idx)}
                 aria-expanded={openIdx === idx}
               >
