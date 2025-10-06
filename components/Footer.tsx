@@ -138,7 +138,7 @@ export default function Footer() {
                   <p className="text-sm text-muted-foreground leading-snug">
                     Help us improve! If you spot an issue, please{" "}
                     <Link
-                      href="https://github.com/Ammar-Khan18/computer-science-society/issues"
+                      href="https://github.com/css-iba/css-website/issues"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-blue-600 underline"
