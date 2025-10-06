@@ -112,7 +112,7 @@ export default function Footer() {
       <Separator className="bg-[#232323]" />
 
       <div className="w-full flex items-center justify-between">
-        <p className="colour-secondary text-[15px] md:ml-2 text-center py-4">&copy; 2025 IBA Computer Science Society. All rights reserved.</p>
+        <p className="colour-secondary text-[15px] ml-2 text-center py-4">&copy; 2025 IBA Computer Science Society. All rights reserved.</p>
         <div className="pr-4"data-hovercard-root>
           <HoverCard open={open} onOpenChange={setOpen}>
             <HoverCardTrigger asChild>
