@@ -33,7 +33,7 @@ const TitleSection: React.FC = () => {
 
 
             {/* Lottie animation top left on desktop */}
-            <div className="absolute z-20 -top-16 -left-24 md:-top-16 md:-left-0 w-40 h-40 md:w-70 md:h-70 pointer-events-none select-none hidden md:block">
+            <div className="absolute z-20 -top-16 -left-24 md:-top-16 md:-left-0 3xl:-top-2 3xl:-left-0 w-40 h-40 md:w-70 md:h-70 pointer-events-none select-none hidden md:block">
                 <WelcomeAnimation />
             </div>
 
@@ -63,7 +63,7 @@ const TitleSection: React.FC = () => {
                     alt="CSS Logo"
                     width={320}
                     height={320}
-                    className="w-48 h-48 md:w-120 md:h-120"
+                    className="w-48 h-48 md:w-150 md:h-150 3xl:w-200 3xl:h-200"
                     priority
                 />
             </div>
