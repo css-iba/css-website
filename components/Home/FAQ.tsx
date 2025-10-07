@@ -14,7 +14,7 @@ const FAQ: React.FC = () => {
   
   return (
     <section className="py-16">
-      <div className="max-w-4xl mx-auto px-6 md:px-4">
+      <div className="max-w-5xl mx-auto px-6 md:px-4">
         <h2 className="font-heading colour-text text-4xl md:text-5xl mb-4">Frequently asked questions</h2>
         <p className="mb-8 font-text text-md md:text-lg colour-text">
           Can&apos;t find the answer you&apos;re looking for? Reach out to our team at{" "}
