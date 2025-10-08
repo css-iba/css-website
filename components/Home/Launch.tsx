@@ -157,7 +157,7 @@ const Launch: React.FC = () => {
                                 </li>
                             </ul>
 
-                            <Link href="/Forms" className="inline-block w-full mt-4">
+                            <Link href="/Launch" className="inline-block w-full mt-4">
                                 <Button className="font-text text-lg w-full px-8 py-3 bg-[var(--colour-accent)] text-[var(--colour-bg)] hover:bg-[var(--colour-accent)]/90">
                                     Register Now
                                 </Button>
