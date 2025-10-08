@@ -50,14 +50,14 @@ const TitleSection: React.FC = () => {
                     IBA <br /> Computer Science Society
                 </motion.h1>
                 <motion.p
-                    style={{ opacity, y, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}
-                    className="font-heading text-base text-center md:text-left md:text-2xl md:ml-12 bg-gradient-to-r from-[var(--colour-text)] via-[var(--colour-accent)] to-[var(--colour-text)] bg-clip-text text-transparent"
+                    style={{ opacity, y, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" , textShadow: "0 0 10px #ff00ff" }}
+                    className="font-heading text-center md:text-left text-xl md:text-3xl md:ml-12 bg-gradient-to-r from-[var(--colour-text)] via-[var(--colour-accent)] to-[var(--colour-text)] bg-clip-text text-transparent"
                 >
                     Innovate . Collaborate . Excel .
                 </motion.p>
             </div>
 
-            <div className="hidden md:flex flex-1 justify-center items-center -translate-y-10">
+            <div className="hidden md:flex flex-1 justify-center items-center -translate-y-10 glow">
                 <Image
                     src="/icon.png"
                     alt="CSS Logo"
