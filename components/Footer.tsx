@@ -58,15 +58,15 @@ export default function Footer() {
   }, [open]);
 
   return (
-    <footer className="font-text w-full border-t border-[#110119] bg-black">
+    <footer className="font-text w-full border-t border-[#110119] bg-gradient-to-l from-[#2B3942] via-[#1c252b] to-[#0c0f11]">
       <div className="max-w-6xl md:mx-auto px-4 py-16 flex flex-col md:flex-row items-start md:items-stretch justify-between ml-3 gap-8 md:gap-20">
 
         {/* Quick Links */}
         <div className="flex-1 flex flex-col items-start">
-          <h3 className="font-heading text-2xl mb-6 colour-accent relative pb-3 after:absolute after:left-0 after:bottom-0 after:w-10 after:h-0.5 after:bg-accent after:transition-all after:duration-300 hover:after:w-16">Quick Links</h3>
+          <h3 className="font-heading text-3xl mb-6 colour-accent relative pb-3 after:absolute after:left-0 after:bottom-0 after:w-12 after:h-0.5 after:bg-accent after:transition-all after:duration-300 hover:after:w-20">Quick Links</h3>
           <div className="flex flex-col gap-2">
             {navLinks.map(link => (
-              <Link key={link.title} href={link.href} className="colour-text hover:colour-primary transition-colors text-[17px] text-base">
+              <Link key={link.title} href={link.href} className="colour-text hover:colour-primary transition-colors text-[19px] md:text-[17px] text-base">
                 {link.title}
               </Link>
             ))}
@@ -75,17 +75,17 @@ export default function Footer() {
 
         {/* Contact Us */}
         <div className="flex-1 flex flex-col items-start">
-          <h3 className="font-heading text-2xl mb-6 colour-accent relative pb-3 after:absolute after:left-0 after:bottom-0 after:w-10 after:h-0.5 after:bg-accent after:transition-all after:duration-300 hover:after:w-16">Contact Us</h3>
+          <h3 className="font-heading text-3xl mb-6 colour-accent relative pb-3 after:absolute after:left-0 after:bottom-0 after:w-12 after:h-0.5 after:bg-accent after:transition-all after:duration-300 hover:after:w-20">Contact Us</h3>
           <div className="flex flex-col gap-2 w-full">
             {contacts.map(({ name, role, email }) => (
               <span
                 key={email}
-                className="colour-text text-base text-[17px] flex flex-col md:flex-row items-start md:items-center gap-0 md:gap-2 w-full"
+                className="colour-text text-base text-[19px] md:text-[17px] flex flex-col md:flex-row items-start md:items-center gap-0 md:gap-2 w-full"
               >
                 <span>{name}, {role},</span>
                 <Link
                   href={`mailto:${email}`}
-                  className="text-sm colour-secondary text-[17px] hover:underline hover:text-pink-500 transition-colors md:ml-2"
+                  className="text-sm colour-secondary text-[19px] md:text-[17px] hover:underline hover:text-pink-500 transition-colors md:ml-2"
                 >
                   {email}
                 </Link>
@@ -96,7 +96,7 @@ export default function Footer() {
 
         {/* Socials */}
         <div className="flex-1 flex flex-col items-start">
-          <h3 className="font-heading text-2xl mb-6 colour-accent relative pb-3 after:absolute after:left-0 after:bottom-0 after:w-10 after:h-0.5 after:bg-accent after:transition-all after:duration-300 hover:after:w-16">Socials</h3>
+          <h3 className="font-heading text-3xl mb-6 colour-accent relative pb-3 after:absolute after:left-0 after:bottom-0 after:w-12 after:h-0.5 after:bg-accent after:transition-all after:duration-300 hover:after:w-20">Socials</h3>
           <div className="flex flex-row gap-6 mb-4">
             {socials.map(({ icon: Icon, href, label }) => (
               <Link key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="group text-[17px]">
@@ -104,7 +104,7 @@ export default function Footer() {
               </Link>
             ))}
           </div>
-          <span className="colour-secondary text-[17px]">IBA, Karachi</span>
+          <span className="colour-secondary text-[19px] md:text-[17px]">Institute Of Business Administration, Karachi</span>
         </div>
 
       </div>
