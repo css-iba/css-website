@@ -12,73 +12,72 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-
 import {
-    Select,
-    SelectContent,
-    SelectGroup,
-    SelectItem,
-    SelectLabel,
-    SelectTrigger,
-    SelectValue,
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
 } from "@/components/ui/select";
-import { Spinner } from "@/components/ui/spinner"; 
+import { Spinner } from "@/components/ui/spinner";
+import Confirmation from "./Confirmation";
 
+// Define options for Select inputs
+const studentYearOptions = [
+  { value: 'freshman', label: 'Freshman (Year 1)' },
+  { value: 'sophomore', label: 'Sophomore (Year 2)' },
+  { value: 'junior', label: 'Junior (Year 3)' },
+  { value: 'senior', label: 'Senior (Year 4)' },
+];
 
-// Define the type for the form data (must match the type used in page.tsx)
+const difficultyOptions = [
+  { value: 'easy', label: 'Easy' },
+  { value: 'hard', label: 'Hard' },
+];
+
 interface RegistrationFormData {
   participant1Name: string;
   participant2Name: string;
   teamLeadEmail: string;
   studentYear: 'freshman' | 'sophomore' | 'junior' | 'senior' | '';
-  difficulty: 'easy' | 'hard';
+  difficulty: 'easy' | 'hard' | '';
 }
-
-// Define options for Select inputs
-const studentYearOptions = [
-    { value: 'freshman', label: 'Freshman (Year 1)' },
-    { value: 'sophomore', label: 'Sophomore (Year 2)' },
-    { value: 'junior', label: 'Junior (Year 3)' },
-    { value: 'senior', label: 'Senior (Year 4)' },
-];
-
-const difficultyOptions = [
-    { value: 'easy', label: 'Easy' },
-    { value: 'hard', label: 'Hard' },
-];
 
 export function RegistrationForm() {
   const form = useFormContext<RegistrationFormData>();
   const [submissionData, setSubmissionData] = useState<RegistrationFormData | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
 
   // This function is called when the form is valid and submitted
   const onSubmit = async (data: RegistrationFormData) => {
     setIsSubmitting(true);
-    
+
     // Simulate an API delay for the spinner effect
-    // In a real app, this would be your actual `fetch` or API call
     await new Promise(resolve => setTimeout(resolve, 1500));
-    
+
     // Save data to local state (as requested)
     setSubmissionData(data);
-    
+
     // Log data to console for verification
     console.log("✅ Form Data Saved to State:", data);
-    
-    setIsSubmitting(false);
 
-    // Optional: Reset form fields after submission
-    form.reset(data); 
+    setIsSubmitting(false);
+    // Show confirmation dialog (toggle state so the component renders)
+    setShowConfirm(true);
+
+    // Reset the form after submission
+    form.reset();
   };
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 font-text">
         
-        {/* Aesthetic FieldGroup container for Team Details */}
-        <div className="space-y-6 p-4 border border-gray-200 rounded-xl bg-gray-50 transition duration-150 hover:shadow-inner">
-          <h3 className="text-xl font-semibold text-gray-800 border-b pb-2 mb-4">Team Details</h3>
+        <div className="space-y-6 p-4 border border-white rounded-xl bg-white transition duration-150 hover:shadow-inner">
+          <h3 className="text-xl font-semibold font-heading text-gray-800 border-b pb-2 mb-4">Team Details</h3>
 
           {/* Participant 1 Name Field */}
           <FormField
@@ -88,9 +87,9 @@ export function RegistrationForm() {
               <FormItem>
                 <FormLabel>Participant 1 Name</FormLabel>
                 <FormControl>
-                  <Input 
-                    placeholder="E.g., Abdullah Tariq" 
-                    {...field} 
+                  <Input
+                    placeholder="E.g., Abdullah Tariq"
+                    {...field}
                     disabled={isSubmitting}
                     className="border-gray-300 focus:border-blue-500 transition"
                   />
@@ -108,9 +107,9 @@ export function RegistrationForm() {
               <FormItem>
                 <FormLabel>Participant 2 Name</FormLabel>
                 <FormControl>
-                  <Input 
-                    placeholder="E.g., Hello there" 
-                    {...field} 
+                  <Input
+                    placeholder="E.g., Zainab Irfan"
+                    {...field}
                     disabled={isSubmitting}
                     className="border-gray-300 focus:border-blue-500 transition"
                   />
@@ -128,10 +127,10 @@ export function RegistrationForm() {
               <FormItem>
                 <FormLabel>Team Lead Email</FormLabel>
                 <FormControl>
-                  <Input 
-                    type="email" 
-                    placeholder="E.g., teamlead@uni.edu" 
-                    {...field} 
+                  <Input
+                    type="email"
+                    placeholder="E.g., firstname.secondname.erp@khi.iba.edu.pk"
+                    {...field}
                     disabled={isSubmitting}
                     className="border-gray-300 focus:border-blue-500 transition"
                   />
@@ -141,46 +140,39 @@ export function RegistrationForm() {
             )}
           />
         </div>
-        
-        {/* Aesthetic FieldGroup container for Event Configuration */}
-        <div className="space-y-6 p-4 border border-gray-200 rounded-xl bg-gray-50 transition duration-150 hover:shadow-inner">
-          <h3 className="text-xl font-semibold text-gray-800 border-b pb-2 mb-4">Event Configuration</h3>
+
+        <div className="space-y-6 p-4 border border-white rounded-xl bg-white transition duration-150 hover:shadow-inner">
+          <h3 className="text-xl font-semibold font-heading text-gray-800 border-b pb-2 mb-4">Difficulty & Year</h3>
 
           {/* Grid for responsiveness on smaller screens */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            
+
             {/* Student Year (Select) */}
             <FormField
               control={form.control}
               name="studentYear"
-              render={() => (
+              render={({ field }) => ( // `field` is passed directly now
                 <FormItem>
                   <FormLabel>Student University Year</FormLabel>
-                  <Controller
-                      name="studentYear"
-                      control={form.control}
-                      render={({ field: selectField }) => (
-                          <Select 
-                            onValueChange={selectField.onChange} 
-                            value={selectField.value}
-                            disabled={isSubmitting}
-                          >
-                              <SelectTrigger className="w-full">
-                                  <SelectValue placeholder="Select Student Year" />
-                              </SelectTrigger>
-                              <SelectContent>
-                                  <SelectGroup>
-                                      <SelectLabel>Academic Year</SelectLabel>
-                                      {studentYearOptions.map(option => (
-                                          <SelectItem key={option.value} value={option.value}>
-                                              {option.label}
-                                          </SelectItem>
-                                      ))}
-                                  </SelectGroup>
-                              </SelectContent>
-                          </Select>
-                      )}
-                  />
+                  <Select
+                    onValueChange={field.onChange}
+                    value={field.value}
+                    disabled={isSubmitting}
+                  >
+                    <SelectTrigger className="w-full">
+                      <SelectValue placeholder="Select Student Year" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectGroup>
+                        <SelectLabel>Academic Year</SelectLabel>
+                        {studentYearOptions.map(option => (
+                          <SelectItem key={option.value} value={option.value}>
+                            {option.label}
+                          </SelectItem>
+                        ))}
+                      </SelectGroup>
+                    </SelectContent>
+                  </Select>
                   <FormMessage />
                 </FormItem>
               )}
@@ -190,34 +182,28 @@ export function RegistrationForm() {
             <FormField
               control={form.control}
               name="difficulty"
-              render={() => (
+              render={({ field }) => ( // `field` is passed directly now
                 <FormItem>
                   <FormLabel>Choose Difficulty</FormLabel>
-                  <Controller
-                      name="difficulty"
-                      control={form.control}
-                      render={({ field: selectField }) => (
-                          <Select 
-                            onValueChange={selectField.onChange} 
-                            value={selectField.value}
-                            disabled={isSubmitting}
-                          >
-                              <SelectTrigger className="w-full">
-                                  <SelectValue placeholder="Select Difficulty" />
-                              </SelectTrigger>
-                              <SelectContent>
-                                  <SelectGroup>
-                                      <SelectLabel>Challenge Level</SelectLabel>
-                                      {difficultyOptions.map(option => (
-                                          <SelectItem key={option.value} value={option.value}>
-                                              {option.label}
-                                          </SelectItem>
-                                      ))}
-                                  </SelectGroup>
-                              </SelectContent>
-                          </Select>
-                      )}
-                  />
+                  <Select
+                    onValueChange={field.onChange}
+                    value={field.value}
+                    disabled={isSubmitting}
+                  >
+                    <SelectTrigger className="w-full">
+                      <SelectValue placeholder="Select Difficulty" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectGroup>
+                        <SelectLabel>Challenge Level</SelectLabel>
+                        {difficultyOptions.map(option => (
+                          <SelectItem key={option.value} value={option.value}>
+                            {option.label}
+                          </SelectItem>
+                        ))}
+                      </SelectGroup>
+                    </SelectContent>
+                  </Select>
                   <FormMessage />
                 </FormItem>
               )}
@@ -226,15 +212,15 @@ export function RegistrationForm() {
         </div>
 
         {/* Submit Button with Spinner */}
-        <Button 
-          type="submit" 
-          className="w-full py-6 transition duration-300 bg-blue-600 hover:bg-blue-700 disabled:opacity-80 disabled:cursor-not-allowed text-lg font-bold"
+        <Button
+          type="submit"
+          className="w-full py-6 transition font-heading duration-200 colour-box-primary disabled:opacity-80 disabled:cursor-not-allowed text-lg font-semibold"
           disabled={isSubmitting}
         >
           {isSubmitting ? (
             <>
               {/* Assuming Spinner is a component that renders a spinning icon */}
-              <Spinner className="w-5 h-5 mr-3 animate-spin" /> 
+              <Spinner className="w-5 h-5 mr-3 animate-spin" />
               Processing Registration...
             </>
           ) : (
@@ -242,7 +228,7 @@ export function RegistrationForm() {
           )}
         </Button>
       </form>
-      
+
       {/* Display the saved state data */}
       {/* {submissionData && (
         <div className="mt-8 p-4 bg-green-50 border border-green-200 rounded-xl shadow-md">
@@ -254,6 +240,9 @@ export function RegistrationForm() {
           </pre>
         </div>
       )} */}
+
+      {/* Confirmation dialog controlled by component state */}
+      <Confirmation isOpen={showConfirm} onClose={() => setShowConfirm(false)} />
     </Form>
   );
 }
