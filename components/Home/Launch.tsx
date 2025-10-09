@@ -103,7 +103,7 @@ const Launch: React.FC = () => {
                                 </li>
                                 <li className="flex items-center gap-3">
                                     <Check className="w-5 h-5 text-green-700 flex-shrink-0" />
-                                    <span className="font-text text-white">Laser Maze</span>
+                                    <span className="font-text text-white">Robotics</span>
                                 </li>
                                 <li className="flex items-center gap-3">
                                     <Check className="w-5 h-5 text-green-700 flex-shrink-0" />
