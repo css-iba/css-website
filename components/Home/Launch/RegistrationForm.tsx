@@ -1,6 +1,6 @@
 'use client';
 
-import { useFormContext, Controller } from "react-hook-form";
+import { useFormContext } from "react-hook-form";
 import {
   Form,
   FormControl,
@@ -23,6 +23,8 @@ import {
 } from "@/components/ui/select";
 import { Spinner } from "@/components/ui/spinner";
 import Confirmation from "./Confirmation";
+
+import { insertRegistration } from "@/app/Launch/Supabase/api";
 
 // Define options for Select inputs
 const studentYearOptions = [
@@ -56,7 +58,13 @@ export function RegistrationForm() {
     setIsSubmitting(true);
 
     // Simulate an API delay for the spinner effect
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    const {error} = await insertRegistration(data);
+    if (error) {
+      console.error("❌ Supabase Insertion Error:", error);
+      setIsSubmitting(false);
+      alert("There was an error submitting your registration. Please try again.");
+      return;
+    }
 
     // Save data to local state (as requested)
     setSubmissionData(data);
