@@ -18,7 +18,7 @@ const registrationFormSchema = z.object({
   }).max(50, {
     message: "Participant 2 name cannot be more than 50 characters.",
   }),
-  teamLeadEmail: z.string().email({
+  teamLeadEmail: z.email({
     message: "Please enter a valid email address.",
   }),
   studentYear: z.enum(['freshman', 'sophomore', 'junior', 'senior', '']).refine(value => value !== '', {
