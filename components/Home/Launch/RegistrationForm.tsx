@@ -137,7 +137,7 @@ export function RegistrationForm() {
                 <FormControl>
                   <Input
                     type="email"
-                    placeholder="E.g., firstname.secondname.erp@khi.iba.edu.pk"
+                    placeholder="E.g., teamLead@gmail.com"
                     {...field}
                     disabled={isSubmitting}
                     className="border-gray-300 focus:border-blue-500 transition"
