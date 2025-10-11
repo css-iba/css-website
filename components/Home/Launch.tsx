@@ -88,7 +88,7 @@ const Launch: React.FC = () => {
                         }}
                     >
                         <CardHeader>
-                            <CardTitle className="font-heading text-2xl colour-text">What We Offer</CardTitle>
+                            <CardTitle className="font-heading text-2xl md:text-3xl colour-text">What We Offer</CardTitle>
                         </CardHeader>
 
                         <Separator className="bg-gray-400" />
@@ -123,25 +123,22 @@ const Launch: React.FC = () => {
                         {/* venue and date */}
                         <CardContent className="pt-0">
                             <div className="flex flex-col md:flex-row items-center justify-between gap-4 mt-6 colour-box-primary rounded-xl shadow-inner p-5 border border-[var(--colour-primary)]">
-                                {/* Icons column for mobile */}
-                                <div className="flex flex-row md:flex-col w-full">
-                                    {/* Venue */}
-                                    <div className="flex w-full">
-                                        <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-[var(--colour-primary)] to-[var(--colour-secondary)] shadow-lg mr-3 md:mr-0 md:mb-0">
-                                            <MapPin className="w-6 h-6 text-white" />
-                                        </span>
-                                        <div className="flex flex-col">
-                                            <span className="block font-semibold text-lg text-white">Venue</span>
-                                            <span className="block text-sm text-gray-200">Fauji Lawn B, Main campus</span>
-                                        </div>
+                                {/* Venue */}
+                                <div className="flex items-center gap-3 w-full">
+                                    <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-[var(--colour-primary)] to-[var(--colour-secondary)] shadow-lg md:inline-flex">
+                                        <MapPin className="w-6 h-6 text-white" />
+                                    </span>
+                                    <div>
+                                        <span className="block font-semibold text-lg text-white">Venue</span>
+                                        <span className="block text-sm text-gray-200">Fauji Lawn B, Main campus</span>
                                     </div>
                                 </div>
                                 {/* Date & Time */}
-                                <div className="flex flex-row md:flex-col w-full mt-4 md:mt-0">
-                                    <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-[var(--colour-primary)] to-[var(--colour-secondary)] shadow-lg mr-3 md:mr-0 md:mb-0">
+                                <div className="flex items-center gap-3 w-full">
+                                    <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-[var(--colour-primary)] to-[var(--colour-secondary)] shadow-lg md:inline-flex">
                                         <Clock className="w-6 h-6 text-white" />
                                     </span>
-                                    <div className="flex flex-col">
+                                    <div>
                                         <span className="block font-semibold text-lg text-white">Date & Time</span>
                                         <span className="block text-sm text-gray-200">29<sup>th</sup> October, 2025 &mdash; 11:00 AM - 4:00 PM</span>
                                     </div>
@@ -166,7 +163,7 @@ const Launch: React.FC = () => {
                         }}
                     >
                         <CardHeader>
-                            <CardTitle className="font-heading text-2xl colour-text">Competitive Programming</CardTitle>
+                            <CardTitle className="font-heading text-2xl md:text-3xl colour-text">Competitive Programming</CardTitle>
                         </CardHeader>
 
                         <Separator className="bg-gray-400" />
@@ -203,31 +200,29 @@ const Launch: React.FC = () => {
                         {/* venue and date */}
                         <CardContent className="pt-0">
                             <div className="flex flex-col md:flex-row items-center justify-between gap-4 mt-6 colour-box-primary rounded-xl shadow-inner p-5 border border-[var(--colour-primary)]">
-                                {/* Icons column for mobile */}
-                                <div className="flex flex-row md:flex-col w-full">
-                                    {/* Venue */}
-                                    <div className="flex w-full">
-                                        <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-[var(--colour-primary)] to-[var(--colour-secondary)] shadow-lg mr-3 md:mr-0 md:mb-0">
-                                            <MapPin className="w-6 h-6 text-white" />
-                                        </span>
-                                        <div className="flex flex-col">
-                                            <span className="block font-semibold text-lg text-white">Venue</span>
-                                            <span className="block text-sm text-gray-200">MCL-3 (Library), Main campus</span>
-                                        </div>
+                                {/* Venue */}
+                                <div className="flex items-center gap-3 w-full">
+                                    <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-[var(--colour-primary)] to-[var(--colour-secondary)] shadow-lg md:inline-flex">
+                                        <MapPin className="w-6 h-6 text-white" />
+                                    </span>
+                                    <div>
+                                        <span className="block font-semibold text-lg text-white">Venue</span>
+                                        <span className="block text-sm text-gray-200">MCL-3 (Library), Main campus</span>
                                     </div>
                                 </div>
                                 {/* Date & Time */}
-                                <div className="flex flex-row md:flex-col w-full mt-4 md:mt-0">
-                                    <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-[var(--colour-primary)] to-[var(--colour-secondary)] shadow-lg mr-3 md:mr-0 md:mb-0">
+                                <div className="flex items-center gap-3 w-full">
+                                    <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-[var(--colour-primary)] to-[var(--colour-secondary)] shadow-lg md:inline-flex">
                                         <Clock className="w-6 h-6 text-white" />
                                     </span>
-                                    <div className="flex flex-col">
+                                    <div>
                                         <span className="block font-semibold text-lg text-white">Date & Time</span>
                                         <span className="block text-sm text-gray-200">29<sup>th</sup> October, 2025 &mdash; 4:00 PM - 5:15 PM</span>
                                     </div>
                                 </div>
                             </div>
                         </CardContent>
+
                     </Card>
                 </motion.div>
             </div>
