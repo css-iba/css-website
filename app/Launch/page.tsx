@@ -5,6 +5,8 @@ import { RegistrationForm } from "@/components/Home/Launch/RegistrationForm";
 import { useForm, FormProvider } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import Link from "next/link";
+import { House } from "lucide-react";
 
 // Define the shape of the form data using a Zod schema
 const registrationFormSchema = z.object({
@@ -46,6 +48,13 @@ const RegistrationPage: React.FC = () => {
 
   return (
     <main className="flex min-h-screen flex-col items-center p-4 sm:p-12 md:p-24 colour-bg">
+      {/* left top corner button with icon to go back to home page */}
+      <div className="self-start mb-4">
+        <Link href="/#launch" className="inline-flex font-text font-semibold items-center px-4 py-2 colour-box-secondary text-gray-900 rounded-lg hover:scale-[1.02] transition-transform duration-200 shadow">
+          <House className="w-5 h-5 mr-2" />
+          Back to Home
+        </Link>
+      </div>
       <div className="w-full max-w-2xl colour-box-secondary p-6 md:p-8 rounded-xl shadow-2xl border border-[var(--colour-secondary)]">
         <h1 className="text-xl md:text-4xl font-extrabold font-heading text-center mb-4 text-gray-900">
           Competitive Programming Registration
