@@ -1,10 +1,12 @@
 import * as React from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Check } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+
+import { MapPin, Clock } from "lucide-react";
 
 // Variants for text blocks (heading, paragraphs, socials)
 const textVariants = {
@@ -115,6 +117,38 @@ const Launch: React.FC = () => {
                                 </li>
                             </ul>
                         </CardContent>
+
+                        <Separator className="bg-gray-400" />
+
+                        {/* venue and date */}
+                        <CardContent className="pt-0">
+                            <div className="flex flex-col md:flex-row items-center justify-between gap-4 mt-6 colour-box-primary rounded-xl shadow-inner p-5 border border-[var(--colour-primary)]">
+                                {/* Icons column for mobile */}
+                                <div className="flex flex-row md:flex-col w-full">
+                                    {/* Venue */}
+                                    <div className="flex w-full">
+                                        <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-[var(--colour-primary)] to-[var(--colour-secondary)] shadow-lg mr-3 md:mr-0 md:mb-0">
+                                            <MapPin className="w-6 h-6 text-white" />
+                                        </span>
+                                        <div className="flex flex-col">
+                                            <span className="block font-semibold text-lg text-white">Venue</span>
+                                            <span className="block text-sm text-gray-200">Fauji Lawn B, Main campus</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* Date & Time */}
+                                <div className="flex flex-row md:flex-col w-full mt-4 md:mt-0">
+                                    <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-[var(--colour-primary)] to-[var(--colour-secondary)] shadow-lg mr-3 md:mr-0 md:mb-0">
+                                        <Clock className="w-6 h-6 text-white" />
+                                    </span>
+                                    <div className="flex flex-col">
+                                        <span className="block font-semibold text-lg text-white">Date & Time</span>
+                                        <span className="block text-sm text-gray-200">29<sup>th</sup> October, 2025 &mdash; 11:00 AM - 4:00 PM</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </CardContent>
+
                     </Card>
                 </motion.div>
 
@@ -162,6 +196,37 @@ const Launch: React.FC = () => {
                                     Register Now
                                 </Button>
                             </Link>
+                        </CardContent>
+
+                        <Separator className="bg-gray-400" />
+
+                        {/* venue and date */}
+                        <CardContent className="pt-0">
+                            <div className="flex flex-col md:flex-row items-center justify-between gap-4 mt-6 colour-box-primary rounded-xl shadow-inner p-5 border border-[var(--colour-primary)]">
+                                {/* Icons column for mobile */}
+                                <div className="flex flex-row md:flex-col w-full">
+                                    {/* Venue */}
+                                    <div className="flex w-full">
+                                        <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-[var(--colour-primary)] to-[var(--colour-secondary)] shadow-lg mr-3 md:mr-0 md:mb-0">
+                                            <MapPin className="w-6 h-6 text-white" />
+                                        </span>
+                                        <div className="flex flex-col">
+                                            <span className="block font-semibold text-lg text-white">Venue</span>
+                                            <span className="block text-sm text-gray-200">MCL-3 (Library), Main campus</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* Date & Time */}
+                                <div className="flex flex-row md:flex-col w-full mt-4 md:mt-0">
+                                    <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-[var(--colour-primary)] to-[var(--colour-secondary)] shadow-lg mr-3 md:mr-0 md:mb-0">
+                                        <Clock className="w-6 h-6 text-white" />
+                                    </span>
+                                    <div className="flex flex-col">
+                                        <span className="block font-semibold text-lg text-white">Date & Time</span>
+                                        <span className="block text-sm text-gray-200">29<sup>th</sup> October, 2025 &mdash; 4:00 PM - 5:15 PM</span>
+                                    </div>
+                                </div>
+                            </div>
                         </CardContent>
                     </Card>
                 </motion.div>
