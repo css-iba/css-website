@@ -116,13 +116,9 @@ const Launch: React.FC = () => {
                                     <span className="font-text text-white">Prize Pool</span>
                                 </li>
                             </ul>
-                        </CardContent>
 
-                        <Separator className="bg-gray-400" />
-
-                        {/* venue and date */}
-                        <CardContent className="pt-0">
-                            <div className="flex flex-col md:flex-row items-center justify-between gap-4 mt-6 colour-box-primary rounded-xl shadow-inner p-5 border border-[var(--colour-primary)]">
+                            {/* venue and date */}
+                            <div className="flex flex-col md:flex-col items-center justify-between gap-4 mt-6">
                                 {/* Venue */}
                                 <div className="flex items-center gap-3 w-full">
                                     <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-[var(--colour-primary)] to-[var(--colour-secondary)] shadow-lg md:inline-flex">
@@ -130,7 +126,7 @@ const Launch: React.FC = () => {
                                     </span>
                                     <div>
                                         <span className="block font-semibold text-lg text-white">Venue</span>
-                                        <span className="block text-sm text-gray-200">Fauji Lawn B, Main campus</span>
+                                        <span className="block text-sm text-gray-700">Fauji Lawn B, Main campus</span>
                                     </div>
                                 </div>
                                 {/* Date & Time */}
@@ -140,7 +136,7 @@ const Launch: React.FC = () => {
                                     </span>
                                     <div>
                                         <span className="block font-semibold text-lg text-white">Date & Time</span>
-                                        <span className="block text-sm text-gray-200">29<sup>th</sup> October, 2025 &mdash; 11:00 AM - 4:00 PM</span>
+                                        <span className="block text-sm text-gray-700">29<sup>th</sup> October, 2025 &mdash; 11:00 AM - 4:00 PM</span>
                                     </div>
                                 </div>
                             </div>
@@ -188,18 +184,8 @@ const Launch: React.FC = () => {
                                 </li>
                             </ul>
 
-                            <Link href="/Launch" className="inline-block w-full mt-4">
-                                <Button className="font-text text-lg w-full px-8 py-3 bg-[var(--colour-accent)] text-[var(--colour-bg)] hover:bg-[var(--colour-accent)]/90">
-                                    Register Now
-                                </Button>
-                            </Link>
-                        </CardContent>
-
-                        <Separator className="bg-gray-400" />
-
-                        {/* venue and date */}
-                        <CardContent className="pt-0">
-                            <div className="flex flex-col md:flex-row items-center justify-between gap-4 mt-6 colour-box-primary rounded-xl shadow-inner p-5 border border-[var(--colour-primary)]">
+                            {/* venue and date */}
+                            <div className="flex flex-col md:flex-col items-center justify-between gap-4 mt-6 ">
                                 {/* Venue */}
                                 <div className="flex items-center gap-3 w-full">
                                     <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-[var(--colour-primary)] to-[var(--colour-secondary)] shadow-lg md:inline-flex">
@@ -207,7 +193,7 @@ const Launch: React.FC = () => {
                                     </span>
                                     <div>
                                         <span className="block font-semibold text-lg text-white">Venue</span>
-                                        <span className="block text-sm text-gray-200">MCL-3 (Library), Main campus</span>
+                                        <span className="block text-sm text-gray-700">MCL-3 (Library), Main campus</span>
                                     </div>
                                 </div>
                                 {/* Date & Time */}
@@ -217,10 +203,16 @@ const Launch: React.FC = () => {
                                     </span>
                                     <div>
                                         <span className="block font-semibold text-lg text-white">Date & Time</span>
-                                        <span className="block text-sm text-gray-200">29<sup>th</sup> October, 2025 &mdash; 4:00 PM - 5:15 PM</span>
+                                        <span className="block text-sm text-gray-700">29<sup>th</sup> October, 2025 &mdash; 4:00 PM - 5:15 PM</span>
                                     </div>
                                 </div>
                             </div>
+
+                            <Link href="/Launch" className="inline-block w-full mt-4">
+                                <Button className="font-text text-lg w-full px-8 py-3 bg-[var(--colour-accent)] text-[var(--colour-bg)] hover:bg-[var(--colour-accent)]/90">
+                                    Register Now
+                                </Button>
+                            </Link>
                         </CardContent>
 
                     </Card>
