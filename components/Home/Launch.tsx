@@ -119,26 +119,33 @@ const Launch: React.FC = () => {
 
                             {/* venue and date */}
                             <div className="flex flex-col md:flex-col items-center justify-between gap-4 mt-6">
-                                {/* Venue */}
-                                <div className="flex items-center gap-3 w-full">
-                                    <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-[var(--colour-primary)] to-[var(--colour-secondary)] shadow-lg md:inline-flex">
-                                        <MapPin className="w-6 h-6 text-white" />
-                                    </span>
-                                    <div>
-                                        <span className="block font-semibold text-lg text-white">Venue</span>
-                                        <span className="block text-sm text-gray-700">Fauji Lawn B, Main campus</span>
+                                {/* venue and date */}
+                                {[
+                                    {
+                                        icon: <MapPin className="w-6 h-6 text-white" />,
+                                        label: "Venue",
+                                        value: "Fauji Lawn B, Main campus",
+                                    },
+                                    {
+                                        icon: <Clock className="w-6 h-6 text-white" />,
+                                        label: "Date & Time",
+                                        value: (
+                                            <>
+                                                29<sup>th</sup> October, 2025 &mdash; 11:00 AM - 4:00 PM
+                                            </>
+                                        ),
+                                    },
+                                ].map((item) => (
+                                    <div key={item.label} className="flex items-center gap-3 w-full">
+                                        <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-[var(--colour-primary)] to-[var(--colour-secondary)] shadow-lg md:inline-flex">
+                                            {item.icon}
+                                        </span>
+                                        <div>
+                                            <span className="block font-semibold text-lg text-white">{item.label}</span>
+                                            <span className="block text-sm text-gray-700">{item.value}</span>
+                                        </div>
                                     </div>
-                                </div>
-                                {/* Date & Time */}
-                                <div className="flex items-center gap-3 w-full">
-                                    <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-[var(--colour-primary)] to-[var(--colour-secondary)] shadow-lg md:inline-flex">
-                                        <Clock className="w-6 h-6 text-white" />
-                                    </span>
-                                    <div>
-                                        <span className="block font-semibold text-lg text-white">Date & Time</span>
-                                        <span className="block text-sm text-gray-700">29<sup>th</sup> October, 2025 &mdash; 11:00 AM - 4:00 PM</span>
-                                    </div>
-                                </div>
+                                ))}
                             </div>
                         </CardContent>
 
@@ -186,26 +193,32 @@ const Launch: React.FC = () => {
 
                             {/* venue and date */}
                             <div className="flex flex-col md:flex-col items-center justify-between gap-4 mt-6 ">
-                                {/* Venue */}
-                                <div className="flex items-center gap-3 w-full">
-                                    <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-[var(--colour-primary)] to-[var(--colour-secondary)] shadow-lg md:inline-flex">
-                                        <MapPin className="w-6 h-6 text-white" />
-                                    </span>
-                                    <div>
-                                        <span className="block font-semibold text-lg text-white">Venue</span>
-                                        <span className="block text-sm text-gray-700">MCL-3 (Library), Main campus</span>
+                                {[
+                                    {
+                                        icon: <MapPin className="w-6 h-6 text-white" />,
+                                        label: "Venue",
+                                        value: "MCL-3 (Library), Main campus",
+                                    },
+                                    {
+                                        icon: <Clock className="w-6 h-6 text-white" />,
+                                        label: "Date & Time",
+                                        value: (
+                                            <>
+                                                29<sup>th</sup> October, 2025 &mdash; 4:00 PM - 5:15 PM
+                                            </>
+                                        ),
+                                    },
+                                ].map((item) => (
+                                    <div key={item.label} className="flex items-center gap-3 w-full">
+                                        <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-[var(--colour-primary)] to-[var(--colour-secondary)] shadow-lg md:inline-flex">
+                                            {item.icon}
+                                        </span>
+                                        <div>
+                                            <span className="block font-semibold text-lg text-white">{item.label}</span>
+                                            <span className="block text-sm text-gray-700">{item.value}</span>
+                                        </div>
                                     </div>
-                                </div>
-                                {/* Date & Time */}
-                                <div className="flex items-center gap-3 w-full">
-                                    <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-[var(--colour-primary)] to-[var(--colour-secondary)] shadow-lg md:inline-flex">
-                                        <Clock className="w-6 h-6 text-white" />
-                                    </span>
-                                    <div>
-                                        <span className="block font-semibold text-lg text-white">Date & Time</span>
-                                        <span className="block text-sm text-gray-700">29<sup>th</sup> October, 2025 &mdash; 4:00 PM - 5:15 PM</span>
-                                    </div>
-                                </div>
+                                ))}
                             </div>
 
                             <Link href="/Launch" className="inline-block w-full mt-4">
