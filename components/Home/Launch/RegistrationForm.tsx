@@ -57,20 +57,20 @@ export function RegistrationForm() {
   const onSubmit = async (data: RegistrationFormData) => {
     setIsSubmitting(true);
 
+    // Save data to local state (as requested)
+    setSubmissionData(data);
+
+    // Log data to console for verification
+    console.log("✅ Form Data Saved to State:", data);
+
     // Simulate an API delay for the spinner effect
-    const {error} = await insertRegistration(data);
+    const {error} = await insertRegistration(submissionData || data);
     if (error) {
       console.error("❌ Supabase Insertion Error:", error);
       setIsSubmitting(false);
       alert("There was an error submitting your registration. Please try again.");
       return;
     }
-
-    // Save data to local state (as requested)
-    setSubmissionData(data);
-
-    // Log data to console for verification
-    console.log("✅ Form Data Saved to State:", data);
 
     setIsSubmitting(false);
     // Show confirmation dialog (toggle state so the component renders)
