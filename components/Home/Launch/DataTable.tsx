@@ -8,6 +8,7 @@ import {
     TableHead,
     TableHeader,
     TableRow,
+    TableCaption,
 } from "@/components/ui/table"
 
 type Row = {
@@ -35,6 +36,9 @@ export default function DataTable({ data }: { data: Row[] }) {
     return (
         <div className="overflow-x-auto">
             <Table>
+                <TableCaption className="text-sm">
+                    {data.length} registration{data.length !== 1 ? "s" : ""}
+                </TableCaption>
                 <TableHeader>
                     <TableRow>
                         {columns.map((col) => (
