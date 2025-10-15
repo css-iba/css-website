@@ -38,3 +38,27 @@ export async function insertRegistration(registrationData: RegistrationFormData)
         return { error: err };
     }
 }
+
+export async function GetData() {
+    try {
+        const { data, error } = await supabase
+            .from('registrations')
+            .select('*');
+
+        if (error) {
+            console.error('Supabase Fetch Error:', {
+                message: error.message,
+                details: error.details,
+                hint: error.hint,
+                code: error.code,
+            });
+            return { error };
+        }
+
+        console.log('Supabase Fetch Success:', data);
+        return { data, error: null };
+    } catch (err) {
+        console.error('Unexpected error during Supabase fetch:', err);
+        return { error: err };
+    }
+}
