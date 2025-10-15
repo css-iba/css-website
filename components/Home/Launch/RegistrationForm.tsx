@@ -127,6 +127,11 @@ export function RegistrationForm() {
             )}
           />
 
+          {/* Advisory note about entrance of second participant, if not then leave N/A */}
+          <p className="text-sm text-gray-500 italic -translate-y-2">
+            Note: If you do not have a second participant, please enter &quot;N/A&quot;.
+          </p>
+
           {/* Team Lead Email Field */}
           <FormField
             control={form.control}
