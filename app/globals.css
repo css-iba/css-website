@@ -220,3 +220,30 @@
 ::-webkit-scrollbar-thumb:hover {
     background: #dddbff; /* color of the scroll thumb on hover */
 }
+
+
+
+
+/* Limit these rules to the table container only */
+.overflow-x-auto {
+  /* Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(221,219,255,0.7) transparent;
+}
+
+/* WebKit browsers: horizontal scrollbar height */
+.overflow-x-auto::-webkit-scrollbar {
+  height: 8px; /* horizontal height */
+}
+
+/* Thumb */
+.overflow-x-auto::-webkit-scrollbar-thumb {
+  background: rgba(221,219,255,0.85);
+  border-radius: 9999px;
+  border: 2px solid transparent; /* space around thumb */
+}
+
+/* Track background (transparent to avoid visual gutter) */
+.overflow-x-auto::-webkit-scrollbar-track {
+  background: transparent;
+}
