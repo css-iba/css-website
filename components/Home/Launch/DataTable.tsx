@@ -30,30 +30,43 @@ export default function DataTable({ data }: { data: Row[] }) {
             </div>
         )
     }
+    // derive column keys from the first row, exclude created_at
+    const rawCols = Object.keys(data[0]).filter((c) => c !== 'created_at')
 
-    const columns = Object.keys(data[0])
+    // prepare display label mapping
+    const labelMap: Record<string, string> = {
+        id: 'ID',
+        participant1Name: 'Name 1',
+        participant2Name: 'Name 2',
+        teamLeadEmail: 'Email',
+        studentYear: 'Year',
+        difficulty: 'Difficulty',
+    }
+
+    // final columns: index (generated) + remaining raw columns
+    const columns = ['index', ...rawCols]
 
     return (
         <div className="overflow-x-auto">
             <Table>
                 <TableCaption className="text-sm">
-                    {data.length} registration{data.length !== 1 ? "s" : ""}
+                    {data.length} registration{data.length !== 1 ? 's' : ''}
                 </TableCaption>
                 <TableHeader>
                     <TableRow>
                         {columns.map((col) => (
                             <TableHead key={col} className="text-left">
-                                {col.replace(/_/g, " ")}
+                                {col === 'index' ? '#' : (labelMap[col] ?? col.replace(/_/g, ' '))}
                             </TableHead>
                         ))}
                     </TableRow>
                 </TableHeader>
                 <TableBody>
                     {data.map((row, idx) => (
-                        <TableRow key={idx} className={idx % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                        <TableRow key={idx} className={idx % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
                             {columns.map((col) => (
                                 <TableCell key={col} className="align-top">
-                                    {String(row[col] ?? "")}
+                                    {col === 'index' ? String(idx + 1) : String(row[col] ?? '')}
                                 </TableCell>
                             ))}
                         </TableRow>
