@@ -10,7 +10,16 @@ import {
     TableRow,
 } from "@/components/ui/table"
 
-type Row = Record<string, any>
+type Row = {
+    id: number;
+    created_at: string;
+    participant1Name: string;
+    participant2Name: string;
+    teamLeadEmail: string;
+    studentYear: 'freshman' | 'sophomore' | 'junior' | 'senior' | '';
+    difficulty: 'easy' | 'hard' | '';
+    [key: string]: string | number | undefined;
+}
 
 export default function DataTable({ data }: { data: Row[] }) {
     if (!data || data.length === 0) {
