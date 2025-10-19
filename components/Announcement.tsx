@@ -45,10 +45,10 @@ const AnnouncementBar: React.FC = () => {
           <svg viewBox="0 0 2 2" aria-hidden="true" className="mx-2 inline size-2 fill-gray-900">
             <circle r={1} cx={1} cy={1} />
           </svg>
-          Something&apos;s coming! Stay tuned and keep an eye out for updates.
+          Introducing <strong>Hello World</strong>, CSS's launch event! Happening on October 29<sup>th</sup>, 2025.
         </p>
         <Link
-          href="/Forms"
+          href="/#launch"
           className="flex-none rounded-full bg-gray-900 px-3.5 py-1 text-sm font-semibold text-white shadow-xs hover:bg-gray-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
         >
           Go to Forms <span aria-hidden="true">&rarr;</span>
