@@ -142,7 +142,7 @@ const Launch: React.FC = () => {
                                         </span>
                                         <div>
                                             <span className="block font-semibold text-lg text-white">{item.label}</span>
-                                            <span className="block text-sm text-gray-700">{item.value}</span>
+                                            <span className="block text-sm font-semibold text-gray-700">{item.value}</span>
                                         </div>
                                     </div>
                                 ))}
@@ -215,7 +215,7 @@ const Launch: React.FC = () => {
                                         </span>
                                         <div>
                                             <span className="block font-semibold text-lg text-white">{item.label}</span>
-                                            <span className="block text-sm text-gray-700">{item.value}</span>
+                                            <span className="block text-sm font-semibold text-gray-700">{item.value}</span>
                                         </div>
                                     </div>
                                 ))}
