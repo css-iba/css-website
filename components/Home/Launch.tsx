@@ -66,7 +66,7 @@ const Launch: React.FC = () => {
                     variants={textVariants}
                     className="text-gray-600 font-text text-lg md:text-xl text-left max-w-4xl"
                     >
-                    Get ready for a day of excitement and innovation as we unveil the CSS Launch: Hello World. 
+                    Get ready for a day of excitement and innovation as we unveil the CSS Launch: <strong>Hello World</strong>. 
                     This launch marks the beginning of a new year of CSS. Join us for fun, learning and networking with fellow programmers.
                 </motion.p>
             </div>
