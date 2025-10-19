@@ -128,7 +128,7 @@ const Launch: React.FC = () => {
                                     },
                                     {
                                         icon: <Clock className="w-6 h-6 text-white" />,
-                                        label: "Date & Time",
+                                        label: "Date \u0026 Time",
                                         value: (
                                             <>
                                                 29<sup>th</sup> October, 2025 &mdash; 11:00 AM - 4:00 PM
@@ -201,7 +201,7 @@ const Launch: React.FC = () => {
                                     },
                                     {
                                         icon: <Clock className="w-6 h-6 text-white" />,
-                                        label: "Date & Time",
+                                        label: "Date \u0026 Time",
                                         value: (
                                             <>
                                                 29<sup>th</sup> October, 2025 &mdash; 4:00 PM - 5:15 PM
