@@ -81,12 +81,7 @@ const Launch: React.FC = () => {
                     viewport={{ once: true, amount: 0.8 }}
                     variants={cardsVariants}
                 >
-                    <Card
-                        className="border-0"
-                        style={{
-                            background: "linear-gradient(120deg, var(--colour-primary), var(--colour-secondary))",
-                        }}
-                    >
+                    <Card className="border-0 bg-[#1a2236]">
                         <CardHeader>
                             <CardTitle className="font-heading text-2xl md:text-3xl colour-text">What We Offer</CardTitle>
                         </CardHeader>
@@ -142,7 +137,7 @@ const Launch: React.FC = () => {
                                         </span>
                                         <div>
                                             <span className="block font-semibold text-lg text-white">{item.label}</span>
-                                            <span className="block text-sm font-semibold text-gray-700">{item.value}</span>
+                                            <span className="block text-sm colour-accent">{item.value}</span>
                                         </div>
                                     </div>
                                 ))}
@@ -159,12 +154,7 @@ const Launch: React.FC = () => {
                     viewport={{ once: true, amount: 0.8 }}
                     variants={cardsVariants}
                 >
-                    <Card 
-                        className="border-0"
-                        style={{
-                            background: "linear-gradient(120deg, var(--colour-primary), var(--colour-secondary))",
-                        }}
-                    >
+                    <Card className="border-0 bg-[#1a2236]">
                         <CardHeader>
                             <CardTitle className="font-heading text-2xl md:text-3xl colour-text">Competitive Programming</CardTitle>
                         </CardHeader>
@@ -215,7 +205,7 @@ const Launch: React.FC = () => {
                                         </span>
                                         <div>
                                             <span className="block font-semibold text-lg text-white">{item.label}</span>
-                                            <span className="block text-sm font-semibold text-gray-700">{item.value}</span>
+                                            <span className="block text-sm colour-accent">{item.value}</span>
                                         </div>
                                     </div>
                                 ))}
