@@ -14,4 +14,4 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 // Also provide a default export for environments that import default
 export default supabase;
 
-console.log('Supabase client initialized.');
+// console.log('Supabase client initialized.');
