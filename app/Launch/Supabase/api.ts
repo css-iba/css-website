@@ -16,7 +16,8 @@ export async function insertRegistration(registrationData: RegistrationFormData)
         // Use an array to insert a single record reliably and request the inserted row back
         const { data, error } = await supabase
             .from('registrations')
-            .insert(registrationData)
+            .insert([registrationData])
+            .select()
             .single();
 
         if (error) {
