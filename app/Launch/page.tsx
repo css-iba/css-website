@@ -66,6 +66,8 @@ const RegistrationPage: React.FC = () => {
         <p className="text-center font-text text-sm text-gray-600 mb-8 p-2 rounded-lg bg-yellow-50 border-l-4 border-red-500 italic">
           Note: There are two difficulty levels available: &ldquo;Easy&rdquo; and &ldquo;Hard&rdquo;. Choose the easy one if you&apos;re in freshman year otherwise choose hard.
           If you think you can do the hard one, go for it!
+          <br />
+          <strong>Only freshman students are allowed to choose the easy difficulty level. If others do so, will be moved to hard.</strong>
         </p>
 
         {/* Wrap the form component with FormProvider */}
