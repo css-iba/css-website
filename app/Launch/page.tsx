@@ -20,9 +20,12 @@ const registrationFormSchema = z.object({
   }).max(50, {
     message: "Participant 2 name cannot be more than 50 characters.",
   }),
-  teamLeadEmail: z.email({
-    message: "Please enter a valid email address.",
-  }),
+  teamLeadEmail: z
+    .email({ message: "Please enter a valid email address." })
+    .refine(
+      (val) => /^[a-zA-Z]+\.[a-zA-Z]+\.\d{5}@khi\.iba\.edu\.pk$/.test(val),
+      { message: "Email must be in the format firstname.lastname.12345@khi.iba.edu.pk" }
+    ),
   studentYear: z.enum(['freshman', 'sophomore', 'junior', 'senior', '']).refine(value => value !== '', {
     message: "Please select a student year.",
   }),
@@ -55,6 +58,7 @@ const RegistrationPage: React.FC = () => {
           Back to Home
         </Link>
       </div>
+      
       <div className="w-full max-w-2xl colour-box-secondary p-6 md:p-8 rounded-xl shadow-2xl border border-[var(--colour-secondary)]">
         <h1 className="text-xl md:text-4xl font-extrabold font-heading text-center mb-4 text-gray-900">
           Competitive Programming Registration
