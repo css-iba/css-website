@@ -57,14 +57,14 @@ export function RegistrationForm() {
   const onSubmit = async (data: RegistrationFormData) => {
     setIsSubmitting(true);
 
-  // Save data to local state (for display/history) but use the fresh `data` when calling the API
-  setSubmissionData(data);
+    // Save data to local state (for display/history) but use the fresh `data` when calling the API
+    setSubmissionData(data);
 
-  // Log data to console for verification
-  console.log("✅ Form Data Saved to State:", data);
+    // Log data to console for verification
+    console.log("✅ Form Data Saved to State:", data);
 
-  // Call insert with the current `data` (don't rely on submissionData which updates asynchronously)
-  const { error } = await insertRegistration(data);
+    // Call insert with the current `data` (don't rely on submissionData which updates asynchronously)
+    const { error } = await insertRegistration(data);
     if (error) {
       // console.error("❌ Supabase Insertion Error:", error);
       setIsSubmitting(false);
