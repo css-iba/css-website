@@ -142,7 +142,7 @@ export function RegistrationForm() {
                 <FormControl>
                   <Input
                     type="email"
-                    placeholder="E.g., teamLead@gmail.com"
+                    placeholder="E.g., firstName.secondName.12345@khi.iba.edu.pk"
                     {...field}
                     disabled={isSubmitting}
                     className="border-gray-300 focus:border-blue-500 transition"
@@ -152,6 +152,11 @@ export function RegistrationForm() {
               </FormItem>
             )}
           />
+
+          {/* Advisory note about entrance of email format */}
+          <p className="text-sm text-gray-500 italic -translate-y-2">
+            Note: email must be in the format firstname.lastname.12345@khi.iba.edu.pk
+          </p>
         </div>
 
         <div className="space-y-6 p-4 border border-white rounded-xl bg-white transition duration-150 hover:shadow-inner">
