@@ -81,8 +81,8 @@ const Launch: React.FC = () => {
                     viewport={{ once: true, amount: 0.8 }}
                     variants={cardsVariants}
                 >
-                    <Card className="border-0 bg-[#1a2236]">
-                        <CardHeader>
+                    <Card className="border-0 bg-gradient-to-r from-[#1a2236] via-[#16202e] to-[#0f131b] shadow-xl/30">
+                        <CardHeader> 
                             <CardTitle className="font-heading text-2xl md:text-3xl colour-text">What We Offer</CardTitle>
                         </CardHeader>
 
@@ -154,7 +154,7 @@ const Launch: React.FC = () => {
                     viewport={{ once: true, amount: 0.8 }}
                     variants={cardsVariants}
                 >
-                    <Card className="border-0 bg-[#1a2236]">
+                    <Card className="border-0 bg-gradient-to-r from-[#1a2236] via-[#16202e] to-[#0f131b] shadow-xl/30">
                         <CardHeader>
                             <CardTitle className="font-heading text-2xl md:text-3xl colour-text">Competitive Programming</CardTitle>
                         </CardHeader>
@@ -212,7 +212,7 @@ const Launch: React.FC = () => {
                             </div>
 
                             <Link href="/Launch" className="inline-block w-full mt-4">
-                                <Button className="font-text text-lg w-full px-8 py-3 bg-[var(--colour-accent)] text-[var(--colour-bg)] hover:bg-[var(--colour-accent)]/90">
+                                <Button className="font-text text-lg w-full px-8 py-3 bg-[var(--colour-accent)] text-[var(--colour-bg)] hover:bg-[var(--colour-accent)]/90 outline-solid outline-2 outline-offset-1 outline-[var(--colour-accent)]">
                                     Register Now
                                 </Button>
                             </Link>
