@@ -187,7 +187,7 @@ const Launch: React.FC = () => {
                                     {
                                         icon: <MapPin className="w-6 h-6 text-white" />,
                                         label: "Venue",
-                                        value: "MCL-3 (Library), Main campus",
+                                        value: "MCL-2 (Library), Main campus",
                                     },
                                     {
                                         icon: <Clock className="w-6 h-6 text-white" />,
