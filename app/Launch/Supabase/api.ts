@@ -63,3 +63,29 @@ export async function GetData() {
         return { error: err };
     }
 }
+
+// Sign in an existing user with email and password
+export async function signIn(email: string, password: string) {
+    try {
+        const {
+            data: { user, session },
+            error,
+        } = await supabase.auth.signInWithPassword({ email, password });
+
+        if (error) {
+            // AuthError from supabase-js has limited fields; stringify for full details
+            // console.error('Supabase signIn error:', {
+            //     message: error.message,
+            //     status: (error as any).status ?? null,
+            //     code: (error as any).code ?? null,
+            //     raw: JSON.stringify(error),
+            // });
+            return { error };
+        }
+
+        return { user, session, error: null };
+    } catch (err) {
+        // console.error('Unexpected error during signIn:', err);
+        return { error: err };
+    }
+}
