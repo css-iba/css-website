@@ -5,6 +5,8 @@ import { useForm, FormProvider } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 
+import { LogOut } from "lucide-react";
+
 import {
   Form,
   FormControl,
@@ -19,7 +21,7 @@ import { Button } from "@/components/ui/button";
 import { Spinner } from "@/components/ui/spinner";
 
 import DataTable from "@/components/Home/Launch/DataTable";
-import { GetData as fetchRegistrations, signIn } from "@/app/Launch/Supabase/api";
+import { GetData as fetchRegistrations, signIn, signOut } from "@/app/Launch/Supabase/api";
 
 // ✅ Define Zod schema for admin login
 const adminSignInSchema = z.object({
@@ -182,9 +184,28 @@ export default function GetPage() {
           </FormProvider>
         ) : (
           <div className="mx-auto max-w-6xl space-y-6">
-            <h2 className="text-3xl font-heading font-bold colour-text border-b-3 inline-block pb-2 mb-4">
-              Registrations
-            </h2>
+
+            <div className="flex items-center justify-between">
+              <h2 className="text-3xl font-heading font-bold colour-text border-b-3 inline-block pb-2 mb-4">
+                Registrations
+              </h2>
+                <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => {
+                  const result = signOut();
+                  Promise.resolve(result).then(() => {
+                  setAuthed(false);
+                  methods.reset();
+                  });
+                }}
+                aria-label="Sign Out"
+                className="flex items-center justify-center w-10 h-10 rounded-full backdrop-blur-sm bg-white/10 hover:bg-white/20 border border-white/20 transition-all duration-300 colour-text hover:text-[var(--colour-text)] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-400"
+                >
+                  <LogOut size={20} />
+                </Button>
+            </div>
+
             <div className="p-4 border border-white rounded-xl bg-white transition duration-150 hover:shadow-inner">
               <DataTable data={rows} />
             </div>
