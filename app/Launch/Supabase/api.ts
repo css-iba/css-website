@@ -89,3 +89,22 @@ export async function signIn(email: string, password: string) {
         return { error: err };
     }
 }
+
+export async function signOut() {
+    try {
+        const { error } = await supabase.auth.signOut();
+        if (error) {
+            // console.error('Supabase signOut error:', {
+            //     message: error.message,
+            //     status: (error as any).status ?? null,
+            //     code: (error as any).code ?? null,
+            //     raw: JSON.stringify(error),
+            // });
+            return { error };
+        }
+        return { error: null };
+    } catch (err) {
+        // console.error('Unexpected error during signOut:', err);
+        return { error: err };
+    }
+}
