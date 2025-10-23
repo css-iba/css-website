@@ -83,7 +83,7 @@ const NavBar: React.FC = () => {
         {/* Right: User Icon */}
         <div className="flex items-center">
           <Link
-            href="/Launch/Get"
+            href="/Admin"
             className="flex items-center justify-center w-10 h-10 rounded-full 
                       backdrop-blur-sm bg-white/10 
                       hover:bg-white/20 
@@ -112,7 +112,7 @@ const NavBar: React.FC = () => {
         <div className="flex items-center gap-3">
           {/* User Icon */}
           <Link
-            href="/Launch/Get"
+            href="/Admin"
             className="flex items-center justify-center w-10 h-10 rounded-full 
                       backdrop-blur-sm bg-white/10 
                       hover:bg-white/20 
