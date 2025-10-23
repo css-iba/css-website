@@ -1,3 +1,22 @@
+// import DataTable from '@/components/Home/Launch/DataTable'
+// import { GetData as fetchRegistrations } from '@/app/Launch/Supabase/api'
+
+// // Server component that fetches registration rows and passes them to the DataTable
+// export default async function GetData() {
+//   const res = await fetchRegistrations()
+//   const rows = res?.data ?? []
+
+//   return (
+//     <main className="min-h-screen p-8 colour-bg">
+//       <div className="mx-auto max-w-6xl">
+//         <h2 className="text-3xl font-heading font-extrabold mb-6 colour-text">Registrations</h2>
+//         <div className="bg-white rounded-xl shadow p-4">
+//           <DataTable data={rows} />
+//         </div>
+//       </div>
+//     </main>
+//   )
+// }
 'use client'
 
 import { useState } from "react";
@@ -37,6 +56,17 @@ const adminSignInSchema = z.object({
 // ✅ Infer the TypeScript type from the Zod schema
 type AdminSignInFormData = z.infer<typeof adminSignInSchema>;
 
+interface RegistrationRow {
+  id: number;
+  created_at: string;
+  participant1Name: string;
+  participant2Name: string;
+  teamLeadEmail: string;
+  studentYear: 'freshman' | 'sophomore' | 'junior' | 'senior' | '';
+  difficulty: 'easy' | 'hard' | '';
+  [key: string]: any;
+}
+
 export default function GetPage() {
   const methods = useForm<AdminSignInFormData>({
     resolver: zodResolver(adminSignInSchema),
@@ -48,7 +78,7 @@ export default function GetPage() {
 
   const [loading, setLoading] = useState(false);
   const [authed, setAuthed] = useState(false);
-  const [rows, setRows] = useState<any[]>([]);
+  const [rows, setRows] = useState<RegistrationRow[]>([]);
   const [error, setError] = useState<string | null>(null);
 
   const onSubmit = async (data: AdminSignInFormData) => {
