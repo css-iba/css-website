@@ -224,21 +224,20 @@ export default function Admin() {
 
             <div className="flex items-center gap-3 mt-3">
               {/* Competition selector - using shadcn Select */}
-            <Select
+              <Select
                 value={selectedCompetition}
                 onValueChange={(val) => setSelectedCompetition(val)}
-            >
-                <SelectTrigger className="w-48 flex items-center justify-between rounded-md backdrop-blur-sm bg-white/10 hover:bg-white/20 border border-white/20 transition-all duration-300 colour-text hover:text-[var(--colour-text)] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-400">
-                    <SelectValue placeholder="Select competition" />
+              >
+                <SelectTrigger className="w-48 flex items-center justify-between rounded-md backdrop-blur-sm bg-white/10 hover:bg-white/20 border border-white/20 transition-all duration-300 colour-text hover:text-[var(--colour-text)] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-400 [&_svg]:stroke-white">
+                  <SelectValue placeholder="Select competition" />
                 </SelectTrigger>
                 <SelectContent className="bg-white">
-                    <SelectGroup>
-                        <SelectLabel>Competitions</SelectLabel>
-                        <SelectItem value="Launch">Launch</SelectItem>
-                        <SelectItem value="CodeX">CodeX</SelectItem>
-                    </SelectGroup>
+                  <SelectGroup>
+                    <SelectLabel>Competitions</SelectLabel>
+                    <SelectItem value="Launch">Launch</SelectItem>
+                  </SelectGroup>
                 </SelectContent>
-            </Select>
+              </Select>
 
               <Button
                 variant="outline"
