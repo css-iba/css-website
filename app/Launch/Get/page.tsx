@@ -1,22 +1,3 @@
-// import DataTable from '@/components/Home/Launch/DataTable'
-// import { GetData as fetchRegistrations } from '@/app/Launch/Supabase/api'
-
-// // Server component that fetches registration rows and passes them to the DataTable
-// export default async function GetData() {
-//   const res = await fetchRegistrations()
-//   const rows = res?.data ?? []
-
-//   return (
-//     <main className="min-h-screen p-8 colour-bg">
-//       <div className="mx-auto max-w-6xl">
-//         <h2 className="text-3xl font-heading font-extrabold mb-6 colour-text">Registrations</h2>
-//         <div className="bg-white rounded-xl shadow p-4">
-//           <DataTable data={rows} />
-//         </div>
-//       </div>
-//     </main>
-//   )
-// }
 'use client'
 
 import { useState } from "react";
@@ -56,15 +37,29 @@ const adminSignInSchema = z.object({
 // ✅ Infer the TypeScript type from the Zod schema
 type AdminSignInFormData = z.infer<typeof adminSignInSchema>;
 
-interface RegistrationRow {
+// ✅ Define a strict yet flexible type for registration rows
+export interface RegistrationRow {
   id: number;
   created_at: string;
   participant1Name: string;
   participant2Name: string;
   teamLeadEmail: string;
-  studentYear: 'freshman' | 'sophomore' | 'junior' | 'senior' | '';
-  difficulty: 'easy' | 'hard' | '';
-  [key: string]: any;
+  studentYear: "freshman" | "sophomore" | "junior" | "senior" | "";
+  difficulty: "easy" | "hard" | "";
+  // Allow for additional fields without using `any`
+  [key: string]: string | number | undefined;
+}
+
+// ✅ Type API responses
+interface SignInResponse {
+  // signIn can return a typed error object or an unknown error shape depending on the runtime,
+  // so allow unknown here and handle extraction safely where the response is used.
+  error?: { message?: string } | null | unknown;
+}
+
+interface GetDataResponse {
+  data?: RegistrationRow[];
+  error?: { message?: string } | unknown;
 }
 
 export default function GetPage() {
@@ -76,25 +71,28 @@ export default function GetPage() {
     },
   });
 
-  const [loading, setLoading] = useState(false);
-  const [authed, setAuthed] = useState(false);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [authed, setAuthed] = useState<boolean>(false);
   const [rows, setRows] = useState<RegistrationRow[]>([]);
   const [error, setError] = useState<string | null>(null);
 
   const onSubmit = async (data: AdminSignInFormData) => {
     setLoading(true);
-    setError(null);
-
-    const res = await signIn(data.email, data.password);
+    const res: SignInResponse = await signIn(data.email, data.password);
     setLoading(false);
 
     if (res?.error) {
-      const msg = (res.error as any)?.message ?? "Sign-in failed";
+      // Safely extract a message if present; the error may be `unknown` at compile time.
+      const err = res.error as unknown;
+      const msg =
+        typeof err === "object" && err !== null && "message" in err
+          ? ( (err as { message?: string }).message ?? "Sign-in failed" )
+          : "Sign-in failed";
       setError(msg);
       return;
     }
 
-    const dataRes = await fetchRegistrations();
+    const dataRes: GetDataResponse = await fetchRegistrations();
     if (dataRes?.error) {
       setError("Failed to load registrations.");
       return;
