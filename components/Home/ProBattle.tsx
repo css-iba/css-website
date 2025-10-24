@@ -87,8 +87,8 @@ const ProBattle: React.FC = () => {
           custom={isMobile}
           transition={{ delay: 0.2 }}
         >   
-          <span className="text-amber-500">ProBattle 2024</span> stands as one of our flagship events, meticulously designed to provide participants with opportunities to <span className="text-amber-500">test their skills, explore cutting-edge technologies, and gain insights from industry leaders.</span>
-          By fostering a collaborative environment, ProBattle inspires creativity, encourages the exchange of ideas, and ensures a platform where participants can truly thrive.
+          <span className="text-amber-500">ProBattle 2024</span> stands as one of our flagship events, meticulously designed to provide participants with opportunities to <span className="text-amber-500">test their skills, explore cutting-edge technologies, and gain insights from industry leaders.
+          </span> By fostering a collaborative environment, ProBattle inspires creativity, encourages the exchange of ideas, and ensures a platform where participants can truly thrive.
         </motion.p>
         
         {/* Button */}
