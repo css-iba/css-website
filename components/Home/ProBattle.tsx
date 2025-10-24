@@ -40,7 +40,7 @@ const ProBattle: React.FC = () => {
   }, []);
 
   return (
-    <section className="flex flex-col md:flex-row items-center justify-between py-12 px-4 md:px-12 md:ml-20 gap-8 mt-20">
+    <section className="flex flex-col md:flex-row items-center justify-between py-12 px-4 md:px-12 md:ml-20 gap-8 mt-20 overflow-x-hidden">
       <div className="flex-1 order-1">
 
         {/* Heading */}
