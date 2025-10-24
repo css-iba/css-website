@@ -78,7 +78,7 @@ const CodeX: React.FC = () => {
           custom={isMobile}
           transition={{ delay: 0.2 }}
         >
-          CODEX, an initiative of the IBA Computer Science Society (CSS), is a
+          CodeX, an initiative of the IBA Computer Science Society (CSS), is a
           dynamic tech-driven community bringing together over 300 active
           members across multiple platforms. It serves as a hub for students to{" "}
           <span className="text-amber-500">
