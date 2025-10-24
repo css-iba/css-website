@@ -36,7 +36,7 @@ export function HomeCarousel() {
 
   return (
     <Carousel
-      className="w-full max-w-2xl mx-auto"
+      className="w-full max-w-2xl mx-auto overflow-x-hidden md:overflow-x-visible"
       orientation={isMobile ? "vertical" : "horizontal"}
       opts={{ align: "start", loop: true }}
       plugins={[
