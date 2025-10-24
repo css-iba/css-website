@@ -40,7 +40,7 @@ const CodeX: React.FC = () => {
   }, []);
 
   return (
-    <section className="flex flex-col md:flex-row-reverse items-center justify-between py-12 px-4 md:px-12 md:mr-40 gap-8 mt-20">
+    <section className="flex flex-col md:flex-row-reverse items-center justify-between py-12 px-4 md:px-12 md:mr-40 gap-8 mt-20 overflow-x-hidden">
       <div className="flex-1 order-1">
 
         {/* Heading */}
@@ -144,13 +144,16 @@ const CodeX: React.FC = () => {
         variants={imageVariants}
         transition={{ delay: 0.8 }}
       >
-        <Image
-          src="/Home/Codex2.png"
-          alt="Events"
-          width={320}
-          height={320}
-          className="rounded-xl border-2 border-[var(--colour-secondary)] w-84 h-48 md:w-130 md:h-90 object-cover"
-        />
+        <div className="w-full max-w-[320px] md:max-w-[520px]">
+          <Image
+            src="/Home/Codex2.png"
+            alt="Events"
+            width={320}
+            height={320}
+            className="rounded-xl border-2 border-[var(--colour-secondary)] w-full h-auto object-cover"
+            style={{ height: 'auto' }}
+          />
+        </div>
       </motion.div>
     </section>
   );
