@@ -64,7 +64,7 @@ const NavBar: React.FC = () => {
         </div>
 
         {/* Center: Nav Links */}
-        <div className="flex gap-6">
+        <div className="flex gap-6 rounded-full backdrop-blur-sm bg-white/10 border border-white/20">
           {navLinks.map((link, index) => (
             <Link
               key={link.title}
