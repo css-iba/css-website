@@ -40,7 +40,7 @@ const CodeX: React.FC = () => {
   }, []);
 
   return (
-    <section className="flex flex-col md:flex-row-reverse items-center justify-between py-12 px-4 md:mr-40 gap-8 mt-20">
+    <section className="flex flex-col md:flex-row-reverse items-center justify-between py-12 px-4 md:px-12 md:mr-40 gap-8 mt-20">
       <div className="flex-1 order-1">
 
         {/* Heading */}
