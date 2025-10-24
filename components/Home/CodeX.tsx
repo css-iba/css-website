@@ -102,7 +102,7 @@ const CodeX: React.FC = () => {
             coding competitions and hackathons to guest lectures and interactive
             workshops
           </span>
-          , CODEX provides countless opportunities for growth. By fostering
+          , CodeX provides countless opportunities for growth. By fostering
           connections and promoting innovation, the community helps its members
           enhance their technical expertise, build meaningful networks, and stay
           at the forefront of emerging tech trends.
