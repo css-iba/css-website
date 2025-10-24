@@ -5,7 +5,7 @@ import { useForm, FormProvider } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 
-import { LogOut, RefreshCw } from "lucide-react";
+import { LogOut, RefreshCw, ShieldUser } from "lucide-react";
 import {
   Select,
   SelectTrigger,
@@ -124,8 +124,11 @@ export default function Admin() {
                 onSubmit={methods.handleSubmit(onSubmit)}
                 className="space-y-8 p-6 border border-white rounded-xl bg-white transition duration-150 hover:shadow-inner"
               >
-                <h2 className="text-2xl font-heading font-bold text-gray-800 border-b pb-2 mb-4">
+                <h2 className="text-2xl flex items-center justify-center font-heading font-bold text-gray-800 border-b pb-2 mb-4">
                   Admin Sign In
+                  <span className="inline-flex items-center justify-center w-9 h-9 ml-3 rounded-full bg-blue-50 hover:bg-blue-100 border border-blue-200 transition-all duration-300 text-blue-700">
+                    <ShieldUser className="w-5 h-5" />
+                  </span>
                 </h2>
 
                 {/* Email Field */}
