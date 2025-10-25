@@ -7,7 +7,7 @@ import { ExternalLink } from "lucide-react";
 
 interface Events {
     name: string;
-    detail: string;
+    detail: React.ReactNode;
     link: string;
     link_text: string;
 }
@@ -35,7 +35,7 @@ const CodexEvents: React.FC<CodexEventsProps> = ({ events }) => (
             <div className="w-full">
               <Separator className="bg-gray-400" />
             </div>
-            <p className="font-text text-md text-black">{event.detail}</p>
+            <div className="font-text text-md text-black list-disc list-inside space-y-1">{event.detail}</div>
             {event.link && (
               <Button asChild variant="outline" className="mt-4 font-text font-semibold w-fit px-4 py-2">
                 <Link href={event.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-md colour-primary hover:underline">
