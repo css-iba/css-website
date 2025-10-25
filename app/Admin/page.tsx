@@ -228,11 +228,13 @@ export default function Admin() {
                   variant="ghost"
                   size="icon"
                   onClick={async () => {
+                    setLoading(true);
                     const result = await signOut();
                     if (!result?.error) {
                       setAuthed(false);
                       methods.reset();
                       setRows([]);
+                      setLoading(false);
                     } else {
                       setError('Sign-out failed');
                     }
@@ -240,7 +242,13 @@ export default function Admin() {
                   aria-label="Sign Out"
                   className="flex items-center justify-center w-10 h-10 rounded-full backdrop-blur-sm bg-white/10 hover:bg-white/20 border border-white/20 transition-all duration-300 colour-text hover:text-[var(--colour-text)] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-400"
                 >
-                  <LogOut size={20} />
+                  {loading ? (
+                    <>
+                      <Spinner className="w-5 h-5 animate-spin" />
+                    </>
+                  ) : (
+                    <LogOut size={20} />
+                  )}
                 </Button>
               </div>
             </div>
