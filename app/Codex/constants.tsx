@@ -2,7 +2,7 @@ import { Code, Users, Award, Rocket } from "lucide-react";
 
 interface Events {
     name: string;
-    detail: string;
+    detail: React.ReactNode;
     link: string;
     link_text: string;
 }
@@ -26,9 +26,19 @@ interface Resource {
 
 const events: Events[] = [
     {
-        name: "Tech Carnival 2025 — Launch Event",
-        detail:
-            "Join us for the grand launch: a full-day Tech Carnival featuring a Competitive Programming module with Beginner and Advanced tracks (prize pool awaiting top performers), booths from leading tech companies, interactive game stalls, hands-on robotics showcases including Robo-Soccer and other student projects, plus FIFA and immersive VR experiences. Network with mentors, try demos, and win big — don’t miss the action!",
+        name: "Hello World — Launch Event",
+        detail: (
+            <>
+                <p className="font-text text-md mb-2">Full day of tech fun and learning! Join us for:</p>
+                <ul className="list-disc list-inside space-y-1 px-4 font-text">
+                    <li>Competitive Programming (Beginner & Advanced tracks — prize pool for top performers)</li>
+                    <li>Booths from tech companies and interactive game stalls</li>
+                    <li>Hands-on robotics showcases (including Robo-Soccer) and student projects</li>
+                    <li>FIFA and immersive VR experiences</li>
+                </ul>
+                <p className="font-text text-md mt-2">Network with mentors, try demos, and win prizes — don’t miss the action!</p>
+            </>
+        ),
         link: "/Launch",
         link_text: "Register Now",
     },
