@@ -25,12 +25,13 @@ interface Resource {
 }
 
 const events: Events[] = [
-//   { 
-//     name: "Tech Carnival 2025",
-//     detail: "Join us for a day of competitive programming, gaming tournaments, and fun tech activities. Open to all skill levels!",
-//     link: "/Codex/TechCarnival",
-//     link_text: "Register Now"
-//   }
+    {
+        name: "Tech Carnival 2025 — Launch Event",
+        detail:
+            "Join us for the grand launch: a full-day Tech Carnival featuring a Competitive Programming module with Beginner and Advanced tracks (prize pool awaiting top performers), booths from leading tech companies, interactive game stalls, hands-on robotics showcases including Robo-Soccer and other student projects, plus FIFA and immersive VR experiences. Network with mentors, try demos, and win big — don’t miss the action!",
+        link: "/Launch",
+        link_text: "Register Now",
+    },
 ];
 
 const data: Data[] = [
