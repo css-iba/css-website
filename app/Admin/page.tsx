@@ -5,7 +5,7 @@ import { useForm, FormProvider } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 
-import { LogOut, RefreshCw, ShieldUser } from "lucide-react";
+import { LogOut, RefreshCw, ShieldUser, EyeOff, Eye } from "lucide-react";
 import {
   Select,
   SelectTrigger,
@@ -87,6 +87,11 @@ export default function Admin() {
   const [rows, setRows] = useState<RegistrationRow[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [selectedCompetition, setSelectedCompetition] = useState<string>('Launch');
+  const [showPassword, setShowPassword] = useState<boolean>(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword((prev) => !prev);
+  };
 
   const onSubmit = async (data: AdminSignInFormData) => {
     setLoading(true);
@@ -159,13 +164,28 @@ export default function Admin() {
                     <FormItem>
                       <FormLabel>Password</FormLabel>
                       <FormControl>
-                        <Input
-                          type="password"
-                          placeholder="Enter admin password"
-                          {...field}
-                          disabled={loading}
-                          className="border-gray-300 focus:border-blue-500 transition"
-                        />
+                        <div className="relative">
+                          <Input
+                            type={showPassword ? "text" : "password"}
+                            placeholder="Enter admin password"
+                            {...field}
+                            disabled={loading}
+                            className="border-gray-300 focus:border-blue-500 transition pr-10"
+                          />
+                          <Button
+                            type="button"
+                            onClick={togglePasswordVisibility}
+                            className="absolute inset-y-0 right-0 flex items-center pr-3 bg-gray-100 rounded-r-md hover:bg-gray-200 transition"
+                            aria-label={showPassword ? "Hide password" : "Show password"}
+                            variant="outline"
+                          >
+                            {showPassword ? (
+                              <EyeOff className="w-5 h-5 text-gray-700" />
+                            ) : (
+                              <Eye className="w-5 h-5 text-gray-700" />
+                            )}
+                          </Button>
+                        </div>
                       </FormControl>
                       <FormMessage />
                     </FormItem>
