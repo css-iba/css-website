@@ -64,11 +64,37 @@ export default function DataTable({ data }: { data: Row[] }) {
                 <TableBody>
                     {data.map((row, idx) => (
                         <TableRow key={idx} className={idx % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                            {columns.map((col) => (
-                                <TableCell key={col} className="align-top">
-                                    {col === 'index' ? String(idx + 1) : String(row[col] ?? '')}
-                                </TableCell>
-                            ))}
+                            {columns.map((col) => {
+                                // special rendering for Year and Difficulty columns
+                                if (col === 'studentYear' || col === 'difficulty') {
+                                    const year = String(row['studentYear'] ?? '') as string
+
+                                    // determine badge style per row rules:
+                                    // - if freshman -> green badge
+                                    // - else if not freshman -> red badge
+                                    // - otherwise neutral badge
+                                    let badgeClass = 'bg-gray-100 text-gray-800'
+                                    if (year === 'freshman') {
+                                        badgeClass = 'bg-emerald-100 text-emerald-800'
+                                    } else if (year !== 'freshman') {
+                                        badgeClass = 'bg-rose-100 text-rose-800'
+                                    }
+
+                                    return (
+                                        <TableCell key={col} className="align-top">
+                                            <span className={`inline-block px-1.5 py-0.5 rounded-full text-sm font-semibold ${badgeClass}`}>
+                                                {String(row[col] ?? '')}
+                                            </span>
+                                        </TableCell>
+                                    )
+                                }
+
+                                return (
+                                    <TableCell key={col} className="align-top">
+                                        {col === 'index' ? String(idx + 1) : String(row[col] ?? '')}
+                                    </TableCell>
+                                )
+                            })}
                         </TableRow>
                     ))}
                 </TableBody>
