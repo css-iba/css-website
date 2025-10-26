@@ -68,21 +68,22 @@ export default function DataTable({ data }: { data: Row[] }) {
                                 // special rendering for Year and Difficulty columns
                                 if (col === 'studentYear' || col === 'difficulty') {
                                     const year = String(row['studentYear'] ?? '') as string
+                                    const difficulty = String(row['difficulty'] ?? '') as string
 
                                     // determine badge style per row rules:
                                     // - if freshman -> green badge
                                     // - else if not freshman -> red badge
-                                    // - otherwise neutral badge
-                                    let badgeClass = 'bg-gray-100 text-gray-800'
-                                    if (year === 'freshman') {
+                                    // - otherwise blue badge
+                                    let badgeClass = 'bg-blue-100 text-blue-800'
+                                    if (year === 'freshman' && difficulty === 'easy') {
                                         badgeClass = 'bg-emerald-100 text-emerald-800'
-                                    } else if (year !== 'freshman') {
+                                    } else if (year !== 'freshman' && difficulty === 'hard') {
                                         badgeClass = 'bg-rose-100 text-rose-800'
                                     }
 
                                     return (
                                         <TableCell key={col} className="align-top">
-                                            <span className={`inline-block px-1.5 py-0.5 rounded-full text-sm font-semibold ${badgeClass}`}>
+                                            <span className={`inline-block px-1.5 py-0.5 text-sm font-semibold ${badgeClass}`}>
                                                 {String(row[col] ?? '')}
                                             </span>
                                         </TableCell>
