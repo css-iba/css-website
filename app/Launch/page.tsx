@@ -2,6 +2,7 @@
 
 import React from "react";
 import { RegistrationForm } from "@/components/Home/Launch/RegistrationForm";
+import { Card, CardContent } from "@/components/ui/card";
 import { useForm, FormProvider } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -38,6 +39,8 @@ const registrationFormSchema = z.object({
 type RegistrationFormData = z.infer<typeof registrationFormSchema>;
 
 const RegistrationPage: React.FC = () => {
+  const closed: boolean = true; // Set to true to close registration
+
   const methods = useForm<RegistrationFormData>({
     resolver: zodResolver(registrationFormSchema),
     defaultValues: {
@@ -59,7 +62,7 @@ const RegistrationPage: React.FC = () => {
         </Link>
       </div>
       
-      <div className="w-full max-w-2xl colour-box-secondary p-6 md:p-8 rounded-xl shadow-2xl border border-[var(--colour-secondary)]">
+      <div className="w-full max-w-2xl colour-box-secondary p-6 md:p-8 rounded-xl shadow-2xl border border-[var(--colour-secondary)] relative">
         <h1 className="text-xl md:text-4xl font-extrabold font-heading text-center mb-4 text-gray-900">
           Competitive Programming Registration
         </h1>
@@ -74,6 +77,19 @@ const RegistrationPage: React.FC = () => {
         <FormProvider {...methods}>
           <RegistrationForm />
         </FormProvider>
+
+        {closed && (
+          <div className="absolute inset-0 z-50 flex items-center justify-center rounded-xl overflow-hidden">
+            {/* translucent blurred backdrop that respects parent's rounded corners */}
+            <div className="absolute inset-0 bg-white/10 backdrop-blur-sm" />
+            <Card className="z-60 max-w-md mx-auto bg-[var(--colour-bg)]/80 border border-white/20 rounded-xl">
+              <CardContent className="p-8 text-center">
+                <h3 className="text-3xl md:text-4xl font-bold colour-text font-heading mb-2">Registrations are closed</h3>
+                <p className="text-md md:text-lg colour-text font-text">Thank you for your interest — registrations are now closed.</p>
+              </CardContent>
+            </Card>
+          </div>
+        )}
       </div>
     </main>
   );
