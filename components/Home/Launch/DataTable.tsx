@@ -77,7 +77,7 @@ export default function DataTable({ data }: { data: Row[] }) {
                                     let badgeClass = 'bg-blue-100 text-blue-800'
                                     if (year === 'freshman' && difficulty === 'easy') {
                                         badgeClass = 'bg-emerald-100 text-emerald-800'
-                                    } else if (year !== 'freshman' && difficulty === 'hard') {
+                                    } else if (year === 'sophomore' && difficulty === 'hard') {
                                         badgeClass = 'bg-rose-100 text-rose-800'
                                     }
 
