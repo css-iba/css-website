@@ -1,6 +1,6 @@
 "use client"
 
-import React from "react"
+import React, { useState } from "react"
 import {
     Table,
     TableBody,
@@ -10,6 +10,8 @@ import {
     TableRow,
     TableCaption,
 } from "@/components/ui/table"
+import { Button } from '@/components/ui/button'
+import { Copy } from 'lucide-react'
 
 type Row = {
     id: number;
@@ -23,6 +25,7 @@ type Row = {
 }
 
 export default function DataTable({ data }: { data: Row[] }) {
+    const [copiedId, setCopiedId] = useState<number | null>(null)
     if (!data || data.length === 0) {
         return (
             <div className="p-8 text-center text-lg text-gray-600">
@@ -90,11 +93,53 @@ export default function DataTable({ data }: { data: Row[] }) {
                                     )
                                 }
 
-                                return (
-                                    <TableCell key={col} className="align-top">
-                                        {col === 'index' ? String(idx + 1) : String(row[col] ?? '')}
-                                    </TableCell>
-                                )
+                                    // Special rendering for the teamLeadEmail column: show copy button
+                                    if (col === 'teamLeadEmail') {
+                                        const email = String(row.teamLeadEmail ?? '')
+                                        const isCopied = copiedId === row.id
+                                        return (
+                                            <TableCell key={col} className="align-top">
+                                                <div className="flex items-center gap-2">
+                                                    <span className="truncate">{email}</span>
+                                                    <Button
+                                                        size="icon"
+                                                        variant="ghost"
+                                                        className="p-2"
+                                                        onClick={async () => {
+                                                            try {
+                                                                await navigator.clipboard.writeText(email)
+                                                                setCopiedId(row.id)
+                                                                setTimeout(() => setCopiedId(null), 2000)
+                                                            } catch (e) {
+                                                                // fallback: create temporary input
+                                                                const el = document.createElement('input')
+                                                                el.value = email
+                                                                document.body.appendChild(el)
+                                                                el.select()
+                                                                try { document.execCommand('copy') } catch {}
+                                                                document.body.removeChild(el)
+                                                                setCopiedId(row.id)
+                                                                setTimeout(() => setCopiedId(null), 2000)
+                                                            }
+                                                        }}
+                                                        aria-label={isCopied ? 'Copied' : 'Copy email'}
+                                                    >
+                                                        {isCopied ? (
+                                                            <span className="text-sm px-1.5 py-0.5 text-emerald-600 font-semibold">Copied!</span>
+                                                        ) : (
+                                                            <Copy className="w-4 h-4" />
+                                                        )}
+                                                    </Button>
+                                                </div>
+                                            </TableCell>
+                                        )
+                                    }
+
+                                    return (
+                                        <TableCell key={col} className="align-top">
+                                            {col === 'index' ? String(idx + 1) : String(row[col] ?? '')}
+                                        </TableCell>
+                                    )
                             })}
                         </TableRow>
                     ))}
