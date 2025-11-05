@@ -43,7 +43,7 @@ const Launch: React.FC = () => {
   }, []);
 
   return (
-    <section id="launch" className="py-8 pb-40 px-4 md:px-12 gap-8 mt-20 min-h-screen colour-box-secondary">
+    <section id="launch" className="py-8 pb-40 px-4 md:px-12 gap-8 mt-20 min-h-screen colour-box-secondary rounded-t-[3rem]">
         <div className="mx-auto md:ml-20 pt-24 pb-12">
         
             {/* Title and Description */}
