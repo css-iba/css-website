@@ -141,7 +141,7 @@ export default function Footer() {
                       href="https://github.com/css-iba/css-website/issues"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-600 underline"
+                      className="text-blue-600 hover:underline"
                     >
                       report it on GitHub
                     </Link>{" "}
