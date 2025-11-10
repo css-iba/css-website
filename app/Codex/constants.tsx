@@ -42,6 +42,23 @@ const events: Events[] = [
         link: "/Launch",
         link_text: "Register Now",
     },
+    {
+        name: "Python 101: Getting started with Python",
+        detail: (
+            <>
+                <p className="font-text text-md mb-2">Join us for an introductory session on Python programming on Wednesday 12<sup>th</sup> November! This event is perfect for beginners looking to learn the basics of Python, including syntax, data types, and simple programming concepts.</p>
+                <ul className="list-disc list-inside space-y-1 px-4 font-text">
+                    <li>Introduction to Python syntax and structure</li>
+                    <li>Understanding data types and variables</li>
+                    <li>Writing simple programs, loops and conditionals</li>
+                    <li>Discussing the uses cases of python</li>
+                </ul>
+                <p className="font-text text-md mt-2">Whether you're new to programming or looking to expand your skills, this session will provide a solid foundation in Python. Don't miss out on this opportunity to kickstart your coding journey!</p>
+            </>
+        ),
+        link: "",
+        link_text: "",
+    },
 ];
 
 const data: Data[] = [
