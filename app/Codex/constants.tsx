@@ -36,7 +36,7 @@ const events: Events[] = [
                     <li>Hands-on robotics showcases (including Robo-Soccer) and student projects</li>
                     <li>FIFA and immersive VR experiences</li>
                 </ul>
-                <p className="font-text text-md mt-2">Network with mentors, try demos, and win prizes — don’t miss the action!</p>
+                <p className="font-text text-md mt-2">Network with mentors, try demos, and win prizes — don&apos;t miss the action!</p>
             </>
         ),
         link: "/Launch",
@@ -53,7 +53,7 @@ const events: Events[] = [
                     <li>Writing simple programs, loops and conditionals</li>
                     <li>Discussing the uses cases of python</li>
                 </ul>
-                <p className="font-text text-md mt-2">Whether you're new to programming or looking to expand your skills, this session will provide a solid foundation in Python. Don't miss out on this opportunity to kickstart your coding journey!</p>
+                <p className="font-text text-md mt-2">Whether you&apos;re new to programming or looking to expand your skills, this session will provide a solid foundation in Python. Don&apos;t miss out on this opportunity to kickstart your coding journey!</p>
             </>
         ),
         link: "",
