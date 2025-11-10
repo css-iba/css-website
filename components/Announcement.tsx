@@ -45,7 +45,7 @@ const AnnouncementBar: React.FC = () => {
           <svg viewBox="0 0 2 2" aria-hidden="true" className="mx-2 inline size-2 fill-gray-900">
             <circle r={1} cx={1} cy={1} />
           </svg>
-          Results for the competitive programming contest are out now!
+          Python workshop on 12th November 2025! Join us for an exciting session.
         </p>
         <Link
           href="/#launch"
