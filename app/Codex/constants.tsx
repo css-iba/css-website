@@ -56,8 +56,8 @@ const events: Events[] = [
                 <p className="font-text text-md mt-2">Whether you&apos;re new to programming or looking to expand your skills, this session will provide a solid foundation in Python. Don&apos;t miss out on this opportunity to kickstart your coding journey!</p>
             </>
         ),
-        link: "",
-        link_text: "",
+        link: "https://github.com/Abdullahprogramme/Python-basics",
+        link_text: "View on GitHub",
     },
 ];
 
