@@ -10,6 +10,7 @@ interface Events {
     detail: React.ReactNode;
     link: string;
     link_text: string;
+    link_icon: React.ReactNode;
 }
 
 interface CodexEventsProps {
@@ -61,7 +62,7 @@ const CodexEvents: React.FC<CodexEventsProps> = ({ events }) => (
                 {event.link ? (
                   <Button asChild variant="outline" className="font-text font-semibold w-fit px-4 py-2">
                     <Link href={event.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm colour-primary hover:underline">
-                      {event.link_text} <ExternalLink className="w-4 h-4" />
+                      {event.link_text} {event.link_icon}
                     </Link>
                   </Button>
                 ) : (
