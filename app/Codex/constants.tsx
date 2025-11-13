@@ -1,10 +1,14 @@
 import { Code, Users, Award, Rocket } from "lucide-react";
 
+// Icons for Events from lucide-react
+import { ExternalLink, File } from "lucide-react";
+
 interface Events {
     name: string;
     detail: React.ReactNode;
     link: string;
     link_text: string;
+    link_icon: React.ReactNode;
 }
 
 interface Data {
@@ -41,6 +45,7 @@ const events: Events[] = [
         ),
         link: "/Launch",
         link_text: "Register Now",
+        link_icon: <ExternalLink className="w-4 h-4" />,
     },
     {
         name: "Python 101: Getting started with Python",
@@ -58,6 +63,7 @@ const events: Events[] = [
         ),
         link: "https://github.com/Abdullahprogramme/Python-basics",
         link_text: "View on GitHub",
+        link_icon: <File className="w-4 h-4" />,
     },
 ];
 
