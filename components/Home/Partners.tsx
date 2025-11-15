@@ -12,6 +12,11 @@ const partnersData = [
     alt: 'Notion IBA Logo',
     src: '/Home/notion-logo.png'
   },
+  {
+    name: 'ACM NUCES',
+    alt: 'ACM NUCES Logo',
+    src: '/Home/acmnuces.png'
+  }
 ];
 
 const Partners: React.FC = () => {
