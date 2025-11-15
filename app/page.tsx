@@ -9,6 +9,7 @@ import CodeX from "@/components/Home/CodeX";
 import ProBattle from "@/components/Home/ProBattle";
 import TeamSection from "@/components/Home/TeamSection";
 import FAQ  from "@/components/Home/FAQ";
+import Partners from "@/components/Home/Partners";
 
 const Home: React.FC = () => {
 
@@ -21,6 +22,7 @@ const Home: React.FC = () => {
         <CodeX />
         <ProBattle />
         <TeamSection />
+        <Partners />
         <FAQ />
     </div>
   );
