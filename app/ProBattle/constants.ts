@@ -55,5 +55,9 @@ export const sponsors: Sponsor[] = [
     {
         logoUrl: "/ProBattle/IBM.png",
         size: "small"
+    },
+    {
+        logoUrl: "/ProBattle/BankAlHabib.png",
+        size: "small"
     }
 ];
