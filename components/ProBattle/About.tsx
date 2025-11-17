@@ -76,6 +76,7 @@ const About: React.FC = () => {
                 w-[300px]        /* mobile width */
                 sm:w-[300px]      /* small screens */
                 lg:w-[800px]      /* large screens */
+                3xl:w-[1000px]     /* extra large screens */
                 max-w-none 
                 rounded-xl 
                 bg-black/40 
