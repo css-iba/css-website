@@ -17,7 +17,7 @@ const TitleSection: React.FC = () => {
         <section className="relative flex md:min-h-screen flex-col md:flex-row items-center justify-between py-12 px-4 md:px-12 gap-8 overflow-visible">
             
             {/* Background pattern */}
-            <div
+            {/* <div
                 className="
                     absolute inset-0
                     bg-[linear-gradient(to_right,rgba(255,255,255,0.25)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.25)_1px,transparent_1px)]
@@ -29,7 +29,45 @@ const TitleSection: React.FC = () => {
                     [mask-size:100%_100%]
                     animate-gridGlow
                 "
-            />
+            /> */}
+
+            <div className="absolute inset-0 z-0 overflow-hidden">
+                <svg
+                aria-hidden="true"
+                className="absolute top-0 left-[max(50%,25rem)] h-[800px] w-[1600px] -translate-x-1/2 
+                mask-[radial-gradient(64rem_64rem_at_top,rgba(255,255,255,0.5),transparent)] 
+                stroke-[rgba(255,255,255,0.25)]"
+                >
+                <defs>
+                    <pattern
+                    x="50%"
+                    y={-1}
+                    id="pattern-bg"
+                    width={200}
+                    height={200}
+                    patternUnits="userSpaceOnUse"
+                    >
+                    <path d="M100 200V.5M.5 .5H200" fill="none" />
+                    </pattern>
+                </defs>
+
+                {/* Background faint shapes */}
+                <svg x="50%" y={-1} className="overflow-visible fill-[rgba(255,255,255,0.08)]">
+                    <path
+                    d="M-100.5 0h201v201h-201Z 
+                        M699.5 0h201v201h-201Z 
+                        M499.5 400h201v201h-201Z 
+                        M-300.5 600h201v201h-201Z"
+                    strokeWidth={0}
+                    />
+                </svg>
+
+                {/* Pattern lines */}
+                <rect fill="url(#pattern-bg)" width="100%" height="100%" strokeWidth={0} />
+                </svg>
+            </div>
+
+            
 
 
             {/* Lottie animation top left on desktop */}
