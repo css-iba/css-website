@@ -45,13 +45,13 @@ const AnnouncementBar: React.FC = () => {
           <svg viewBox="0 0 2 2" aria-hidden="true" className="mx-2 inline size-2 fill-gray-900">
             <circle r={1} cx={1} cy={1} />
           </svg>
-          Python workshop has finished. Resources have been uploaded on Github, link in CodeX section.
+          Code Clash on 23<sup>rd</sup> November, 2025. Join CodeX group for more details.
         </p>
         <Link
-          href="/#launch"
+          href="/Codex"
           className="flex-none rounded-full bg-gray-900 px-3.5 py-1 text-sm font-semibold text-white shadow-xs hover:bg-gray-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
         >
-          Go to Forms <span aria-hidden="true">&rarr;</span>
+          Go to CodeX <span aria-hidden="true">&rarr;</span>
         </Link>
       </div>
       <div className="flex flex-1 justify-end">
