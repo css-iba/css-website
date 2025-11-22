@@ -1,7 +1,7 @@
 import { Code, Users, Award, Rocket } from "lucide-react";
 
 // Icons for Events from lucide-react
-import { ExternalLink, File } from "lucide-react";
+import { ExternalLink, File, UsersRound } from "lucide-react";
 
 interface Events {
     name: string;
@@ -65,6 +65,24 @@ const events: Events[] = [
         link_text: "View on GitHub",
         link_icon: <File className="w-4 h-4" />,
     },
+    {
+        name: "Code Clash",
+        detail: (
+            <>
+                <p className="font-text text-md mb-2">Get ready for a short and exciting coding competition designed to test your problem-solving skills and coding speed! Whether you&apos;re a beginner or an experienced coder, Code Clash offers a fun and challenging environment to showcase your abilities.</p>
+                <ul className="list-disc list-inside space-y-1 px-4 font-text">
+                    <li>2 to 3 coding problems to solve within a limited time</li>
+                    <li>Problems designed for various skill levels</li>
+                    <li>DataCamp licenses for winners</li>
+                    <li>Certificates for winners</li>
+                </ul>
+                <p className="font-text text-md mt-2">Join us for Code Clash and put your coding skills to the test in a friendly and competitive atmosphere. Don&apos;t miss out on the chance to win exciting prizes and recognition!</p>
+            </>
+        ),
+        link: "https://chat.whatsapp.com/LM8BwRVyqha33PXq1JJfmU",
+        link_text: "Join Community",
+        link_icon: <UsersRound className="w-4 h-4" />,
+    }
 ];
 
 const data: Data[] = [
