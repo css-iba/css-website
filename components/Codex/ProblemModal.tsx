@@ -58,24 +58,24 @@ export default function ProblemModal({listenForId }: ProblemModalProps) {
 
             <AlertDialogPortal>
                 <AlertDialogOverlay />
-                                <AlertDialogContent className="w-full max-w-[95vw] sm:max-w-[720px] mx-auto px-3 overflow-hidden">
-                                <AlertDialogHeader>
-                                        <div className="flex items-center justify-between gap-4">
-                                                <div className="min-w-0">
-                                                    <AlertDialogTitle className="text-base sm:text-lg">Code Clash — Problems</AlertDialogTitle>
-                                                    <AlertDialogDescription className="text-sm text-muted-foreground">
-                                                        Select a problem tab to view the solution code. Use the close button to dismiss this dialog.
-                                                    </AlertDialogDescription>
-                                                </div>
-                                                <div className="ml-4 flex-shrink-0">
-                                                    <AlertDialogCancel asChild>
-                                                        <Button variant="ghost" className="p-2 rounded-md">
-                                                            <X className="w-4 h-4" />
-                                                        </Button>
-                                                    </AlertDialogCancel>
-                                                </div>
-                                        </div>
-                                </AlertDialogHeader>
+                <AlertDialogContent className="w-full max-w-[95vw] sm:max-w-[720px] mx-auto px-3 overflow-hidden">
+                <AlertDialogHeader>
+                    <div className="flex items-center justify-between gap-4">
+                        <div className="min-w-0">
+                            <AlertDialogTitle className="text-base sm:text-lg">{listenForId} — Problems</AlertDialogTitle>
+                            <AlertDialogDescription className="text-sm text-muted-foreground">
+                                Select a problem tab to view the solution code. Use the close button to dismiss this dialog.
+                            </AlertDialogDescription>
+                        </div>
+                        <div className="ml-4 flex-shrink-0">
+                            <AlertDialogCancel asChild>
+                                <Button variant="ghost" className="p-2 rounded-md">
+                                    <X className="w-4 h-4" />
+                                </Button>
+                            </AlertDialogCancel>
+                        </div>
+                    </div>
+                </AlertDialogHeader>
 
                 <div className="mt-4">
                     <div className="flex gap-2 border-b pb-2 overflow-x-auto">
