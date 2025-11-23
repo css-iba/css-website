@@ -10,8 +10,8 @@ type ProblemsMap = Record<string, Problem[]>;
 const problemsMap: ProblemsMap = {
     "code-clash": [
         {
-            id: 'blocks',
-            title: 'Blocks',
+            id: 'fizzbuzz',
+            title: 'FizzBuzz',
             language: 'cpp',
             code: `#include <iostream>
 #include <algorithm>
@@ -35,8 +35,8 @@ int main() {
 }`,
         },
         {
-            id: 'anagram',
-            title: 'Anagram Check',
+            id: 'your-name',
+            title: 'Your Name',
             language: 'python',
             code: `def main():
         t = int(input())
