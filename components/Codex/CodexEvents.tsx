@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
-import { ExternalLink } from "lucide-react";
+import ProblemModal from "./ProblemModal";
 
 interface Events {
     name: string;
@@ -74,6 +74,8 @@ const CodexEvents: React.FC<CodexEventsProps> = ({ events }) => (
         ))}
       </div>
     )}
+
+    <ProblemModal listenForId="code-clash"/>
   </section>
 )
 
