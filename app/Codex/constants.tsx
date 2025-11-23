@@ -77,6 +77,7 @@ const events: Events[] = [
                     <li>Certificates for winners</li>
                 </ul>
                 <p className="font-text text-md mt-2">Join us for Code Clash and put your coding skills to the test in a friendly and competitive atmosphere. Don&apos;t miss out on the chance to win exciting prizes and recognition!</p>
+                <button data-problem-trigger="code-clash" className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors duration-300">Open to see solutions</button>
             </>
         ),
         link: "https://chat.whatsapp.com/LM8BwRVyqha33PXq1JJfmU",
