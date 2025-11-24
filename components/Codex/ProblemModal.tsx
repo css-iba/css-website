@@ -4,15 +4,15 @@ import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
 import {
-  AlertDialog,
-  AlertDialogContent,
-  AlertDialogHeader,
-  AlertDialogTitle,
+    AlertDialog,
+    AlertDialogContent,
+    AlertDialogHeader,
+    AlertDialogTitle,
     AlertDialogDescription,
-  AlertDialogPortal,
-  AlertDialogOverlay,
-  AlertDialogFooter,
-  AlertDialogCancel,
+    AlertDialogPortal,
+    AlertDialogOverlay,
+    AlertDialogFooter,
+    AlertDialogCancel,
 } from "@/components/ui/alert-dialog";
 
 import problemsMap  from "@/app/Codex/Problems";
