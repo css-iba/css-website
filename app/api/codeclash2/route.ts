@@ -1,0 +1,62 @@
+import { NextResponse } from "next/server";
+import { supabase } from "@/app/Launch/Supabase/client";
+import nodemailer from "nodemailer";
+
+export async function POST(req: Request) {
+  try {
+    const data = await req.json();
+
+    // Insert into Supabase
+    const { error } = await supabase.from("codeclash2").insert(data);
+    if (error) {
+      console.error("Supabase error:", error);
+      return NextResponse.json({ error }, { status: 500 });
+    }
+
+    // Send email
+    const transporter = nodemailer.createTransport({
+      host: process.env.SMTP_HOST,
+      port: Number(process.env.SMTP_PORT),
+      secure: Number(process.env.SMTP_PORT) === 465, // true for 465
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
+    });
+
+    await transporter.sendMail({
+      from: process.env.FROM_EMAIL,
+      to: data.email,
+      subject: "CodeClash Registration",
+      text: `
+Hello ${data.participantName},
+
+Thank you for registering for CodeClash 2.0! We are thrilled to have you join us for this exciting event.
+
+Here are your registration details:
+
+Participant Name: ${data.participantName}
+Email: ${data.email}
+Phone Number: ${data.phoneNumber}
+
+Please keep this information safe, as it may be required for event check-in and communications.
+
+Important Notes:
+- Make sure to check your email regularly for updates or instructions related to CodeClash 2.0.
+- If you have any questions, feel free to reach out to us at computersciencessociety@khi.iba.edu.pk.
+- Stay tuned for any announcements regarding schedules, rules, and team coordination.
+
+We look forward to seeing you at CodeClash 2.0 and wish you the best of luck!
+
+Best regards,
+Computer Science Society, IBA Karachi
+`,
+  });
+
+    return NextResponse.json({ success: true }, { status: 200 });
+
+  } catch (err) {
+    console.error("API route error:", err);
+    return NextResponse.json({ error: "Server error" }, { status: 500 });
+  }
+}
