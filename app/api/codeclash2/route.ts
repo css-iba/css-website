@@ -11,7 +11,7 @@ export async function POST(req: Request) {
     // 1. Insert into Supabase
     const { error } = await supabase.from("codeclash2").insert(data);
     if (error) {
-      console.error("Supabase error:", error);
+      // console.error("Supabase error:", error);
       return NextResponse.json({ error }, { status: 500 });
     }
 
@@ -45,12 +45,10 @@ Participant Name: ${data.participantName}
 Email: ${data.email}
 Phone Number: ${data.phoneNumber}
 
-Please keep this information safe, as it may be required for event check-in and communications.
-
 Important Notes:
-- Make sure to check your email regularly for updates or instructions related to CodeClash 2.0.
+- Each team may have only 1 member.
 - If you have any questions, feel free to reach out to us at computersciencessociety@khi.iba.edu.pk.
-- Stay tuned for any announcements regarding schedules, rules, and team coordination.
+- Stay tuned for any announcements regarding the event on our website at https://css.iba.edu.pk/.
 
 We look forward to seeing you at CodeClash 2.0 and wish you the best of luck!
 
