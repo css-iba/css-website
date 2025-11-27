@@ -29,8 +29,12 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Spinner } from "@/components/ui/spinner";
 
+// Data Tables
 import DataTable from "@/components/Home/Launch/DataTable";
-import { GetData as fetchRegistrations, signIn, signOut } from "@/app/Launch/Supabase/api";
+import CodeClashDataTable from "@/components/Codex/CodeClash2/DataTable";
+
+import { signIn, signOut } from "@/app/Launch/Supabase/api";
+import { fetchCompetitionRows, type CompetitionKey, type AnyCompetitionRecord, type CodeClash2Record, type LaunchRecord } from "@/app/Admin/Registration_Rows";
 
 // ✅ Define Zod schema for admin login
 const adminSignInSchema = z.object({
@@ -48,29 +52,9 @@ const adminSignInSchema = z.object({
 // ✅ Infer the TypeScript type from the Zod schema
 type AdminSignInFormData = z.infer<typeof adminSignInSchema>;
 
-// ✅ Define a strict yet flexible type for registration rows
-export interface RegistrationRow {
-  id: number;
-  created_at: string;
-  participant1Name: string;
-  participant2Name: string;
-  teamLeadEmail: string;
-  studentYear: "freshman" | "sophomore" | "junior" | "senior" | "";
-  difficulty: "easy" | "hard" | "";
-  // Allow for additional fields without using `any`
-  [key: string]: string | number | undefined;
-}
-
 // ✅ Type API responses
 interface SignInResponse {
-  // signIn can return a typed error object or an unknown error shape depending on the runtime,
-  // so allow unknown here and handle extraction safely where the response is used.
   error?: { message?: string } | null | unknown;
-}
-
-interface GetDataResponse {
-  data?: RegistrationRow[];
-  error?: { message?: string } | unknown;
 }
 
 export default function Admin() {
@@ -84,9 +68,9 @@ export default function Admin() {
 
   const [loading, setLoading] = useState<boolean>(false);
   const [authed, setAuthed] = useState<boolean>(false);
-  const [rows, setRows] = useState<RegistrationRow[]>([]);
+  const [rows, setRows] = useState<AnyCompetitionRecord[]>([]);
   const [error, setError] = useState<string | null>(null);
-  const [selectedCompetition, setSelectedCompetition] = useState<string>('Launch');
+  const [selectedCompetition, setSelectedCompetition] = useState<CompetitionKey>('Launch');
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
   const togglePasswordVisibility = () => {
@@ -109,7 +93,7 @@ export default function Admin() {
       return;
     }
 
-    const dataRes: GetDataResponse = await fetchRegistrations();
+    const dataRes = await fetchCompetitionRows(selectedCompetition as CompetitionKey);
     if (dataRes?.error) {
       setError("Failed to load registrations.");
       return;
@@ -257,7 +241,7 @@ export default function Admin() {
               {/* Competition selector - using shadcn Select */}
               <Select
                 value={selectedCompetition}
-                onValueChange={(val) => setSelectedCompetition(val)}
+                onValueChange={(val) => setSelectedCompetition(val as CompetitionKey)}
               >
                 <SelectTrigger className="w-48 flex items-center justify-between rounded-md backdrop-blur-sm bg-white/10 hover:bg-white/20 border border-white/20 transition-all duration-300 colour-text hover:text-[var(--colour-text)] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-400 [&_svg]:stroke-white">
                   <SelectValue placeholder="Select competition" />
@@ -266,6 +250,7 @@ export default function Admin() {
                   <SelectGroup>
                     <SelectLabel>Competitions</SelectLabel>
                     <SelectItem value="Launch">Launch</SelectItem>
+                    <SelectItem value="CodeClash2">CodeClash 2.0</SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>
@@ -276,16 +261,11 @@ export default function Admin() {
                   setError(null);
                   // fetch again for the selected competition
                   try {
-                    if (selectedCompetition === 'Launch') {
-                      const r = await fetchRegistrations();
-                      if (r?.error) {
-                        setError('Failed to load registrations');
-                      } else {
-                        setRows(r.data ?? []);
-                      }
+                    const r = await fetchCompetitionRows(selectedCompetition as CompetitionKey);
+                    if (r?.error) {
+                      setError('Failed to load registrations');
                     } else {
-                      // placeholder for other competitions' fetchers
-                      setRows([]);
+                      setRows(r.data ?? []);
                     }
                   } catch (e) {
                     setError('Failed to load registrations');
@@ -301,8 +281,8 @@ export default function Admin() {
 
             <div className="p-4 border border-white rounded-xl bg-white transition duration-150 hover:shadow-inner">
               {/* Map: competition name -> component. For Launch we use DataTable. */}
-              {selectedCompetition === 'Launch' && <DataTable data={rows} />}
-              {/* future: render different component based on selectedCompetition */}
+              {selectedCompetition === 'Launch' && <DataTable data={rows as LaunchRecord[]} />}
+              {selectedCompetition === 'CodeClash2' && <CodeClashDataTable data={rows as CodeClash2Record[]} />}
             </div>
           </div>
         )}
