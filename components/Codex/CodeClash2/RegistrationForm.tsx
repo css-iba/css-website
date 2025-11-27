@@ -53,14 +53,6 @@ export function RegistrationForm() {
       return;
     }
 
-    // if (error) {
-    //   // console.error("❌ Supabase Insertion Error:", error);
-    //   setIsSubmitting(false);
-    //   console.log(error);
-    //   alert("There was an error submitting your registration. Please try again.");
-    //   return;
-    // }
-
     setIsSubmitting(false);
     // Show confirmation dialog (toggle state so the component renders)
     setShowConfirm(true);
@@ -96,6 +88,11 @@ export function RegistrationForm() {
             )}
           />
 
+          {/* Advisory note about entrance of name */}
+          <p className="text-sm text-gray-500 italic -translate-y-2">
+            Note: Enter your full name
+          </p>
+
           {/* Email Field */}
           <FormField
             control={form.control}
@@ -119,7 +116,7 @@ export function RegistrationForm() {
 
           {/* Advisory note about entrance of email format */}
           <p className="text-sm text-gray-500 italic -translate-y-2">
-            Note: email must be in the format firstname.lastname.12345@khi.iba.edu.pk
+            Note: email must be in the format firstname.lastname.12345@khi.iba.edu.pk or firstname.lastname.12345@duet.edu.pk.
           </p>
 
           {/* Phone Number Field */}
@@ -132,7 +129,7 @@ export function RegistrationForm() {
                 <FormControl>
                 <Input
                     type="tel"
-                    placeholder="E.g., +1234567890"
+                    placeholder="E.g., 03001234567"
                     {...field}
                     disabled={isSubmitting}
                     className="border-gray-300 focus:border-blue-500 transition"
