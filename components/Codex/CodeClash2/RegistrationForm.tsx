@@ -15,6 +15,8 @@ import { useState } from "react";
 import { Spinner } from "@/components/ui/spinner";
 import Confirmation from "../../Home/Launch/Confirmation";
 
+import { insertRegistration } from "@/app/CodeClash2/api";
+
 interface RegistrationFormData {
     participantName: string;
     email: string;
@@ -38,18 +40,11 @@ export function RegistrationForm() {
     console.log("✅ Form Data Saved to State:", data);
 
     // Call insert with the current `data` (don't rely on submissionData which updates asynchronously)
-    const res = await fetch("/api/codeclash2", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
-
-    const result = await res.json();
-
-    if (!res.ok) {
-      console.log(result.error);
-      alert("There was an error submitting your registration.");
+    const { error } = await insertRegistration(data);
+    if (error) {
+      // console.error("❌ Supabase Insertion Error:", error);
       setIsSubmitting(false);
+      alert("There was an error submitting your registration. Please try again.");
       return;
     }
 
