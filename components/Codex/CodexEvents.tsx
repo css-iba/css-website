@@ -76,6 +76,7 @@ const CodexEvents: React.FC<CodexEventsProps> = ({ events }) => (
     )}
 
     <ProblemModal listenForId="code-clash"/>
+    <ProblemModal listenForId="code-clash-2"/>
   </section>
 )
 
