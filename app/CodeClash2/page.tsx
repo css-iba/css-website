@@ -11,21 +11,25 @@ import { House } from "lucide-react";
 
 // Define the shape of the form data using a Zod schema
 const registrationFormSchema = z.object({
-  participantName: z.string().min(2, {
-    message: "Participant name must be at least 2 characters.",
-  }).max(50, {
-    message: "Participant name cannot be more than 50 characters.",
-  }),
+  participantName: z
+    .string()
+    .min(2, { message: "Participant name must be at least 2 characters." })
+    .max(50, { message: "Participant name cannot be more than 50 characters." }),
   email: z
     .email({ message: "Please enter a valid email address." })
     .refine(
-      (val) => /^[a-zA-Z]+\.[a-zA-Z]+\.\d{5}@khi\.iba\.edu\.pk$/.test(val),
-      { message: "Email must be in the format firstname.lastname.12345@khi.iba.edu.pk" }
+      (val) =>
+        /^[a-zA-Z]+\.[a-zA-Z]+\.\d{5}@khi\.iba\.edu\.pk$/i.test(val) ||
+        /^\d{2}[A-Za-z]-[A-Za-z]{2}-\d{3}@students\.duet\.edu\.pk$/i.test(val),
+      {
+        message:
+          "Email must be in the format firstname.lastname.12345@khi.iba.edu.pk or 24F-CS-123@students.duet.edu.pk",
+      }
     ),
   phoneNumber: z
     .string()
     .min(10, { message: "Phone number must be at least 10 digits." })
-    .max(15, { message: "Phone number cannot be more than 15 digits." })
+    .max(15, { message: "Phone number cannot be more than 15 digits." }),
 });
 
 // Infer the TypeScript type from the schema
