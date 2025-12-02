@@ -111,7 +111,7 @@ export function RegistrationForm() {
 
           {/* Advisory note about entrance of email format */}
           <p className="text-sm text-gray-500 italic -translate-y-2">
-            Note: email must be in the format firstname.lastname.12345@khi.iba.edu.pk or firstname.lastname.12345@duet.edu.pk.
+            Note: email must be in the format firstname.lastname.12345@khi.iba.edu.pk or 24F-CS-123@students.duet.edu.pk.
           </p>
 
           {/* Phone Number Field */}
