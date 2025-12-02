@@ -83,6 +83,25 @@ const events: Events[] = [
         link: "https://chat.whatsapp.com/LM8BwRVyqha33PXq1JJfmU",
         link_text: "Join Community",
         link_icon: <UsersRound className="w-4 h-4" />,
+    },
+    {
+        name: "Code Clash 2.0",
+        detail: (
+            <>
+                <p id="codeclash2" className="font-text text-md mb-2">Get ready for another short and exciting coding competition designed to test your problem-solving skills and coding speed! Whether you&apos;re a beginner or an experienced coder, Code Clash offers a fun and challenging environment to showcase your abilities.</p>
+                <ul className="list-disc list-inside space-y-1 px-4 font-text">
+                    <li>2 to 3 coding problems to solve within a limited time</li>
+                    <li>Problems designed for various skill levels</li>
+                    <li>DataCamp licenses for winners</li>
+                    <li>Certificates for winners</li>
+                </ul>
+                <p className="font-text text-md mt-2">Join us for Code Clash and put your coding skills to the test in a friendly and competitive atmosphere. Don&apos;t miss out on the chance to win exciting prizes and recognition!</p>
+                <button data-problem-trigger="code-clash" className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors duration-300">Open to see solutions</button>
+            </>
+        ),
+        link: "/CodeClash2",
+        link_text: "Register Now",
+        link_icon: <ExternalLink className="w-4 h-4" />,
     }
 ];
 
