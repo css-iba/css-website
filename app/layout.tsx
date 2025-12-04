@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Cascadia_Code } from "next/font/google";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import AnnouncementBar from "@/components/Announcement";
@@ -12,17 +11,11 @@ const movatif = localFont({
   display: "swap",
 });
 
-// const premint = localFont({
-//   src: "./Fonts/premint-Regular.otf",
-//   variable: "--font-heading",
-//   display: "swap",
-// });
-
-const cascadia = Cascadia_Code({
-  subsets: ["latin"],
+const cascadia = localFont({
+  src: "./Fonts/Cascadia.ttf",
   variable: "--font-heading",
   display: "swap",
-});
+})
 
 const lemonMilk = localFont({
   src: "./Fonts/Weissenhof_Grotesk.ttf",
