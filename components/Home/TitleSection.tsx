@@ -83,7 +83,7 @@ const TitleSection: React.FC = () => {
             <div className="z-21 flex-1 flex flex-col items-center md:items-start -translate-y-10">
                 <motion.h1
                     style={{ opacity, y, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}
-                    className="z-21 font-title text-5xl text-center md:text-left md:text-8xl mb-4 md:ml-12 bg-gradient-to-r from-[var(--colour-text)] via-[var(--colour-accent)] to-[var(--colour-text)] bg-clip-text text-transparent"
+                    className="z-21 font-title text-5xl text-center md:text-left md:text-[90px] mb-4 md:ml-12 bg-gradient-to-r from-[var(--colour-text)] via-[var(--colour-accent)] to-[var(--colour-text)] bg-clip-text text-transparent"
                 >
                     IBA <br /> Computer Science Society
                 </motion.h1>
