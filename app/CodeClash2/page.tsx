@@ -20,7 +20,7 @@ const registrationFormSchema = z.object({
     .refine(
       (val) =>
         /^[a-zA-Z]+\.[a-zA-Z]+\.\d{5}@khi\.iba\.edu\.pk$/i.test(val) ||
-        /^\d{2}[A-Za-z]-[A-Za-z]{2}-\d{3}@students\.duet\.edu\.pk$/i.test(val),
+        /^[A-Za-z0-9]+-[A-Za-z0-9]+-[A-Za-z0-9]+@students\.duet\.edu\.pk$/i.test(val),
       {
         message:
           "Email must be in the format firstname.lastname.12345@khi.iba.edu.pk or 24F-CS-123@students.duet.edu.pk",
