@@ -5,8 +5,8 @@ import Footer from "@/components/Footer";
 import AnnouncementBar from "@/components/Announcement";
 import "./globals.css";
 
-const movatif = localFont({
-  src: "./Fonts/Movatif W00 Light.ttf",
+const sansFlex = localFont({
+  src: "./Fonts/SansFlex.ttf",
   variable: "--font-title",
   display: "swap",
 });
@@ -47,7 +47,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={`
-          ${movatif.variable}
+          ${sansFlex.variable}
           ${cascadia.variable}
           ${lemonMilk.variable}
           antialiased
