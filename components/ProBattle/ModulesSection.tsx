@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from "react";
-import { ModuleCard, ModuleCardProps } from './ModuleCard';
+import { ModuleCard } from './ModuleCard';
 import { motion } from "framer-motion";
 import { modulesData } from "@/app/ProBattle/constants";
 
@@ -60,7 +60,7 @@ export default function ModulesSection() {
                         viewport={{ once: true, amount: 0.8 }}
                         custom={isMobile}
                         variants={textVariants} className="font-heading colour-text text-md md:text-lg">
-                        Explore ProBattle's diverse modules designed to enhance your skills - Choose your path!
+                        Explore ProBattle&apos;s diverse modules designed to enhance your skills - Choose your path!
                     </motion.p>
                 </div>
 
