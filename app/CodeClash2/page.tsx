@@ -36,7 +36,7 @@ const registrationFormSchema = z.object({
 type RegistrationFormData = z.infer<typeof registrationFormSchema>;
 
 const RegistrationPage: React.FC = () => {
-  const closed: boolean = false; // Set to true to close registration
+  const closed: boolean = true; // Set to true to close registration
 
   const methods = useForm<RegistrationFormData>({
     resolver: zodResolver(registrationFormSchema),
