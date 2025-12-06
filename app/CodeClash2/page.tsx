@@ -57,7 +57,7 @@ const RegistrationPage: React.FC = () => {
         </Link>
       </div>
       
-      <div className="w-full max-w-2xl colour-box-secondary p-6 md:p-8 rounded-xl shadow-2xl border border-[var(--colour-secondary)] relative">
+      <div className="w-full max-w-2xl colour-box-secondary p-6 md:p-8 rounded-xl shadow-2xl border border-[--colour-secondary] relative">
         <h1 className="text-xl md:text-4xl font-extrabold font-heading text-center mb-4 text-gray-900">
           Code Clash 2.0 Registration
         </h1>
@@ -77,7 +77,7 @@ const RegistrationPage: React.FC = () => {
           <div className="absolute inset-0 z-50 flex items-center justify-center rounded-xl overflow-hidden">
             {/* translucent blurred backdrop that respects parent's rounded corners */}
             <div className="absolute inset-0 bg-white/10 backdrop-blur-sm" />
-            <Card className="z-60 max-w-md mx-auto bg-[var(--colour-bg)]/80 border border-white/20 rounded-xl">
+            <Card className="z-60 max-w-md mx-auto bg-[--colour-bg]/80 border border-white/20 rounded-xl">
               <CardContent className="p-8 text-center">
                 <h3 className="text-3xl md:text-4xl font-bold colour-text font-heading mb-2">Registrations are closed</h3>
                 <p className="text-md md:text-lg colour-text font-text">Thank you for your interest — registrations are now closed.</p>
