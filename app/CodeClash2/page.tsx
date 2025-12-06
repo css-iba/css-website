@@ -57,16 +57,10 @@ const RegistrationPage: React.FC = () => {
         </Link>
       </div>
       
-      <div className="w-full max-w-2xl colour-box-secondary p-6 md:p-8 rounded-xl shadow-2xl border border-[--colour-secondary] relative">
+      <div className="w-full max-w-2xl colour-box-secondary p-6 md:p-8 rounded-xl shadow-2xl border border-[var(--colour-secondary)] relative">
         <h1 className="text-xl md:text-4xl font-extrabold font-heading text-center mb-4 text-gray-900">
           Code Clash 2.0 Registration
         </h1>
-        {/* <p className="text-center font-text text-sm text-gray-600 mb-8 p-2 rounded-lg bg-yellow-50 border-l-4 border-red-500 italic">
-          Note: There are two difficulty levels available: &ldquo;Easy&rdquo; and &ldquo;Hard&rdquo;. Choose the easy one if you&apos;re in freshman year otherwise choose hard.
-          If you think you can do the hard one, go for it!
-          <br />
-          <strong>Only freshman students are allowed to choose the easy difficulty level. If others do so, will be moved to hard.</strong>
-        </p> */}
 
         {/* Wrap the form component with FormProvider */}
         <FormProvider {...methods}>
@@ -77,7 +71,7 @@ const RegistrationPage: React.FC = () => {
           <div className="absolute inset-0 z-50 flex items-center justify-center rounded-xl overflow-hidden">
             {/* translucent blurred backdrop that respects parent's rounded corners */}
             <div className="absolute inset-0 bg-white/10 backdrop-blur-sm" />
-            <Card className="z-60 max-w-md mx-auto bg-[--colour-bg]/80 border border-white/20 rounded-xl">
+            <Card className="z-60 max-w-md mx-auto bg-[var(--colour-bg)]/80 border border-white/20 rounded-xl">
               <CardContent className="p-8 text-center">
                 <h3 className="text-3xl md:text-4xl font-bold colour-text font-heading mb-2">Registrations are closed</h3>
                 <p className="text-md md:text-lg colour-text font-text">Thank you for your interest — registrations are now closed.</p>
