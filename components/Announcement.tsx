@@ -45,7 +45,7 @@ const AnnouncementBar: React.FC = () => {
           <svg viewBox="0 0 2 2" aria-hidden="true" className="mx-2 inline size-2 fill-gray-900">
             <circle r={1} cx={1} cy={1} />
           </svg>
-          Code Clash 2.0 on 7<sup>th</sup> December, 2025. Competition starts at 4:00 PM.
+          Code Clash 2.0 is being rescheduled to either next week or in the winter break.
         </p>
         <Link
           href="/CodeClash2"
