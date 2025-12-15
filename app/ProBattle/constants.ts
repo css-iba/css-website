@@ -19,6 +19,7 @@ interface ModuleCardProps {
     maxParticipants: number;
     price: number;
     guideLink: string;
+    category?: string;
 }
 
 const sponsors: Sponsor[] = [
@@ -86,7 +87,7 @@ const contacts: TeamContact[] = [
     title: "COO", 
     isAdmin: true, 
     email: "Abdullah.Tariq.29123@khi.iba.edu.pk", 
-    phone: "(+92) 306-2927911",
+    phone: "",
     avatarUrl: "/Home/Abdullah.jpg"
   },
   { 
@@ -105,48 +106,224 @@ const contacts: TeamContact[] = [
     phone: "",
     avatarUrl: "/Home/Bisma.jpg"
   },
-  { name: "Faysal Pasha", title: "CO", isAdmin: true, email: "", phone: "" },
-  { name: "Ammar Khan", title: "Mentor", isAdmin: true, email: "", phone: "" },
-  { name: "Musab Bin Majid", title: "Tech Ec", isAdmin: true, email: "", phone: "" },
+  { 
+    name: "Muhammad Arrayyan Asad",
+    title: "EC Operations/Logistics", 
+    email: "M.Arrayyan.30557@khi.iba.edu.pk",
+    phone: "(+92) 311-4976336",
+    avatarUrl: ""
+  },
+  { 
+    name: "Abdul Haseeb", 
+    title: "EC Registrations", 
+    email: "",
+    phone: "(+92) 332-3450675",
+    avatarUrl: ""
+  }
 ];
 
 const modulesData: ModuleCardProps[] = [
   {
     name: 'Web Development',
     description:
-      'Master modern web development with React, Next.js, and Tailwind CSS. Build responsive, scalable applications from scratch. Build responsive, scalable applications from scratch.',
+      '',
     minParticipants: 1,
     maxParticipants: 3,
-    price: 5000,
+    price: 1800,
     guideLink: 'https://example.com/guides/web-dev',
+    category: 'Technical'
   },
   {
-    name: 'Data Structures',
+    name: 'Business Intelligence',
     description:
-      'Deep dive into fundamental and advanced data structures. Learn algorithms optimization and competitive programming techniques.',
+      '',
     minParticipants: 1,
-    maxParticipants: 0,
-    price: 3500,
+    maxParticipants: 3,
+    price: 1800,
     guideLink: 'https://example.com/guides/data-structures',
+    category: 'Technical'
   },
   {
-    name: 'Mobile Development',
+    name: 'Natural Language Processing',
     description:
-      'Create native and cross-platform mobile applications using modern frameworks. Build iOS and Android apps efficiently.',
-    minParticipants: 2,
-    maxParticipants: 4,
+      '',
+    minParticipants: 1,
+    maxParticipants: 3,
     price: 6000,
     guideLink: 'https://example.com/guides/mobile-dev',
+    category: 'Technical'
   },
   {
     name: 'Machine Learning',
     description:
-      'Explore ML fundamentals, neural networks, and real-world applications. Build intelligent systems with Python and TensorFlow.',
+      '',
     minParticipants: 1,
     maxParticipants: 3,
     price: 7500,
     guideLink: 'https://example.com/guides/ml',
+    category: 'Technical'
   },
+  {
+    name: 'UI/UX Design',
+    description:
+      '',
+    minParticipants: 1,
+    maxParticipants: 3,
+    price: 7500,
+    guideLink: 'https://example.com/guides/ml',
+    category: 'Technical'
+  },
+  {
+    name: 'Database Design',
+    description:
+      '',
+    minParticipants: 1,
+    maxParticipants: 3,
+    price: 7500,
+    guideLink: 'https://example.com/guides/ml',
+    category: 'Technical'
+  },
+  {
+    name: 'Capture The Flag',
+    description:
+      '',
+    minParticipants: 1,
+    maxParticipants: 3,
+    price: 7500,
+    guideLink: 'https://example.com/guides/ml',
+    category: 'Technical'
+  },
+  {
+    name: 'Speed Debugging',
+    description:
+      '',
+    minParticipants: 1,
+    maxParticipants: 3,
+    price: 7500,
+    guideLink: 'https://example.com/guides/ml',
+    category: 'Technical'
+  },
+  {
+    name: 'Competitive Programming',
+    description:
+      '',
+    minParticipants: 1,
+    maxParticipants: 3,
+    price: 7500,
+    guideLink: 'https://example.com/guides/ml',
+    category: 'Technical'
+  },
+  {
+    name: 'Maze Following Robot',
+    description:
+      '',
+    minParticipants: 1,
+    maxParticipants: 3,
+    price: 7500,
+    guideLink: 'https://example.com/guides/ml',
+    category: 'Robotics'
+  },
+  {
+    name: 'Robot War Light Weight',
+    description:
+      '',
+    minParticipants: 1,
+    maxParticipants: 3,
+    price: 7500,
+    guideLink: 'https://example.com/guides/ml',
+    category: 'Robotics'
+  },
+  {
+    name: 'Robot Soccer',
+    description:
+      '',
+    minParticipants: 1,
+    maxParticipants: 3,
+    price: 7500,
+    guideLink: 'https://example.com/guides/ml',
+    category: 'Robotics'
+  },
+  {
+    name: 'Line Following Robot',
+    description:
+      '',
+    minParticipants: 1,
+    maxParticipants: 3,
+    price: 7500,
+    guideLink: 'https://example.com/guides/ml',
+    category: 'Robotics'
+  },
+  {
+    name: 'Vibe Coding',
+    description:
+      'Vibe Coding is an interactive programming module that introduces participants to the basics of coding through creativity and experimentation. From simple animations to small digital projects, this module helps learners understand logic, develop problem-solving skills, and express their ideas through code in a fun and engaging way.',
+    minParticipants: 1,
+    maxParticipants: 3,
+    price: 7500,
+    guideLink: 'https://example.com/guides/ml',
+    category: 'Non-Technical'
+  },
+  {
+    name: 'Escapistan',
+    description:
+      'Escapistan is a fast-paced escape-room module filled with physical puzzles, locked secrets, and time-sensitive challenges. Teams must collaborate, think quickly, and solve their way out before the clock hits zero.',
+    minParticipants: 1,
+    maxParticipants: 3,
+    price: 7500,
+    guideLink: 'https://example.com/guides/ml',
+    category: 'Non-Technical'
+  },
+  {
+    name: 'Tech Tank',
+    description:
+      '',
+    minParticipants: 1,
+    maxParticipants: 3,
+    price: 7500,
+    guideLink: 'https://example.com/guides/ml',
+    category: 'Non-Technical'
+  },
+  {
+    name: 'Competitive Programming',
+    description:
+      '',
+    minParticipants: 1,
+    maxParticipants: 3,
+    price: 7500,
+    guideLink: 'https://example.com/guides/ml',
+    category: 'High School'
+  },
+  {
+    name: 'Speed Debugging',
+    description:
+      '',
+    minParticipants: 1,
+    maxParticipants: 3,
+    price: 7500,
+    guideLink: 'https://example.com/guides/ml',
+    category: 'High School'
+  },
+  {
+    name: 'Innovate Lab',
+    description:
+      'Innovate Lab\'s signature STEM module puts your creativity and engineering instincts to the test! From building impact-proof designs to crafting bold structural creations, this hands-on experience challenges participants to think critically, experiment fearlessly, and bring ideas to life. Get ready to build, break, learn, and innovate—one structure at a time.',
+    minParticipants: 1,
+    maxParticipants: 3,
+    price: 7500,
+    guideLink: 'https://example.com/guides/ml',
+    category: 'High School'
+  },
+  {
+    name: 'Cipher',
+    description:
+      'Cipher is a conspiracy-driven investigation module where participants dig into suspicious clues, unravel hidden motives, and piece together complex theories. It\'s all about sharp observation, critical thinking, and exposing the truth behind the mystery.',
+    minParticipants: 1,
+    maxParticipants: 3,
+    price: 7500,
+    guideLink: 'https://example.com/guides/ml',
+    category: 'High School'
+  },
+
 ];
 
 export { sponsors, contacts, modulesData };
