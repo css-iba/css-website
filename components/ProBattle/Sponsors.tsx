@@ -9,12 +9,13 @@ const Sponsors: React.FC = () => {
         <h2 className="text-center text-4xl font-semibold text-gray-900 font-heading">
           Our Previous Sponsors
         </h2>
+        
         <div className="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-4">
           {sponsors.map((sponsor, index) => {
             const isSmall = sponsor?.size === 'small';
             const imgWidth = isSmall ? 300 : 200;
             const imgHeight = isSmall ? 90 : 60;
-            const containerClass = isSmall ? 'col-span-2 max-h-28 w-full lg:col-span-1 flex items-center' : 'col-span-2 max-h-12 w-full lg:col-span-1 flex items-center';
+            const containerClass = isSmall ? 'col-span-2 max-h-28 w-full lg:col-span-1 flex items-center border-2' : 'col-span-2 max-h-12 w-full lg:col-span-1 flex items-center';
             const imageClass = isSmall ? 'max-h-28 w-full object-contain' : 'max-h-20 w-full object-contain';
 
             return (
