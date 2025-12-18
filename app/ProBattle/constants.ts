@@ -284,7 +284,7 @@ const modulesData: ModuleCardProps[] = [
     category: 'Non-Technical'
   },
   {
-    name: 'Competitive Programming',
+    name: 'Competitive Programming (High School)',
     description:
       '',
     minParticipants: 1,
@@ -294,7 +294,7 @@ const modulesData: ModuleCardProps[] = [
     category: 'High School'
   },
   {
-    name: 'Speed Debugging',
+    name: 'Speed Debugging (High School)',
     description:
       '',
     minParticipants: 1,
