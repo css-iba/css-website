@@ -59,16 +59,30 @@ export function ModuleCard({
             </div>
 
             {/* Module Guide Link */}
-            <Badge variant="destructive" className="w-full justify-center mt-auto p-1">
-                <Link
-                    href={guideLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 colour-text font-text text-lg transition-colors"
-                >
-                    View Module Guide
-                    <LinkIcon className="w-6 h-6" />
-                </Link>
+            <Badge 
+                variant="destructive" 
+                className={`w-full justify-center mt-auto p-1 transition-colors ${
+                    guideLink 
+                        ? 'bg-[#19675b] hover:bg-[#1e8e73] cursor-pointer' 
+                        : 'bg-gray-600 cursor-not-allowed opacity-50'
+                }`}
+            >
+                {guideLink ? (
+                    <Link
+                        href={guideLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 colour-text font-text text-lg transition-colors"
+                    >
+                        View Module Guide
+                        <LinkIcon className="w-6 h-6" />
+                    </Link>
+                ) : (
+                    <span className="flex items-center gap-2 colour-text font-text text-lg">
+                        View Module Guide
+                        <LinkIcon className="w-6 h-6" />
+                    </span>
+                )}
             </Badge>
         </div>
     );
