@@ -32,6 +32,7 @@ import { Spinner } from "@/components/ui/spinner";
 // Data Tables
 import DataTable from "@/components/Home/Launch/DataTable";
 import CodeClashDataTable from "@/components/Codex/CodeClash2/DataTable";
+import ProBattle2026DataTable from "../ProBattle/Registrations/DataTable";
 
 import { signIn, signOut } from "@/app/Launch/Supabase/api";
 import { fetchCompetitionRows, type CompetitionKey, type AnyCompetitionRecord, type CodeClash2Record, type LaunchRecord } from "@/app/Admin/Registration_Rows";
@@ -251,6 +252,7 @@ export default function Admin() {
                     <SelectLabel>Competitions</SelectLabel>
                     <SelectItem value="Launch">Launch</SelectItem>
                     <SelectItem value="CodeClash2">CodeClash 2.0</SelectItem>
+                    <SelectItem value="ProBattle2026">ProBattle 2026</SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>
@@ -267,7 +269,7 @@ export default function Admin() {
                     } else {
                       setRows(r.data ?? []);
                     }
-                  } catch (e) {
+                  } catch {
                     setError('Failed to load registrations');
                   }
                 }}
@@ -283,6 +285,7 @@ export default function Admin() {
               {/* Map: competition name -> component. For Launch we use DataTable. */}
               {selectedCompetition === 'Launch' && <DataTable data={rows as LaunchRecord[]} />}
               {selectedCompetition === 'CodeClash2' && <CodeClashDataTable data={rows as CodeClash2Record[]} />}
+              {selectedCompetition === 'ProBattle2026' && <ProBattle2026DataTable />}
             </div>
           </div>
         )}

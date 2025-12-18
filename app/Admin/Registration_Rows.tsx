@@ -25,12 +25,49 @@ export type CodeClash2Record = {
     [key: string]: string | number | undefined;
 };
 
+export type AttendeeRow = {
+    id: string;
+    created_at: string;
+    name: string;
+    email: string;
+    phone_number: string;
+    cnic: string;
+    institute_name: string;
+    reference_number: string;
+    brand_ambassador_code?: string;
+    [key: string]: string | number | undefined;
+}
+
+export type ParticipantRow = {
+    id: string;
+    created_at: string;
+    team_lead_email: string;
+    module_name: string;
+    participant1_name: string;
+    participant1_phone: string;
+    participant1_cnic: string;
+    participant2_name?: string;
+    participant2_phone?: string;
+    participant2_cnic?: string;
+    participant3_name?: string;
+    participant3_phone?: string;
+    participant3_cnic?: string;
+    participant4_name?: string;
+    participant4_phone?: string;
+    participant4_cnic?: string;
+    institute_name: string;
+    reference_number: string;
+    brand_ambassador_code?: string;
+    [key: string]: string | number | undefined;
+}
+
 // Map competition keys to their record types
-export type CompetitionKey = "Launch" | "CodeClash2";
+export type CompetitionKey = "Launch" | "CodeClash2" | "ProBattle2026";
 
 type RecordMap = {
     Launch: LaunchRecord;
     CodeClash2: CodeClash2Record;
+    ProBattle2026: ParticipantRow | AttendeeRow;
 };
 
 export type CompetitionRecord<K extends keyof RecordMap> = RecordMap[K];
