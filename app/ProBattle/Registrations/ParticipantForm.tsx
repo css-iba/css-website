@@ -13,7 +13,7 @@ import { insertParticipantRegistration } from './api'
 import { Input } from '@/components/ui/input'
 import { Spinner } from '@/components/ui/spinner'
 import { Progress } from '@/components/ui/progress'
-import { ArrowLeft, ArrowRight, CreditCard, CheckCircle, LayoutGrid, Users, Mail, Phone, IdCard, Building, Hash, User } from 'lucide-react'
+import { ArrowLeft, ArrowRight, CreditCard, CheckCircle, LayoutGrid, Users, Mail, Phone, IdCard, Building, Hash, User, Gift } from 'lucide-react'
 
 import Confirmation from "../../../components/Home/Launch/Confirmation";
 
@@ -53,7 +53,8 @@ export default function ParticipantForm() {
       participant4_phone: '',
       participant4_cnic: '',
       institute_name: '',
-      reference_number: ''
+      reference_number: '',
+      brand_ambassador_code: ''
     }
   })
 
@@ -264,7 +265,7 @@ export default function ParticipantForm() {
               ))}
             </div>
 
-            <div className="flex items-center justify-between gap-3 mt-8">
+            <div className="flex items-center gap-3 mt-8">
               <button
                 type="button"
                 onClick={() => {
@@ -272,7 +273,7 @@ export default function ParticipantForm() {
                   setSelectedModule(null)
                 }}
                 disabled={isSubmitting}
-                className="px-6 py-3 rounded-lg font-semibold transition colour-box-secondary text-gray-900 hover:scale-[1.02] disabled:opacity-80 flex items-center gap-2"
+                className="px-4 sm:px-6 py-3 rounded-lg font-semibold transition colour-box-secondary text-gray-900 hover:scale-[1.02] disabled:opacity-80 flex items-center justify-center gap-2 shrink-0"
               >
                 <ArrowLeft className="w-5 h-5" />
                 Back
@@ -281,10 +282,10 @@ export default function ParticipantForm() {
                 type="button"
                 onClick={() => setStage(3)}
                 disabled={isSubmitting || !isStage2Valid}
-                className="flex-1 py-3 transition font-heading duration-200 colour-box-primary text-white rounded-lg disabled:opacity-80 disabled:cursor-not-allowed text-lg font-semibold flex items-center justify-center gap-2"
+                className="flex-1 py-3 transition font-heading duration-200 colour-box-primary text-white rounded-lg disabled:opacity-80 disabled:cursor-not-allowed text-base sm:text-lg font-semibold flex items-center justify-center gap-2 min-w-0"
               >
-                Next: Payment
-                <ArrowRight className="w-5 h-5" />
+                <span className="truncate">Next: Payment</span>
+                <ArrowRight className="w-5 h-5 shrink-0" />
               </button>
             </div>
           </div>
@@ -357,14 +358,34 @@ export default function ParticipantForm() {
                 Enter the reference number you receive after payment
               </p>
             </div>
+
+            {/* Brand Ambassador Code */}
+            <div className="space-y-2">
+              <label className="text-base font-semibold text-gray-900 font-heading flex items-center gap-2">
+                <Gift className="w-4 h-4 text-gray-600" />
+                Brand Ambassador Code (Optional)
+              </label>
+              <Input
+                {...form.register('brand_ambassador_code')}
+                placeholder="Enter brand ambassador code if any"
+                disabled={isSubmitting}
+                className="border-gray-300 focus:border-blue-500 transition"
+              />
+              {form.formState.errors.brand_ambassador_code && (
+                <p className="text-sm text-red-500">{form.formState.errors.brand_ambassador_code.message}</p>
+              )}
+              <p className="text-sm text-gray-500 italic">
+                If you have a brand ambassador code, please enter it here
+              </p>
+            </div>
           </div>
 
-          <div className="flex items-center justify-between gap-3">
+          <div className="flex items-center gap-1">
             <button
               type="button"
               onClick={() => setStage(2)}
               disabled={isSubmitting}
-              className="px-6 py-3 rounded-lg font-semibold transition colour-box-secondary text-gray-900 hover:scale-[1.02] disabled:opacity-80 flex items-center gap-2"
+              className="px-4 sm:px-6 py-3 rounded-lg font-semibold transition colour-box-secondary text-gray-900 hover:scale-[1.02] disabled:opacity-80 flex items-center justify-center gap-2 shrink-0"
             >
               <ArrowLeft className="w-5 h-5" />
               Back
@@ -372,17 +393,17 @@ export default function ParticipantForm() {
             <button
               type="submit"
               disabled={isSubmitting || !form.watch('reference_number')}
-              className="flex-1 py-6 transition font-heading duration-200 colour-box-primary disabled:opacity-80 disabled:cursor-not-allowed text-lg font-semibold rounded-lg text-white flex items-center justify-center gap-2"
+              className="flex-1 py-4 sm:py-6 transition font-heading duration-200 colour-box-primary disabled:opacity-80 disabled:cursor-not-allowed text-base sm:text-lg font-semibold rounded-lg text-white flex items-center justify-center gap-2 min-w-0"
             >
               {isSubmitting ? (
                 <>
-                  <Spinner className="w-5 h-5 mr-3 animate-spin inline-block" />
-                  Processing...
+                  <Spinner className="w-5 h-5 animate-spin shrink-0" />
+                  <span className="truncate">Processing...</span>
                 </>
               ) : (
                 <>
-                  <CheckCircle className="w-5 h-5" />
-                  Submit Registration
+                  <CheckCircle className="w-5 h-5 shrink-0" />
+                  <span className="truncate">Submit Registration</span>
                 </>
               )}
             </button>
