@@ -126,204 +126,214 @@ const modulesData: ModuleCardProps[] = [
   {
     name: 'Web Development',
     description:
-      '',
+      'Participants will design and build a responsive full-stack web application focusing on clean UI, smooth functionality, and efficient code structure. This module emphasizes creativity, usability, and technical execution through hands-on development.',
     minParticipants: 1,
     maxParticipants: 3,
-    price: 1800,
-    guideLink: 'https://example.com/guides/web-dev',
+    price: 1500,
+    guideLink: '',
     category: 'Technical'
   },
   {
     name: 'Business Intelligence',
     description:
-      '',
+      'This module focuses on transforming raw data into meaningful insights using data visualization and analytical tools. Participants will explore decision-making techniques and learn how data-driven strategies support business growth.',
     minParticipants: 1,
     maxParticipants: 3,
-    price: 1800,
-    guideLink: 'https://example.com/guides/data-structures',
+    price: 1500,
+    guideLink: '',
     category: 'Technical'
   },
   {
     name: 'Natural Language Processing',
     description:
-      '',
+      'Participants will work on building systems that understand and generate human language by combining information retrieval with language models. The module highlights context-aware responses and practical NLP applications.',
     minParticipants: 1,
     maxParticipants: 3,
-    price: 6000,
-    guideLink: 'https://example.com/guides/mobile-dev',
+    price: 1500,
+    guideLink: '',
     category: 'Technical'
   },
   {
     name: 'Machine Learning',
     description:
-      '',
+      'Teams will compete to build machine learning models using a provided dataset to achieve the best performance on unseen data. Rankings are based on evaluation metrics, encouraging innovation and strong modeling skills.',
     minParticipants: 1,
     maxParticipants: 3,
-    price: 7500,
-    guideLink: 'https://example.com/guides/ml',
+    price: 1500,
+    guideLink: '',
     category: 'Technical'
   },
   {
     name: 'UI/UX Design',
     description:
-      '',
+      'This module challenges participants to redesign digital interfaces by improving usability, accessibility, and visual appeal. Teams analyze user journeys and propose design solutions that enhance overall user experience.',
     minParticipants: 1,
     maxParticipants: 3,
-    price: 7500,
-    guideLink: 'https://example.com/guides/ml',
+    price: 1500,
+    guideLink: '',
     category: 'Technical'
   },
   {
     name: 'Database Design',
     description:
-      '',
+      'Participants learn how to structure efficient database schemas and write meaningful queries using SQL. The focus is on data relationships, normalization, and building scalable, well-organized databases.',
     minParticipants: 1,
     maxParticipants: 3,
-    price: 7500,
-    guideLink: 'https://example.com/guides/ml',
+    price: 1500,
+    guideLink: '',
     category: 'Technical'
   },
   {
     name: 'Capture The Flag',
     description:
-      '',
+      'A cybersecurity-focused module where participants solve security challenges, uncover vulnerabilities, and analyze systems under attack scenarios. It encourages logical thinking, ethical hacking, and teamwork.',
     minParticipants: 1,
     maxParticipants: 3,
-    price: 7500,
-    guideLink: 'https://example.com/guides/ml',
+    price: 1500,
+    guideLink: '',
     category: 'Technical'
   },
   {
     name: 'Speed Debugging',
     description:
-      '',
+      'This module tests participants’ ability to quickly identify and fix errors in code. It strengthens code-reading skills, logical reasoning, and confidence in solving problems under time pressure.',
     minParticipants: 1,
-    maxParticipants: 3,
-    price: 7500,
-    guideLink: 'https://example.com/guides/ml',
+    maxParticipants: 2,
+    price: 1500,
+    guideLink: '',
     category: 'Technical'
   },
   {
     name: 'Competitive Programming',
     description:
-      '',
+      'Participants solve algorithmic problems that require speed, accuracy, and strong logical thinking. This module emphasizes efficient problem-solving techniques and performance under competitive conditions.',
     minParticipants: 1,
-    maxParticipants: 3,
-    price: 7500,
-    guideLink: 'https://example.com/guides/ml',
+    maxParticipants: 2,
+    price: 1500,
+    guideLink: '',
     category: 'Technical'
   },
   {
     name: 'Maze Following Robot',
     description:
-      '',
+      'Participants design and program robots capable of autonomously navigating through a maze. The module focuses on sensors, control logic, and decision-making for real-world navigation challenges.',
     minParticipants: 1,
     maxParticipants: 3,
-    price: 7500,
-    guideLink: 'https://example.com/guides/ml',
+    price: 2500,
+    guideLink: '',
     category: 'Robotics'
   },
   {
     name: 'Robot War Light Weight',
     description:
-      '',
+      'Teams build and control combat robots designed to push opponents out of the arena. Strategy, mechanical strength, and precise control determine success in this intense robotics competition.',
     minParticipants: 1,
     maxParticipants: 3,
-    price: 7500,
-    guideLink: 'https://example.com/guides/ml',
+    price: 2500,
+    guideLink: '',
     category: 'Robotics'
   },
   {
     name: 'Robot Soccer',
     description:
-      '',
+      'This module combines robotics and strategy as teams build robots to compete in soccer matches. Participants focus on coordination, control systems, and teamwork-driven gameplay.',
     minParticipants: 1,
     maxParticipants: 3,
-    price: 7500,
-    guideLink: 'https://example.com/guides/ml',
+    price: 2500,
+    guideLink: '',
     category: 'Robotics'
   },
   {
     name: 'Line Following Robot',
     description:
-      '',
+      'Participants create robots that follow a predefined path using sensors and control algorithms. Precision, speed, and accuracy play a critical role in successfully completing the track.',
     minParticipants: 1,
     maxParticipants: 3,
-    price: 7500,
-    guideLink: 'https://example.com/guides/ml',
+    price: 2500,
+    guideLink: '',
     category: 'Robotics'
   },
   {
     name: 'Vibe Coding',
     description:
-      'Vibe Coding is an interactive programming module that introduces participants to the basics of coding through creativity and experimentation. From simple animations to small digital projects, this module helps learners understand logic, develop problem-solving skills, and express their ideas through code in a fun and engaging way.',
+      'An interactive coding module where participants explore programming through creativity and experimentation. From small projects to animations, it focuses on logic-building and creative expression.',
     minParticipants: 1,
-    maxParticipants: 3,
-    price: 7500,
-    guideLink: 'https://example.com/guides/ml',
+    maxParticipants: 2,
+    price: 2000,
+    guideLink: '',
     category: 'Non-Technical'
   },
   {
     name: 'Escapistan',
     description:
-      'Escapistan is a fast-paced escape-room module filled with physical puzzles, locked secrets, and time-sensitive challenges. Teams must collaborate, think quickly, and solve their way out before the clock hits zero.',
+      'A fast-paced escape room experience filled with physical puzzles, hidden clues, and time-based challenges. Participants must collaborate and think critically to escape before time runs out.',
     minParticipants: 1,
     maxParticipants: 3,
-    price: 7500,
-    guideLink: 'https://example.com/guides/ml',
+    price: 2500,
+    guideLink: '',
+    category: 'Non-Technical'
+  },
+  {
+    name: 'Escapistan (Solo)',
+    description:
+      'A fast-paced escape room experience filled with physical puzzles, hidden clues, and time-based challenges. Participants must collaborate and think critically to escape before time runs out.',
+    minParticipants: 0,
+    maxParticipants: 1,
+    price: 1000,
+    guideLink: '',
     category: 'Non-Technical'
   },
   {
     name: 'Tech Tank',
     description:
-      '',
+      'A pitching competition where teams present innovative tech ideas to a panel of judges. Projects are evaluated based on creativity, feasibility, impact, and presentation quality.',
     minParticipants: 1,
-    maxParticipants: 3,
-    price: 7500,
-    guideLink: 'https://example.com/guides/ml',
+    maxParticipants: 4,
+    price: 2500,
+    guideLink: '',
     category: 'Non-Technical'
   },
   {
     name: 'Competitive Programming (High School)',
     description:
-      '',
+      'A beginner-friendly competitive programming module designed for high school students. It focuses on logical thinking, problem-solving techniques, and improving coding confidence.',
     minParticipants: 1,
     maxParticipants: 3,
-    price: 7500,
-    guideLink: 'https://example.com/guides/ml',
+    price: 2500,
+    guideLink: '',
     category: 'High School'
   },
   {
     name: 'Speed Debugging (High School)',
     description:
-      '',
+      'This module introduces high school students to debugging by identifying and fixing simple coding errors. It strengthens understanding of code flow and logical reasoning.',
     minParticipants: 1,
     maxParticipants: 3,
-    price: 7500,
-    guideLink: 'https://example.com/guides/ml',
+    price: 2500,
+    guideLink: '',
     category: 'High School'
   },
   {
     name: 'Innovate Lab',
     description:
-      'Innovate Lab\'s signature STEM module puts your creativity and engineering instincts to the test! From building impact-proof designs to crafting bold structural creations, this hands-on experience challenges participants to think critically, experiment fearlessly, and bring ideas to life. Get ready to build, break, learn, and innovate—one structure at a time.',
+      'A hands-on STEM experience where participants build and test creative structures and designs. The module encourages experimentation, teamwork, and innovative problem-solving.',
     minParticipants: 1,
     maxParticipants: 3,
-    price: 7500,
-    guideLink: 'https://example.com/guides/ml',
+    price: 2500,
+    guideLink: '',
     category: 'High School'
   },
   {
     name: 'Cipher',
     description:
-      'Cipher is a conspiracy-driven investigation module where participants dig into suspicious clues, unravel hidden motives, and piece together complex theories. It\'s all about sharp observation, critical thinking, and exposing the truth behind the mystery.',
+      'A mystery-based investigation module where participants analyze clues, uncover hidden patterns, and solve interconnected challenges using critical thinking and observation skills.',
     minParticipants: 1,
     maxParticipants: 3,
-    price: 7500,
-    guideLink: 'https://example.com/guides/ml',
+    price: 2500,
+    guideLink: '',
     category: 'High School'
-  },
-
+  }
 ];
+
 
 export { sponsors, contacts, modulesData };
