@@ -188,7 +188,7 @@ export default function ParticipantForm() {
               <Input 
                 type="email"
                 {...form.register('team_lead_email')} 
-                placeholder="firstname.lastname.12345@khi.iba.edu.pk"
+                placeholder="E.g., sample@example.com"
                 disabled={isSubmitting}
                 className="border-gray-300 focus:border-blue-500 transition"
               />
@@ -196,10 +196,6 @@ export default function ParticipantForm() {
                 <p className="text-sm text-red-500">{form.formState.errors.team_lead_email.message}</p>
               )}
             </div>
-
-            <p className="text-sm text-gray-500 italic -translate-y-4">
-              Note: Use your institutional email
-            </p>
 
             {/* Participant Details */}
             <div className="border-t pt-6">
@@ -355,7 +351,7 @@ export default function ParticipantForm() {
                 <p className="text-sm text-red-500">{form.formState.errors.reference_number.message}</p>
               )}
               <p className="text-sm text-gray-500 italic">
-                Enter the reference number you receive after payment
+                Enter the reference number you received after payment
               </p>
             </div>
 
