@@ -42,6 +42,7 @@ const sectionVariants = {
 type ModuleCategory = 'Technical' | 'Non-Technical' | 'High School' | 'Robotics';
 
 const CATEGORY_ORDER: ModuleCategory[] = ['Technical', 'Non-Technical', 'High School', 'Robotics'];
+const SUB_HEADING_ORDER: string[] = ['Recommended for university students', 'Recommended for all', 'Recommended for high school students', 'Recommended for robotics enthusiasts'];
 
 function groupModulesByCategory(modules: typeof modulesData): Record<ModuleCategory, typeof modulesData> {
   const grouped: Record<ModuleCategory, typeof modulesData> = {
@@ -101,7 +102,7 @@ export default function ModulesSection() {
         </div>
 
         {/* Category Sections */}
-        {CATEGORY_ORDER.map((category) => {
+        {CATEGORY_ORDER.map((category, i) => {
           const categoryModules = groupedModules[category];
           if (categoryModules.length === 0) return null;
 
@@ -115,9 +116,14 @@ export default function ModulesSection() {
               className="mb-16"
             >
               {/* Category Title */}
-              <h3 className="text-2xl md:text-3xl font-bold font-heading colour-text mb-6 pb-3 border-b-2 border-gray-200 w-[fit-content]">
+              <h3 className="text-2xl md:text-3xl font-bold font-heading colour-text mb-2 pb-3 border-b-2 border-gray-200 w-[fit-content]">
                 {category}
               </h3>
+
+              {/* Subheading */}
+              <p className="font-heading colour-text text-md md:text-lg mb-8">
+                {SUB_HEADING_ORDER[i]}
+              </p>
 
               {/* Modules Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
