@@ -89,6 +89,7 @@ const PARTICIPANT_LABEL_MAP: Record<string, string> = {
 }
 
 // Module color mapping - light pastel colors for row backgrounds
+// cspell:ignore Escapistan
 const MODULE_COLORS: Record<string, string> = {
     'Web Development': 'bg-blue-50',
     'Business Intelligence': 'bg-amber-50',
@@ -98,6 +99,19 @@ const MODULE_COLORS: Record<string, string> = {
     'Database Design': 'bg-cyan-50',
     'Capture The Flag': 'bg-red-50',
     'Speed Debugging': 'bg-orange-50',
+    'Competitive Programming': 'bg-lime-50',
+    'Maze Following Robot': 'bg-teal-50',
+    'Robot War Light Weight': 'bg-green-50',
+    'Robot Soccer': 'bg-violet-50',
+    'Line Following Robot': 'bg-fuchsia-50',
+    'Vibe Coding': 'bg-rose-50',
+    'Escapistan': 'bg-sky-50',
+    'Escapistan (Solo)': 'bg-indigo-50',
+    'Tech Tank': 'bg-slate-100',
+    'Competitive Programming (High School)': 'bg-yellow-50',
+    'Speed Debugging (High School)': 'bg-stone-100',
+    'Innovate Lab': 'bg-zinc-100',
+    'Cipher': 'bg-neutral-100',
 }
 
 const getModuleRowColor = (row: ParticipantRow): string => {
