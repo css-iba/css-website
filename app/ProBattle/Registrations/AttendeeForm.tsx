@@ -103,7 +103,7 @@ export default function AttendeeForm() {
           <Input 
             type="email"
             {...form.register('email')} 
-            placeholder="E.g., firstname.lastname.12345@khi.iba.edu.pk"
+            placeholder="E.g., sample@example.com"
             disabled={isSubmitting}
             className="border-gray-300 focus:border-blue-500 transition"
           />
@@ -200,7 +200,7 @@ export default function AttendeeForm() {
             <p className="text-sm text-red-500">{form.formState.errors.reference_number.message}</p>
           )}
           <p className="text-sm text-gray-500 italic">
-            Enter the reference number you receive after payment
+            Enter the reference number you received after payment
           </p>
         </div>
 
