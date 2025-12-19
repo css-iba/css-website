@@ -21,7 +21,7 @@ export function ModuleCard({
     guideLink,
 }: ModuleCardProps) {
 
-    const isSingleParticipant = maxParticipants === 0;
+    const isSingleParticipant = minParticipants === 0;
     const ParticipantIcon = isSingleParticipant ? User : Users;
     
     return (
