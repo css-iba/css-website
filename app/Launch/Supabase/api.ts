@@ -14,7 +14,7 @@ export async function insertRegistration(registrationData: RegistrationFormData)
     console.log('Attempting to insert registration data:', registrationData);
     try {
         // Use an array to insert a single record reliably and request the inserted row back
-        const { data, error } = await supabase
+        const { error } = await supabase
             .from('registrations')
             .insert([registrationData])
             .select()
@@ -106,5 +106,18 @@ export async function signOut() {
     } catch (err) {
         // console.error('Unexpected error during signOut:', err);
         return { error: err };
+    }
+}
+
+// Get current session (to persist auth across refreshes)
+export async function getSession() {
+    try {
+        const { data: { session }, error } = await supabase.auth.getSession();
+        if (error) {
+            return { session: null, error };
+        }
+        return { session, error: null };
+    } catch (err) {
+        return { session: null, error: err };
     }
 }
