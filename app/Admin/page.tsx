@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm, FormProvider } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -34,7 +34,7 @@ import DataTable from "@/components/Home/Launch/DataTable";
 import CodeClashDataTable from "@/components/Codex/CodeClash2/DataTable";
 import ProBattle2026DataTable from "../ProBattle/Registrations/DataTable";
 
-import { signIn, signOut } from "@/app/Launch/Supabase/api";
+import { signIn, signOut, getSession } from "@/app/Launch/Supabase/api";
 import { fetchCompetitionRows, type CompetitionKey, type AnyCompetitionRecord, type CodeClash2Record, type LaunchRecord } from "@/app/Admin/Registration_Rows";
 
 // ✅ Define Zod schema for admin login
@@ -68,11 +68,29 @@ export default function Admin() {
   });
 
   const [loading, setLoading] = useState<boolean>(false);
+  const [checkingSession, setCheckingSession] = useState<boolean>(true);
   const [authed, setAuthed] = useState<boolean>(false);
   const [rows, setRows] = useState<AnyCompetitionRecord[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [selectedCompetition, setSelectedCompetition] = useState<CompetitionKey>('Launch');
   const [showPassword, setShowPassword] = useState<boolean>(false);
+
+  // Check for existing session on mount
+  useEffect(() => {
+    const checkSession = async () => {
+      const { session } = await getSession();
+      if (session) {
+        setAuthed(true);
+        // Optionally fetch initial data
+        const dataRes = await fetchCompetitionRows(selectedCompetition);
+        if (!dataRes?.error) {
+          setRows(dataRes.data ?? []);
+        }
+      }
+      setCheckingSession(false);
+    };
+    checkSession();
+  }, []);
 
   const togglePasswordVisibility = () => {
     setShowPassword((prev) => !prev);
@@ -107,7 +125,11 @@ export default function Admin() {
   return (
     <main className="min-h-screen p-8 colour-bg font-text">
       <div className="mx-auto max-w-3xl">
-        {!authed ? (
+        {checkingSession ? (
+          <div className="flex items-center justify-center min-h-[400px]">
+            <Spinner className="w-8 h-8 animate-spin" />
+          </div>
+        ) : !authed ? (
           <FormProvider {...methods}>
             <Form {...methods}>
               <form
