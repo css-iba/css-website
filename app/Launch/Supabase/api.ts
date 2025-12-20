@@ -1,4 +1,3 @@
-// cspell:disable-next-line
 import { supabase } from './client';
 
 
@@ -92,7 +91,7 @@ export async function signIn(email: string, password: string) {
 
 export async function signOut() {
     try {
-        const { error } = await supabase.auth.signOut();
+        const { error } = await supabase.auth.signOut({ scope: 'local' });
         if (error) {
             // console.error('Supabase signOut error:', {
             //     message: error.message,
