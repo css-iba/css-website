@@ -91,15 +91,27 @@ export async function signIn(email: string, password: string) {
 
 export async function signOut() {
     try {
-        // Try to sign out - if it fails (403), we still return success
-        // because we want to clear local state regardless
-        await supabase.auth.signOut({ scope: 'local' });
-        // Always return success - the local state will be cleared
+        const { error } = await supabase.auth.signOut({ scope: 'local' });
+        if (error) {
+            // // Ignore 403 (domain not whitelisted in Supabase) - logout still works locally
+            // const status = (error as any).status;
+            // if (status === 403) {
+            //     console.warn('SignOut 403 ignored (domain not whitelisted)');
+            //     return { error: null };
+            // }
+            // // Return other errors to be displayed
+
+            // console.error('Supabase signOut error:', {
+            //     message: error.message,
+            //     status: (error as any).status ?? null,
+            //     code: (error as any).code ?? null,
+            //     raw: JSON.stringify(error),
+            // });
+        }
         return { error: null };
     } catch (err) {
-        // Even on error, return success to allow UI to update
-        console.warn('SignOut warning (ignored):', err);
-        return { error: null };
+        // console.error('Unexpected error during signOut:', err);
+        return { error: err };
     }
 }
 
