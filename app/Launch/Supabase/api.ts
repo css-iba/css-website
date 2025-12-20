@@ -91,20 +91,15 @@ export async function signIn(email: string, password: string) {
 
 export async function signOut() {
     try {
-        const { error } = await supabase.auth.signOut({ scope: 'local' });
-        if (error) {
-            // console.error('Supabase signOut error:', {
-            //     message: error.message,
-            //     status: (error as any).status ?? null,
-            //     code: (error as any).code ?? null,
-            //     raw: JSON.stringify(error),
-            // });
-            return { error };
-        }
+        // Try to sign out - if it fails (403), we still return success
+        // because we want to clear local state regardless
+        await supabase.auth.signOut({ scope: 'local' });
+        // Always return success - the local state will be cleared
         return { error: null };
     } catch (err) {
-        // console.error('Unexpected error during signOut:', err);
-        return { error: err };
+        // Even on error, return success to allow UI to update
+        console.warn('SignOut warning (ignored):', err);
+        return { error: null };
     }
 }
 
