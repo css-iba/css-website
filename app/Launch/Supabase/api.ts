@@ -93,24 +93,12 @@ export async function signOut() {
     try {
         const { error } = await supabase.auth.signOut({ scope: 'local' });
         if (error) {
-            // // Ignore 403 (domain not whitelisted in Supabase) - logout still works locally
-            // const status = (error as any).status;
-            // if (status === 403) {
-            //     console.warn('SignOut 403 ignored (domain not whitelisted)');
-            //     return { error: null };
-            // }
-            // // Return other errors to be displayed
-
-            // console.error('Supabase signOut error:', {
-            //     message: error.message,
-            //     status: (error as any).status ?? null,
-            //     code: (error as any).code ?? null,
-            //     raw: JSON.stringify(error),
-            // });
+            console.error('Supabase signOut error:', error.message);
+            return { error };
         }
         return { error: null };
     } catch (err) {
-        // console.error('Unexpected error during signOut:', err);
+        console.error('Unexpected error during signOut:', err);
         return { error: err };
     }
 }
