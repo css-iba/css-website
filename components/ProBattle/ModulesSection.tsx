@@ -74,7 +74,7 @@ export default function ModulesSection() {
   }, []);
 
   return (
-    <section className="w-full pt-12 pb-20 px-4">
+    <section id="modules" className="w-full pt-12 pb-20 px-4">
       <div className="max-w-6xl mx-auto">
 
         {/* Section Header */}
