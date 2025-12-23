@@ -9,7 +9,7 @@ const attendeeSchema = z.object({
   cnic: z.string().length(13, 'CNIC must be exactly 13 digits'),
   institute_name: z.string().min(2, 'Institute name is required'),
   reference_number: z.string().min(1, 'Reference number is required'),
-  brand_ambassador_code: z.string().optional()
+  brand_ambassador_code: z.string().length(6, 'Brand ambassador code must be exactly 6 characters').optional()
 })
 
 const participantSchema = z.object({
@@ -34,7 +34,7 @@ const participantSchema = z.object({
 
   institute_name: z.string().min(2, 'Institute name is required'),
   reference_number: z.string().min(1, 'Reference number is required'),
-  brand_ambassador_code: z.string().optional()
+  brand_ambassador_code: z.string().length(6, 'Brand ambassador code must be exactly 6 characters').optional()
 })
 
 export { attendeeSchema, participantSchema }
