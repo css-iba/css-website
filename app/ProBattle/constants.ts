@@ -264,26 +264,6 @@ const modulesData: ModuleCardProps[] = [
     category: 'Non-Technical'
   },
   {
-    name: 'Escapistan',
-    description:
-      'A fast-paced escape room experience filled with physical puzzles, hidden clues, and time-based challenges. Participants must collaborate and think critically to escape before time runs out.',
-    minParticipants: 1,
-    maxParticipants: 3,
-    price: 2500,
-    guideLink: '',
-    category: 'Non-Technical'
-  },
-  {
-    name: 'Escapistan (Solo)',
-    description:
-      'A fast-paced escape room experience filled with physical puzzles, hidden clues, and time-based challenges. Participants must collaborate and think critically to escape before time runs out.',
-    minParticipants: 0,
-    maxParticipants: 1,
-    price: 1000,
-    guideLink: '',
-    category: 'Non-Technical'
-  },
-  {
     name: 'Tech Tank',
     description:
       'A pitching competition where teams present innovative tech ideas to a panel of judges. Projects are evaluated based on creativity, feasibility, impact, and presentation quality.',
