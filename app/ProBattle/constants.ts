@@ -298,8 +298,8 @@ const modulesData: ModuleCardProps[] = [
     description:
       'A hands-on STEM experience where participants build and test creative structures and designs. The module encourages experimentation, teamwork, and innovative problem-solving.',
     minParticipants: 1,
-    maxParticipants: 3,
-    price: 2500,
+    maxParticipants: 4,
+    price: 3000,
     guideLink: '',
     category: 'High School'
   },
