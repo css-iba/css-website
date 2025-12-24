@@ -274,6 +274,26 @@ const modulesData: ModuleCardProps[] = [
     category: 'Non-Technical'
   },
   {
+    name: 'Cipher',
+    description:
+      'A mystery-based investigation module where participants analyze clues, uncover hidden patterns, and solve interconnected challenges using critical thinking and observation skills.',
+    minParticipants: 1,
+    maxParticipants: 3,
+    price: 2500,
+    guideLink: '',
+    category: 'Non-Technical'
+  },
+  {
+    name: 'FIFA',
+    description:
+      'A competitive gaming module where participants showcase their skills in FIFA matches. It emphasizes strategy, teamwork, and quick decision-making in a fast-paced virtual environment.',
+    minParticipants: 0,
+    maxParticipants: 1,
+    price: 1500,
+    guideLink: '',
+    category: 'Non-Technical'
+  },
+  {
     name: 'Competitive Programming (High School)',
     description:
       'A beginner-friendly competitive programming module designed for high school students. It focuses on logical thinking, problem-solving techniques, and improving coding confidence.',
@@ -300,16 +320,6 @@ const modulesData: ModuleCardProps[] = [
     minParticipants: 1,
     maxParticipants: 4,
     price: 3000,
-    guideLink: '',
-    category: 'High School'
-  },
-  {
-    name: 'Cipher',
-    description:
-      'A mystery-based investigation module where participants analyze clues, uncover hidden patterns, and solve interconnected challenges using critical thinking and observation skills.',
-    minParticipants: 1,
-    maxParticipants: 3,
-    price: 2500,
     guideLink: '',
     category: 'High School'
   }
