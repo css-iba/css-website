@@ -31,6 +31,7 @@ export default function AttendeeForm() {
 
   const form = useForm<AttendeeFormData>({
     resolver: zodResolver(attendeeSchema),
+    mode: 'onTouched',
     defaultValues: {
         name: '',
         email: '',
@@ -249,4 +250,5 @@ export default function AttendeeForm() {
     </form>
   )
 }
+
 
