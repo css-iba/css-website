@@ -45,7 +45,7 @@ export function ModuleCard({
                 <div className="flex items-center gap-2">
                     <ParticipantIcon className="w-6 h-6 colour-text" />
                     <span className="text-lg font-semibold font-text colour-text">
-                        {isSingleParticipant ? `${minParticipants} person` : `${minParticipants} - ${maxParticipants} persons`}
+                        {isSingleParticipant ? `${maxParticipants} person` : `${minParticipants} - ${maxParticipants} persons`}
                     </span>
                 </div>
 
@@ -87,3 +87,4 @@ export function ModuleCard({
         </div>
     );
 }
+
