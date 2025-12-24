@@ -37,6 +37,7 @@ export default function ParticipantForm() {
 
   const form = useForm<ParticipantFormData>({
     resolver: zodResolver(participantSchema),
+    mode: 'onTouched',
     defaultValues: {
       team_lead_email: '',
       module_name: '',
@@ -412,4 +413,5 @@ export default function ParticipantForm() {
     </form>
   )
 }
+
 
