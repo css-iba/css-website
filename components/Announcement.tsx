@@ -48,10 +48,10 @@ const AnnouncementBar: React.FC = () => {
           ProBattle &apos;26 on 24<sup>th</sup> - 25<sup>th</sup> January. Registrations will open soon!
         </p>
         <Link
-          href="/CodeClash2"
+          href="/ProBattle"
           className="flex-none rounded-full bg-gray-900 px-3.5 py-1 text-sm font-semibold text-white shadow-xs hover:bg-gray-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
         >
-          Go to CodeX <span aria-hidden="true">&rarr;</span>
+          Go to ProBattle <span aria-hidden="true">&rarr;</span>
         </Link>
       </div>
       <div className="flex flex-1 justify-end">
