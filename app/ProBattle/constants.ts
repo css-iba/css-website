@@ -213,12 +213,22 @@ const modulesData: ModuleCardProps[] = [
     guideLink: '',
     category: 'Technical'
   },
+  // {
+  //   name: 'Maze Following Robot',
+  //   description:
+  //     'Participants design and program robots capable of autonomously navigating through a maze. The module focuses on sensors, control logic, and decision-making for real-world navigation challenges.',
+  //   minParticipants: 1,
+  //   maxParticipants: 4,
+  //   price: 2500,
+  //   guideLink: '',
+  //   category: 'Robotics'
+  // },
   {
-    name: 'Maze Following Robot',
+    name: 'Robo Sumo',
     description:
-      'Participants design and program robots capable of autonomously navigating through a maze. The module focuses on sensors, control logic, and decision-making for real-world navigation challenges.',
+      'Teams build and program robots to compete in sumo-style matches, aiming to push opponents out of a circular ring. The module emphasizes strategy, mechanical design, and precise control for effective competition.',
     minParticipants: 1,
-    maxParticipants: 3,
+    maxParticipants: 4,
     price: 2500,
     guideLink: '',
     category: 'Robotics'
@@ -228,7 +238,7 @@ const modulesData: ModuleCardProps[] = [
     description:
       'Teams build and control combat robots designed to push opponents out of the arena. Strategy, mechanical strength, and precise control determine success in this intense robotics competition.',
     minParticipants: 1,
-    maxParticipants: 3,
+    maxParticipants: 4,
     price: 2500,
     guideLink: '',
     category: 'Robotics'
@@ -238,7 +248,7 @@ const modulesData: ModuleCardProps[] = [
     description:
       'This module combines robotics and strategy as teams build robots to compete in soccer matches. Participants focus on coordination, control systems, and teamwork-driven gameplay.',
     minParticipants: 1,
-    maxParticipants: 3,
+    maxParticipants: 4,
     price: 2500,
     guideLink: '',
     category: 'Robotics'
@@ -248,7 +258,7 @@ const modulesData: ModuleCardProps[] = [
     description:
       'Participants create robots that follow a predefined path using sensors and control algorithms. Precision, speed, and accuracy play a critical role in successfully completing the track.',
     minParticipants: 1,
-    maxParticipants: 3,
+    maxParticipants: 4,
     price: 2500,
     guideLink: '',
     category: 'Robotics'
