@@ -8,7 +8,7 @@ const RegisterCTA: React.FC = () => {
   return (
     <div className="colour-bg">
       <div className="mx-auto max-w-[85rem] py-24 sm:px-6 sm:py-32 lg:px-8">
-        <div className="relative isolate overflow-hidden bg-[#061a19] px-6 pt-16 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
+        <div className="relative isolate overflow-hidden bg-[#061a19] px-6 pt-16 pb-24 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:flex-wrap lg:gap-x-20 lg:px-24 lg:pt-0 lg:pb-0">
           
           {/* Background SVG Gradient */}
           <svg
@@ -89,6 +89,20 @@ const RegisterCTA: React.FC = () => {
                 <p className="mt-2 text-sm text-gray-300 font-text">Prize Pool</p>
               </div>
             </div>
+          </div>
+
+          {/* Attendee CTA - Full Width Row */}
+          <div className="w-full flex flex-col lg:flex-row items-center justify-center gap-3 lg:gap-4 py-6 px-6 border-t border-[#19675b]/30 mt-6 lg:mt-0">
+            <p className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-heading text-gray-300 text-center lg:text-left">
+              Or become an <span className="text-[#19c8aa] font-bold">attendee</span> and experience the event live
+            </p>
+            <Link
+              href="/ProBattle/Registrations"
+              className="group inline-flex items-center gap-2 rounded-xl border-2 border-[#19c8aa] px-5 py-3 text-sm sm:text-base font-semibold text-[#19c8aa] hover:bg-[#19c8aa] hover:text-[#061a19] transition-all duration-300 font-heading shrink-0"
+            >
+              Register as Attendee
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+            </Link>
           </div>
 
         </div>
