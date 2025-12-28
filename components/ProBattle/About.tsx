@@ -63,7 +63,7 @@ const About: React.FC = () => {
 
               <h1 
                 style={{ WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" , textShadow: "0 0 10px #ff00ff" }}
-                className="mt-2 text-4xl font-semibold tracking-tight colour-secondary sm:text-5xl font-heading bg-gradient-to-r from-[var(--colour-text)] via-[var(--colour-accent)] to-[var(--colour-text)] bg-clip-text text-transparent"
+                className="mt-2 pb-2 text-4xl font-semibold tracking-tight colour-secondary sm:text-5xl font-heading bg-gradient-to-r from-[var(--colour-text)] via-[var(--colour-accent)] to-[var(--colour-text)] bg-clip-text text-transparent"
               >
                 Bigger and better
               </h1>
@@ -183,3 +183,4 @@ const About: React.FC = () => {
 }
 
 export default About;
+
