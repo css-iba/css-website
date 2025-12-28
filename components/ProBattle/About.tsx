@@ -2,7 +2,9 @@
 
 import * as React from "react"
 import Image from "next/image"
-import { User, GraduationCap, Users, Layers, Presentation, Mic, Workflow } from "lucide-react"
+import { User, GraduationCap, Users, Layers, Presentation, Mic, Workflow, ArrowRight } from "lucide-react"
+import { Button } from "../ui/button"
+import Link from "next/link"
 
 const About: React.FC = () => {
   return (
@@ -173,6 +175,14 @@ const About: React.FC = () => {
                 Keep an eye out for registration details coming soon!
               </p>
 
+              {/* Register Now Button */}
+              <Link href="/ProBattle/Registrations">
+                <Button className="mt-8 group relative inline-flex items-center gap-3 px-8 py-6 text-lg font-semibold font-heading text-white bg-gradient-to-r from-[#0a3631] via-[#19675b] to-[#19c8aa] hover:from-[#061a19] hover:via-[#005d50] hover:to-[#19675b] rounded-xl shadow-lg hover:shadow-[#19c8aa]/25 transition-all duration-300 border border-[#19c8aa]/30">
+                  Register Now
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                </Button>
+              </Link>
+
             </div>
           </div>
         </div>
@@ -183,4 +193,3 @@ const About: React.FC = () => {
 }
 
 export default About;
-
