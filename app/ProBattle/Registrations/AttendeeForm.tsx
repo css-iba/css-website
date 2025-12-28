@@ -177,7 +177,7 @@ export default function AttendeeForm() {
         </p>
 
         <Link
-          href="https://example.com/payment"
+          href="https://ibaapps.iba.edu.pk/society_events/register/event/probattle-26"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block px-6 py-3 rounded-lg font-semibold transition colour-box-primary text-white hover:scale-[1.02] duration-200"
@@ -250,5 +250,4 @@ export default function AttendeeForm() {
     </form>
   )
 }
-
 
