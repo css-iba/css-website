@@ -184,7 +184,7 @@ const modulesData: ModuleCardProps[] = [
     category: 'Technical'
   },
   {
-    name: 'Capture The Flag',
+    name: 'Cyber Warfare',
     description:
       'A cybersecurity-focused module where participants solve security challenges, uncover vulnerabilities, and analyze systems under attack scenarios. It encourages logical thinking, ethical hacking, and teamwork.',
     minParticipants: 1,
@@ -213,16 +213,6 @@ const modulesData: ModuleCardProps[] = [
     guideLink: '',
     category: 'Technical'
   },
-  // {
-  //   name: 'Maze Following Robot',
-  //   description:
-  //     'Participants design and program robots capable of autonomously navigating through a maze. The module focuses on sensors, control logic, and decision-making for real-world navigation challenges.',
-  //   minParticipants: 1,
-  //   maxParticipants: 4,
-  //   price: 2500,
-  //   guideLink: '',
-  //   category: 'Robotics'
-  // },
   {
     name: 'Robo Sumo',
     description:
@@ -284,16 +274,6 @@ const modulesData: ModuleCardProps[] = [
     category: 'Non-Technical'
   },
   {
-    name: 'Cipher',
-    description:
-      'A mystery-based investigation module where participants analyze clues, uncover hidden patterns, and solve interconnected challenges using critical thinking and observation skills.',
-    minParticipants: 1,
-    maxParticipants: 3,
-    price: 2500,
-    guideLink: '',
-    category: 'Non-Technical'
-  },
-  {
     name: 'FIFA',
     description:
       'A competitive gaming module where participants showcase their skills in FIFA matches. It emphasizes strategy, teamwork, and quick decision-making in a fast-paced virtual environment.',
@@ -332,7 +312,17 @@ const modulesData: ModuleCardProps[] = [
     price: 3000,
     guideLink: '',
     category: 'High School'
-  }
+  },
+  {
+    name: 'Cipher',
+    description:
+      'A mystery-based investigation module where participants analyze clues, uncover hidden patterns, and solve interconnected challenges using critical thinking and observation skills.',
+    minParticipants: 1,
+    maxParticipants: 3,
+    price: 2500,
+    guideLink: '',
+    category: 'High School'
+  },
 ];
 
 
