@@ -186,7 +186,7 @@ const modulesData: ModuleCardProps[] = [
   {
     name: 'Cyber Warfare',
     description:
-      'Team up in groups of 3 and compete in a one-day cyber challenge featuring CTF clues, code-breaking puzzles, and cyber security trivia. Test your logic, speed, and teamwork in 5-6 hours of intense gameplay. Cash prizes await the top teams. Play smart. Play fast.',
+      'A cybersecurity-focused module where participants compete in a one-day cyber challenge featuring CTF clues, code-breaking puzzles, and cyber security trivia. Test your logic, speed, and teamwork in 5-6 hours of intense gameplay. Play smart. Play fast. Win big.',
     minParticipants: 1,
     maxParticipants: 3,
     price: 1500,
