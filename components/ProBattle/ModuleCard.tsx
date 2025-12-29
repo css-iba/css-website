@@ -1,4 +1,4 @@
-import { Users, Tag, User, Link as LinkIcon } from 'lucide-react';
+import { Users, Tag, User, Link as LinkIcon, Layers } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
@@ -10,6 +10,7 @@ export interface ModuleCardProps {
     maxParticipants: number;
     price: number;
     guideLink: string;
+    Tier?: number[];
 }
 
 export function ModuleCard({
@@ -19,13 +20,32 @@ export function ModuleCard({
     maxParticipants,
     price,
     guideLink,
+    Tier,
 }: ModuleCardProps) {
 
     const isSingleParticipant = minParticipants === 0;
     const ParticipantIcon = isSingleParticipant ? User : Users;
+
+    const formatTier = (tier?: number[]) => {
+        if (!tier || tier.length === 0) return null;
+        if (tier.length === 1) return `Tier: ${tier[0]}`;
+        return `Tier: ${tier[0]} & ${tier[1]}`;
+    };
     
     return (
         <div className="flex flex-col h-full w-full md:w-[90%] max-w-sm p-6 border bg-[#1a2236] border-gray-700 rounded-lg shadow-md hover:shadow-xl hover:scale-[1.02] hover:border-gray-400 transition-all duration-200">
+            {/* Tier Badge - Top Right */}
+            {Tier && Tier.length > 0 && (
+                <div className="flex justify-end mb-2">
+                    <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#19675b]/20 border border-[#19675b]/40">
+                        <Layers className="w-4 h-4 text-[#19c8aa]" />
+                        <span className="text-sm font-semibold text-[#19c8aa]">
+                            {formatTier(Tier)}
+                        </span>
+                    </div>
+                </div>
+            )}
+
             {/* Module Name */}
             <h3 className="text-2xl md:text-2xl font-semibold font-heading colour-text mb-3">
                 {name}
@@ -87,4 +107,3 @@ export function ModuleCard({
         </div>
     );
 }
-
