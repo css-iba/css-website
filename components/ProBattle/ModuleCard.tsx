@@ -39,7 +39,7 @@ export function ModuleCard({
                 <div className="flex justify-end mb-2">
                     <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#19675b]/20 border border-[#19675b]/40">
                         <Layers className="w-4 h-4 text-[#19c8aa]" />
-                        <span className="text-sm font-semibold text-[#19c8aa]">
+                        <span className="text-sm font-heading font-semibold text-[#19c8aa]">
                             {formatTier(Tier)}
                         </span>
                     </div>
@@ -107,3 +107,4 @@ export function ModuleCard({
         </div>
     );
 }
+
