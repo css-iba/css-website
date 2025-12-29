@@ -20,6 +20,7 @@ interface ModuleCardProps {
     price: number;
     guideLink: string;
     category?: string;
+    Tier?: number[];
 }
 
 const sponsors: Sponsor[] = [
@@ -131,7 +132,8 @@ const modulesData: ModuleCardProps[] = [
     maxParticipants: 3,
     price: 1500,
     guideLink: '',
-    category: 'Technical'
+    category: 'Technical',
+    Tier: [1]
   },
   {
     name: 'Business Intelligence',
@@ -141,7 +143,8 @@ const modulesData: ModuleCardProps[] = [
     maxParticipants: 3,
     price: 1500,
     guideLink: '',
-    category: 'Technical'
+    category: 'Technical',
+    Tier: [1]
   },
   {
     name: 'Natural Language Processing',
@@ -151,7 +154,8 @@ const modulesData: ModuleCardProps[] = [
     maxParticipants: 3,
     price: 1500,
     guideLink: '',
-    category: 'Technical'
+    category: 'Technical',
+    Tier: [1]
   },
   {
     name: 'Machine Learning',
@@ -161,7 +165,8 @@ const modulesData: ModuleCardProps[] = [
     maxParticipants: 3,
     price: 1500,
     guideLink: '',
-    category: 'Technical'
+    category: 'Technical',
+    Tier: [1]
   },
   {
     name: 'UI/UX Design',
@@ -171,7 +176,8 @@ const modulesData: ModuleCardProps[] = [
     maxParticipants: 3,
     price: 1500,
     guideLink: '',
-    category: 'Technical'
+    category: 'Technical',
+    Tier: [2]
   },
   {
     name: 'Database Design',
@@ -181,7 +187,8 @@ const modulesData: ModuleCardProps[] = [
     maxParticipants: 3,
     price: 1500,
     guideLink: '',
-    category: 'Technical'
+    category: 'Technical',
+    Tier: [2]
   },
   {
     name: 'Cyber Warfare',
@@ -191,7 +198,8 @@ const modulesData: ModuleCardProps[] = [
     maxParticipants: 3,
     price: 1500,
     guideLink: '',
-    category: 'Technical'
+    category: 'Technical',
+    Tier: [2]
   },
   {
     name: 'Speed Debugging',
@@ -201,7 +209,8 @@ const modulesData: ModuleCardProps[] = [
     maxParticipants: 2,
     price: 1500,
     guideLink: '',
-    category: 'Technical'
+    category: 'Technical',
+    Tier: [2]
   },
   {
     name: 'Competitive Programming',
@@ -211,7 +220,8 @@ const modulesData: ModuleCardProps[] = [
     maxParticipants: 2,
     price: 1500,
     guideLink: '',
-    category: 'Technical'
+    category: 'Technical',
+    Tier: [3]
   },
   {
     name: 'Robo Sumo',
@@ -221,7 +231,8 @@ const modulesData: ModuleCardProps[] = [
     maxParticipants: 4,
     price: 2500,
     guideLink: '',
-    category: 'Robotics'
+    category: 'Robotics',
+    Tier: [2, 3]
   },
   {
     name: 'Robot War Light Weight',
@@ -231,7 +242,8 @@ const modulesData: ModuleCardProps[] = [
     maxParticipants: 4,
     price: 2500,
     guideLink: '',
-    category: 'Robotics'
+    category: 'Robotics',
+    Tier: [2, 3]
   },
   {
     name: 'Robot Soccer',
@@ -241,7 +253,8 @@ const modulesData: ModuleCardProps[] = [
     maxParticipants: 4,
     price: 2500,
     guideLink: '',
-    category: 'Robotics'
+    category: 'Robotics',
+    Tier: [2, 3]
   },
   {
     name: 'Line Following Robot',
@@ -251,7 +264,8 @@ const modulesData: ModuleCardProps[] = [
     maxParticipants: 4,
     price: 2500,
     guideLink: '',
-    category: 'Robotics'
+    category: 'Robotics',
+    Tier: [2, 3]
   },
   {
     name: 'Tech Tank',
@@ -261,7 +275,8 @@ const modulesData: ModuleCardProps[] = [
     maxParticipants: 4,
     price: 2500,
     guideLink: '',
-    category: 'Non-Technical'
+    category: 'Non-Technical',
+    Tier: [3]
   },
   {
     name: 'FIFA',
@@ -271,7 +286,8 @@ const modulesData: ModuleCardProps[] = [
     maxParticipants: 1,
     price: 1500,
     guideLink: '',
-    category: 'Non-Technical'
+    category: 'Non-Technical',
+    Tier: [3]
   },
   {
     name: 'Competitive Programming (High School)',
@@ -281,7 +297,8 @@ const modulesData: ModuleCardProps[] = [
     maxParticipants: 3,
     price: 2500,
     guideLink: '',
-    category: 'High School'
+    category: 'High School',
+    Tier: [1]
   },
   {
     name: 'Speed Debugging (High School)',
@@ -291,7 +308,8 @@ const modulesData: ModuleCardProps[] = [
     maxParticipants: 3,
     price: 2500,
     guideLink: '',
-    category: 'High School'
+    category: 'High School',
+    Tier: [2]
   },
   {
     name: 'Innovate Lab',
@@ -301,7 +319,8 @@ const modulesData: ModuleCardProps[] = [
     maxParticipants: 4,
     price: 3000,
     guideLink: '',
-    category: 'High School'
+    category: 'High School',
+    Tier: [2, 3]
   },
   {
     name: 'Vibe Coding',
@@ -311,7 +330,8 @@ const modulesData: ModuleCardProps[] = [
     maxParticipants: 2,
     price: 2000,
     guideLink: '',
-    category: 'High School'
+    category: 'High School',
+    Tier: [1]
   },
   {
     name: 'Cipher',
@@ -321,7 +341,8 @@ const modulesData: ModuleCardProps[] = [
     maxParticipants: 3,
     price: 2500,
     guideLink: '',
-    category: 'High School'
+    category: 'High School',
+    Tier: [3]
   },
 ];
 
