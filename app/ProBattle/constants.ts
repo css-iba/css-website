@@ -254,16 +254,6 @@ const modulesData: ModuleCardProps[] = [
     category: 'Robotics'
   },
   {
-    name: 'Vibe Coding',
-    description:
-      'An interactive coding module where participants explore programming through creativity and experimentation. From small projects to animations, it focuses on logic-building and creative expression.',
-    minParticipants: 1,
-    maxParticipants: 2,
-    price: 2000,
-    guideLink: '',
-    category: 'Non-Technical'
-  },
-  {
     name: 'Tech Tank',
     description:
       'A pitching competition where teams present innovative tech ideas to a panel of judges. Projects are evaluated based on creativity, feasibility, impact, and presentation quality.',
@@ -310,6 +300,16 @@ const modulesData: ModuleCardProps[] = [
     minParticipants: 1,
     maxParticipants: 4,
     price: 3000,
+    guideLink: '',
+    category: 'High School'
+  },
+  {
+    name: 'Vibe Coding',
+    description:
+      'An interactive coding module where participants explore programming through creativity and experimentation. From small projects to animations, it focuses on logic-building and creative expression.',
+    minParticipants: 1,
+    maxParticipants: 2,
+    price: 2000,
     guideLink: '',
     category: 'High School'
   },
