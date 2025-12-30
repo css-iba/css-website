@@ -235,7 +235,7 @@ const modulesData: ModuleCardProps[] = [
     Tier: [2, 3]
   },
   {
-    name: 'Robo Race',
+    name: 'Robo Race (High School)',
     description:
       'This module challenges participants to design and program robots that can navigate a racecourse as quickly as possible. Speed, agility, and efficient pathfinding are key to winning the race.',
     minParticipants: 1,
@@ -257,7 +257,7 @@ const modulesData: ModuleCardProps[] = [
     Tier: [2, 3]
   },
   {
-    name: 'Line Following Robot',
+    name: 'Line Following Robot (University)',
     description:
       'Participants create robots that follow a predefined path using sensors and control algorithms. Precision, speed, and accuracy play a critical role in successfully completing the track.',
     minParticipants: 1,
