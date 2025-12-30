@@ -18,6 +18,10 @@ const faqs = [
   {
     question: "Do we have to bring our own devices?",
     answer: "These details vary from module to module. Please refer to the specific module guides in the links provided in the modules section."
+  },
+  {
+    question: "What console if FIFA on? What FIFA it is? Is it single or double elimination?",
+    answer: "FIFA will be played on PlayStation 5 using FIFA 26. The tournament format will be double elimination."
   }
 ]
 
