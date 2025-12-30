@@ -57,15 +57,13 @@ const About: React.FC = () => {
             <div className="lg:max-w-lg">
 
               <p 
-                style={{ WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" , textShadow: "0 0 10px #ff00ff" }}
-                className="text-base font-heading font-semibold bg-gradient-to-r from-[var(--colour-text)] via-[var(--colour-accent)] to-[var(--colour-text)] bg-clip-text text-transparent"
+                className="text-base font-heading font-semibold text-[#19c8aa]"
               >
                 Introducing ProBattle &apos;26
               </p>
 
               <h1 
-                style={{ WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" , textShadow: "0 0 10px #ff00ff" }}
-                className="mt-2 pb-2 text-4xl sm:text-5xl font-bold tracking-tight colour-secondary font-heading bg-gradient-to-r from-[var(--colour-text)] via-[var(--colour-accent)] to-[var(--colour-text)] bg-clip-text text-transparent"
+                className="mt-2 pb-2 text-4xl sm:text-5xl font-bold tracking-tight font-heading text-white"
               >
                 Bigger and Better
               </h1>
