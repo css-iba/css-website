@@ -8,25 +8,24 @@ import { AlertTriangle } from "lucide-react";
 
 // Variants for text blocks (heading, paragraphs, socials)
 const textVariants = {
-  hidden: (isMobile: boolean) => ({
+  hidden: {
     opacity: 0,
-    x: isMobile ? 0 : -50,
-    y: isMobile ? -50 : 0,
-  }),
+    y: 20,
+  },
   visible: {
     opacity: 1,
-    x: 0,
     y: 0,
-    transition: { duration: 0.8, ease: "easeOut" as const },
+    transition: { duration: 0.6, ease: "easeOut" as const },
   },
 };
 
 // Variants for cards
 const cardsVariants = {
-  hidden: { opacity: 0 },
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
-    transition: { duration: 1.2, ease: "easeOut" as const },
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" as const },
   },
 };
 
@@ -36,7 +35,19 @@ const sectionVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: "easeOut" as const },
+    transition: { duration: 0.6, ease: "easeOut" as const },
+  },
+};
+
+// Stagger children animation for grid
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.1,
+    },
   },
 };
 
@@ -64,15 +75,30 @@ function groupModulesByCategory(modules: typeof modulesData): Record<ModuleCateg
 }
 
 export default function ModulesSection() {
-  const [isMobile, setIsMobile] = React.useState(false);
+  const [hasMounted, setHasMounted] = React.useState(false);
   const groupedModules = groupModulesByCategory(modulesData);
 
   React.useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    setHasMounted(true);
   }, []);
+
+  // Prevent hydration mismatch - render with initial state until mounted
+  if (!hasMounted) {
+    return (
+      <section id="modules" className="w-full pt-12 pb-20 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="mt-12 mb-16">
+            <h2 className="text-4xl md:text-6xl font-bold font-heading colour-text mb-2">
+              ProBattle Modules
+            </h2>
+            <p className="font-heading colour-text text-md md:text-lg">
+              Explore ProBattle&apos;s diverse modules designed to enhance your skills - Choose your path!
+            </p>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id="modules" className="w-full pt-12 pb-20 px-4">
@@ -83,8 +109,7 @@ export default function ModulesSection() {
           <motion.h2
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.8 }}
-            custom={isMobile}
+            viewport={{ once: true, amount: 0.3 }}
             variants={textVariants}
             className="text-4xl md:text-6xl font-bold font-heading colour-text mb-2"
           >
@@ -93,8 +118,7 @@ export default function ModulesSection() {
           <motion.p
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.8 }}
-            custom={isMobile}
+            viewport={{ once: true, amount: 0.3 }}
             variants={textVariants}
             className="font-heading colour-text text-md md:text-lg"
           >
@@ -105,7 +129,7 @@ export default function ModulesSection() {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.8 }}
+            viewport={{ once: true, amount: 0.3 }}
             variants={cardsVariants}
             className="mt-6 p-4 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-start gap-3"
           >
@@ -129,7 +153,7 @@ export default function ModulesSection() {
               key={category}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.1 }}
               variants={sectionVariants}
               className="mb-16"
             >
@@ -144,19 +168,22 @@ export default function ModulesSection() {
               </p>
 
               {/* Modules Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <motion.div 
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.1 }}
+                variants={containerVariants}
+              >
                 {categoryModules.map((module) => (
                   <motion.div
                     key={module.name}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.8 }}
                     variants={cardsVariants}
                   >
                     <ModuleCard {...module} />
                   </motion.div>
                 ))}
-              </div>
+              </motion.div>
             </motion.div>
           );
         })}
