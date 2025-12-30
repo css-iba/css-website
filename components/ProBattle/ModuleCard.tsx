@@ -56,6 +56,17 @@ export function ModuleCard({
                 {description}
             </p>
 
+            {/* FIFA-specific details */}
+            {name === 'FIFA' && (
+                <div className="mb-4 p-3 rounded-lg bg-[#19675b]/15 border border-[#19675b]/30">
+                    <ul className="text-[16px] font-text text-gray-300 space-y-1">
+                        <li>• Console: <span className="text-[#19c8aa] font-medium">PS5</span></li>
+                        <li>• Game: <span className="text-[#19c8aa] font-medium">FC 26 (FIFA 26)</span></li>
+                        <li>• Format: <span className="text-[#19c8aa] font-medium">Double Elimination</span></li>
+                    </ul>
+                </div>
+            )}
+
             {/* Separator */}
             <Separator className="my-4" />
 
@@ -107,4 +118,3 @@ export function ModuleCard({
         </div>
     );
 }
-
