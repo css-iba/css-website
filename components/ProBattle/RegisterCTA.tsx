@@ -73,7 +73,7 @@ const RegisterCTA: React.FC = () => {
           <div className="relative mt-16 lg:mt-8 lg:flex lg:items-center">
             <div className="grid grid-cols-2 gap-6 py-10 lg:py-32">
               <div className="text-center p-6 rounded-2xl bg-[#0a3631]/50 backdrop-blur-sm border border-[#19675b]/30">
-                <p className="text-4xl font-bold text-[#19c8aa] font-heading">15+</p>
+                <p className="text-4xl font-bold text-[#19c8aa] font-heading">18+</p>
                 <p className="mt-2 text-sm text-gray-300 font-text">Modules</p>
               </div>
               <div className="text-center p-6 rounded-2xl bg-[#0a3631]/50 backdrop-blur-sm border border-[#19675b]/30">
@@ -81,11 +81,11 @@ const RegisterCTA: React.FC = () => {
                 <p className="mt-2 text-sm text-gray-300 font-text">Participants</p>
               </div>
               <div className="text-center p-6 rounded-2xl bg-[#0a3631]/50 backdrop-blur-sm border border-[#19675b]/30">
-                <p className="text-4xl font-bold text-[#19c8aa] font-heading">10+</p>
+                <p className="text-4xl font-bold text-[#19c8aa] font-heading">15+</p>
                 <p className="mt-2 text-sm text-gray-300 font-text">Universities</p>
               </div>
               <div className="text-center p-6 rounded-2xl bg-[#0a3631]/50 backdrop-blur-sm border border-[#19675b]/30">
-                <p className="text-4xl font-bold text-[#19c8aa] font-heading">TBD</p>
+                <p className="text-4xl font-bold text-[#19c8aa] font-heading">TBA</p>
                 <p className="mt-2 text-sm text-gray-300 font-text">Prize Pool</p>
               </div>
             </div>
