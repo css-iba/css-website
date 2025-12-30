@@ -235,9 +235,9 @@ const modulesData: ModuleCardProps[] = [
     Tier: [2, 3]
   },
   {
-    name: 'Robot War Light Weight',
+    name: 'Robo Race',
     description:
-      'Teams build and control combat robots designed to push opponents out of the arena. Strategy, mechanical strength, and precise control determine success in this intense robotics competition.',
+      'This module challenges participants to design and program robots that can navigate a racecourse as quickly as possible. Speed, agility, and efficient pathfinding are key to winning the race.',
     minParticipants: 1,
     maxParticipants: 4,
     price: 2500,
