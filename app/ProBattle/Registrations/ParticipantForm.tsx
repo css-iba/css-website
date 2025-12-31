@@ -78,15 +78,45 @@ export default function ParticipantForm() {
     return email && email.length > 0
   }, [form])
 
+
+  // Helper: all-or-none for participant2/3/4
+  function areOptionalParticipantsValid() {
+    // participantFields[1], [2], [3] are participant2, 3, 4
+    for (let i = 1; i <= 3; i++) {
+      const field = participantFields[i];
+      const name = form.getValues(field.name);
+      const phone = form.getValues(field.phone);
+      const cnic = form.getValues(field.cnic);
+      const anyFilled = [name, phone, cnic].some(v => v && v.trim() !== '');
+
+      if (anyFilled) {
+        if (!name || name.trim().length < 2) return false;
+        if (!phone || !/^\d{11}$/.test(phone)) return false;
+        if (!cnic || !/^\d{13}$/.test(cnic)) return false;
+      }
+    }
+
+    return true;
+  }
+
   const isStage2Valid = useMemo(() => {
-    const hasModule = selectedModule !== null
-    // Check if first participant details are filled
-    const p1Name = form.watch('participant1_name')
-    const p1Phone = form.watch('participant1_phone')
-    const p1Cnic = form.watch('participant1_cnic')
-    const p1Valid = p1Name && p1Name.length >= 2 && p1Phone && p1Phone.length >= 10 && p1Cnic && p1Cnic.length === 13
-    return hasModule && p1Valid
-  }, [selectedModule, form.watch('participant1_name'), form.watch('participant1_phone'), form.watch('participant1_cnic')])
+    const hasModule = selectedModule !== null;
+    // Team lead email validation
+    const teamLeadEmail = form.watch('team_lead_email');
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const teamLeadEmailValid = teamLeadEmail && emailRegex.test(teamLeadEmail);
+
+    // First participant validation
+    const p1Name = form.watch('participant1_name');
+    const p1Phone = form.watch('participant1_phone');
+    const p1Cnic = form.watch('participant1_cnic');
+    const p1Valid = p1Name && p1Name.length >= 2 && p1Phone && p1Phone.length >= 10 && p1Cnic && p1Cnic.length === 13;
+
+    return hasModule && teamLeadEmailValid && p1Valid && areOptionalParticipantsValid();
+  }, [selectedModule, form.watch('team_lead_email'), form.watch('participant1_name'), form.watch('participant1_phone'), form.watch('participant1_cnic'),
+      form.watch('participant2_name'), form.watch('participant2_phone'), form.watch('participant2_cnic'),
+      form.watch('participant3_name'), form.watch('participant3_phone'), form.watch('participant3_cnic'),
+      form.watch('participant4_name'), form.watch('participant4_phone'), form.watch('participant4_cnic')]);
 
   const onSubmit = async (data: ParticipantFormData) => {
     setIsSubmitting(true)
