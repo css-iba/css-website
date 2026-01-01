@@ -204,7 +204,7 @@ const modulesData: ModuleCardProps[] = [
   {
     name: 'Speed Debugging',
     description:
-      'This module tests participants’ ability to quickly identify and fix errors in code. It strengthens code-reading skills, logical reasoning, and confidence in solving problems under time pressure.',
+      'This module tests participants\' ability to quickly identify and fix errors in code. It strengthens code-reading skills, logical reasoning, and confidence in solving problems under time pressure.',
     minParticipants: 1,
     maxParticipants: 2,
     price: 1500,
@@ -289,6 +289,18 @@ const modulesData: ModuleCardProps[] = [
     category: 'Non-Technical',
     Tier: [3]
   },
+  
+  {
+    name: 'Vibe Coding',
+    description:
+      'An interactive coding module where participants explore programming through creativity and experimentation. From small projects to animations, it focuses on logic-building and creative expression.',
+    minParticipants: 1,
+    maxParticipants: 2,
+    price: 2000,
+    guideLink: '',
+    category: 'Non-Technical',
+    Tier: [1]
+  },
   {
     name: 'Competitive Programming (High School)',
     description:
@@ -321,17 +333,6 @@ const modulesData: ModuleCardProps[] = [
     guideLink: '',
     category: 'High School',
     Tier: [2, 3]
-  },
-  {
-    name: 'Vibe Coding',
-    description:
-      'An interactive coding module where participants explore programming through creativity and experimentation. From small projects to animations, it focuses on logic-building and creative expression.',
-    minParticipants: 1,
-    maxParticipants: 2,
-    price: 2000,
-    guideLink: '',
-    category: 'High School',
-    Tier: [1]
   },
   {
     name: 'Cipher',
