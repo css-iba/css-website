@@ -7,11 +7,13 @@ import ModulesSection from "@/components/ProBattle/ModulesSection";
 import Contact from "@/components/ProBattle/Contact";
 import RegisterCTA from "@/components/ProBattle/RegisterCTA"
 import FAQs from "@/components/ProBattle/FAQs";
+import Details from "@/components/ProBattle/Details";
 
 const ProBattle: React.FC = () => {
   return (
     <main className="min-h-screen colour-bg">
       <About />
+      <Details />
       <ModulesSection />
       <RegisterCTA />
       <Contact />
