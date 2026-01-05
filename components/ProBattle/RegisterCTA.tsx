@@ -7,7 +7,7 @@ import { ArrowRight, Rocket } from "lucide-react"
 const RegisterCTA: React.FC = () => {
   return (
     <div className="colour-bg">
-      <div className="mx-auto max-w-[85rem] py-24 sm:px-6 sm:py-32 lg:px-8">
+      <div className="mx-auto max-w-[90rem] py-24 sm:px-6 sm:py-32 lg:px-8">
         <div className="relative isolate overflow-hidden bg-[#061a19] px-6 pt-16 pb-24 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:flex-wrap lg:gap-x-20 lg:px-24 lg:pt-0 lg:pb-0">
           
           {/* Background SVG Gradient */}
@@ -73,19 +73,19 @@ const RegisterCTA: React.FC = () => {
           <div className="relative mt-16 lg:mt-8 lg:flex lg:items-center">
             <div className="grid grid-cols-2 gap-6 py-10 lg:py-32">
               <div className="text-center p-6 rounded-2xl bg-[#0a3631]/50 backdrop-blur-sm border border-[#19675b]/30">
-                <p className="text-4xl font-bold text-[#19c8aa] font-heading">18+</p>
+                <p className="text-3xl font-bold text-[#19c8aa] font-heading">18+</p>
                 <p className="mt-2 text-sm text-gray-300 font-text">Modules</p>
               </div>
               <div className="text-center p-6 rounded-2xl bg-[#0a3631]/50 backdrop-blur-sm border border-[#19675b]/30">
-                <p className="text-4xl font-bold text-[#19c8aa] font-heading">1000+</p>
+                <p className="text-3xl font-bold text-[#19c8aa] font-heading">1000+</p>
                 <p className="mt-2 text-sm text-gray-300 font-text">Participants</p>
               </div>
               <div className="text-center p-6 rounded-2xl bg-[#0a3631]/50 backdrop-blur-sm border border-[#19675b]/30">
-                <p className="text-4xl font-bold text-[#19c8aa] font-heading">15+</p>
+                <p className="text-3xl font-bold text-[#19c8aa] font-heading">15+</p>
                 <p className="mt-2 text-sm text-gray-300 font-text">Universities</p>
               </div>
               <div className="text-center p-6 rounded-2xl bg-[#0a3631]/50 backdrop-blur-sm border border-[#19675b]/30">
-                <p className="text-4xl font-bold text-[#19c8aa] font-heading">TBA</p>
+                <p className="text-2xl font-bold text-[#19c8aa] font-heading">Rs.350,000</p>
                 <p className="mt-2 text-sm text-gray-300 font-text">Prize Pool</p>
               </div>
             </div>
