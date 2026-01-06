@@ -135,10 +135,19 @@ export default function ModulesSection() {
           >
             <AlertTriangle className="w-6 h-6 text-amber-500 shrink-0 mt-0.5" />
             <div>
-              <p className="font-semibold text-amber-500 font-heading text-base">Important Note</p>
-              <p className="text-sm text-amber-400/90 font-text mt-1">
-                Participants are recommended to not register in more than one module with the same tier level. Please check the tier displayed on each module card before registering.
+              <p className="font-semibold text-amber-500 font-heading text-[17px]">Important Note (Read this)</p>
+
+              <p className="text-[15.5px] text-amber-400/90 font-text mt-1">
+                Participants are recommended to not register in more than one module with the same tier level. 
+                Please check the tier displayed on each module card before registering.
               </p>
+
+              <p className="text-[15.5px] text-amber-400/90 font-text mt-3">
+                &apos;High School&apos; modules are specifically designed for high school students and lower levels while the &apos;University&apos; modules are for university students and above. 
+                For example, Competitive Programming is for university students while Competitive Programming (High School) is for high school students. 
+                If you think you can handle university level modules, feel free to register for them even if you are in high school. 
+              </p>
+
             </div>
           </motion.div>
         </div>
