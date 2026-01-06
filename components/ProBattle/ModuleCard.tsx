@@ -1,4 +1,4 @@
-import { Users, Tag, User, Link as LinkIcon, Layers } from 'lucide-react';
+import { Users, Tag, User, Link as LinkIcon, Layers, AlertTriangle } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
@@ -64,6 +64,32 @@ export function ModuleCard({
                         <li>• Game: <span className="text-[#19c8aa] font-medium">FC 26 (FIFA 26)</span></li>
                         <li>• Format: <span className="text-[#19c8aa] font-medium">Double Elimination</span></li>
                     </ul>
+                </div>
+            )}
+
+            {/* Robo Race-specific details */}
+            {name === 'Robo Race (High School)' && (
+                <div className="p-4 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-start gap-3">
+                    <AlertTriangle className="w-6 h-6 text-amber-500 shrink-0 mt-0.5" />
+                    <div>
+                        <p className="font-semibold text-amber-500 font-heading text-base">Important Note</p>
+                        <p className="text-sm text-amber-400/90 font-text mt-1">
+                            This module is only for high school and lower level students.
+                        </p>
+                    </div>
+                </div>
+            )}
+
+            {/* Line Following Robot (University)-specific details */}
+            {name === 'Line Following Robot (University)' && (
+                <div className="p-4 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-start gap-3">
+                    <AlertTriangle className="w-6 h-6 text-amber-500 shrink-0 mt-0.5" />
+                    <div>
+                        <p className="font-semibold text-amber-500 font-heading text-base">Important Note</p>
+                        <p className="text-sm text-amber-400/90 font-text mt-1">
+                            This module is only for university students.
+                        </p>
+                    </div>
                 </div>
             )}
 
