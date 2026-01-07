@@ -1,122 +1,122 @@
 interface Sponsor {
-    logoUrl: string;
-    size?: string;
+  logoUrl: string;
+  size?: string;
 }
 
 interface TeamContact {
-    name: string;
-    title: string;
-    isAdmin?: boolean;
-    avatarUrl?: string;
-    email?: string;
-    phone?: string;
+  name: string;
+  title: string;
+  isAdmin?: boolean;
+  avatarUrl?: string;
+  email?: string;
+  phone?: string;
 };
 
 interface ModuleCardProps {
-    name: string;
-    description: string;
-    minParticipants: number;
-    maxParticipants: number;
-    price: number;
-    guideLink: string;
-    category?: string;
-    Tier?: number[];
+  name: string;
+  description: string;
+  minParticipants: number;
+  maxParticipants: number;
+  price: number;
+  guideLink: string;
+  category?: string;
+  Tier?: number[];
 }
 
 const sponsors: Sponsor[] = [
-    {
-        logoUrl: "/ProBattle/HBL.png",
-        size: "small"
-    },
-    {
-        logoUrl: "/ProBattle/Daraz.png",
-        size: "small"
-    },
-    {
-        logoUrl: "/ProBattle/Allied.png",
-        size: "small"
-    },
-    {
-        logoUrl: "/ProBattle/Careem.png",
-        size: "small"
-    },
-    {
-        logoUrl: "/ProBattle/Systems.png",
-        size: "small"
-    },
-    {
-        logoUrl: "/ProBattle/Toyota.png",
-        size: "small"
-    },
-    {
-        logoUrl: "/ProBattle/MLSA.png",
-        size: "large"
-    },
-    {
-        logoUrl: "/ProBattle/RoboAutomators.png",
-        size: "small"
-    },
-    {
-        logoUrl: "/Home/notion-logo.png",
-        size: "large"
-    },
-    {
-        logoUrl: "/Home/DC_Donates_logo.png",
-        size: "large"
-    },
-    {
-        logoUrl: "/ProBattle/Kalsoft.png",
-        size: "small"
-    },
-    {
-        logoUrl: "/ProBattle/SudoWare.png",
-        size: "small"
-    },
-    {
-        logoUrl: "/ProBattle/IBM.png",
-        size: "small"
-    },
-    {
-        logoUrl: "/ProBattle/BankAlHabib.png",
-        size: "small"
-    }
+  {
+    logoUrl: "/ProBattle/HBL.png",
+    size: "small"
+  },
+  {
+    logoUrl: "/ProBattle/Daraz.png",
+    size: "small"
+  },
+  {
+    logoUrl: "/ProBattle/Allied.png",
+    size: "small"
+  },
+  {
+    logoUrl: "/ProBattle/Careem.png",
+    size: "small"
+  },
+  {
+    logoUrl: "/ProBattle/Systems.png",
+    size: "small"
+  },
+  {
+    logoUrl: "/ProBattle/Toyota.png",
+    size: "small"
+  },
+  {
+    logoUrl: "/ProBattle/MLSA.png",
+    size: "large"
+  },
+  {
+    logoUrl: "/ProBattle/RoboAutomators.png",
+    size: "small"
+  },
+  {
+    logoUrl: "/Home/notion-logo.png",
+    size: "large"
+  },
+  {
+    logoUrl: "/Home/DC_Donates_logo.png",
+    size: "large"
+  },
+  {
+    logoUrl: "/ProBattle/Kalsoft.png",
+    size: "small"
+  },
+  {
+    logoUrl: "/ProBattle/SudoWare.png",
+    size: "small"
+  },
+  {
+    logoUrl: "/ProBattle/IBM.png",
+    size: "small"
+  },
+  {
+    logoUrl: "/ProBattle/BankAlHabib.png",
+    size: "small"
+  }
 ];
 
 const contacts: TeamContact[] = [
-  { 
-    name: "Abdullah Tariq", 
-    title: "COO", 
-    isAdmin: true, 
-    email: "Abdullah.Tariq.29123@khi.iba.edu.pk", 
+  {
+    name: "Abdullah Tariq",
+    title: "COO",
+    isAdmin: true,
+    email: "Abdullah.Tariq.29123@khi.iba.edu.pk",
     phone: "",
     avatarUrl: "/Home/Abdullah.jpg"
   },
-  { 
-    name: "Zainab Irfan", 
-    title: "CEO", 
-    isAdmin: true, 
-    email: "z.ansari.29091@khi.iba.edu.pk", 
+  {
+    name: "Zainab Irfan",
+    title: "CEO",
+    isAdmin: true,
+    email: "z.ansari.29091@khi.iba.edu.pk",
     phone: "",
     avatarUrl: "/Home/Zainab.jpg"
   },
-  { 
-    name: "Bisma Kasbati", 
-    title: "CFO", 
+  {
+    name: "Bisma Kasbati",
+    title: "CFO",
     isAdmin: true,
-    email: "b.kasbati.28671@khi.iba.edu.pk", 
+    email: "b.kasbati.28671@khi.iba.edu.pk",
     phone: "",
     avatarUrl: "/Home/Bisma.jpg"
   },
-  { 
+  {
     name: "Muhammad Arrayyan Asad",
-    title: "EC Operations/Logistics", 
+    title: "EC Operations/Logistics",
     email: "M.Arrayyan.30557@khi.iba.edu.pk",
     phone: "(+92) 311-4976336",
     avatarUrl: ""
   },
-  { 
-    name: "Abdul Haseeb", 
-    title: "EC Registrations", 
+  {
+    name: "Abdul Haseeb",
+    title: "EC Registrations",
     email: "",
     phone: "(+92) 332-3450675",
     avatarUrl: ""
@@ -230,7 +230,7 @@ const modulesData: ModuleCardProps[] = [
     minParticipants: 1,
     maxParticipants: 4,
     price: 2500,
-    guideLink: '',
+    guideLink: 'https://drive.google.com/file/d/1pY95MdPKTR7v51bw9AnCzP2gPqoWeIVs/view?usp=drive_link',
     category: 'Robotics',
     Tier: [2, 3]
   },
@@ -241,7 +241,7 @@ const modulesData: ModuleCardProps[] = [
     minParticipants: 1,
     maxParticipants: 4,
     price: 2500,
-    guideLink: '',
+    guideLink: 'https://drive.google.com/file/d/1VRP_E6TfLLULEpQhDYR-jN4JFBTBojNM/view?usp=drive_link',
     category: 'Robotics',
     Tier: [2, 3]
   },
@@ -252,7 +252,7 @@ const modulesData: ModuleCardProps[] = [
     minParticipants: 1,
     maxParticipants: 4,
     price: 2500,
-    guideLink: '',
+    guideLink: 'https://drive.google.com/file/d/1uhitvjEZDdea2Sa_6f-NnH2LN-R9QWIi/view?usp=drive_link',
     category: 'Robotics',
     Tier: [2, 3]
   },
@@ -263,7 +263,7 @@ const modulesData: ModuleCardProps[] = [
     minParticipants: 1,
     maxParticipants: 4,
     price: 2500,
-    guideLink: '',
+    guideLink: 'https://drive.google.com/file/d/1gDhxdM82zDJARA4tlINwOlj5H5p46XUK/view?usp=drive_link',
     category: 'Robotics',
     Tier: [2, 3]
   },
@@ -289,7 +289,7 @@ const modulesData: ModuleCardProps[] = [
     category: 'Non-Technical',
     Tier: [3]
   },
-  
+
   {
     name: 'Vibe Coding',
     description:
