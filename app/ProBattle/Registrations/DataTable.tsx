@@ -89,7 +89,6 @@ const PARTICIPANT_LABEL_MAP: Record<string, string> = {
 }
 
 // Module color mapping - light pastel colors for row backgrounds
-// cspell:ignore Escapistan
 const MODULE_COLORS: Record<string, string> = {
     'Web Development': 'bg-blue-50',
     'Business Intelligence': 'bg-amber-50',
@@ -97,16 +96,16 @@ const MODULE_COLORS: Record<string, string> = {
     'Machine Learning': 'bg-emerald-50',
     'UI/UX Design': 'bg-pink-50',
     'Database Design': 'bg-cyan-50',
-    'Capture The Flag': 'bg-red-50',
+    'Cyber Warfare': 'bg-red-50',
     'Speed Debugging': 'bg-orange-50',
     'Competitive Programming': 'bg-lime-50',
     'Maze Following Robot': 'bg-teal-50',
-    'Robot War Light Weight': 'bg-green-50',
+    'Robo Sumo': 'bg-green-50',
     'Robot Soccer': 'bg-violet-50',
-    'Line Following Robot': 'bg-fuchsia-50',
+    'Line Following Robot (University)': 'bg-fuchsia-50',
+    'Robo Race (High School)': 'bg-sky-50',
     'Vibe Coding': 'bg-rose-50',
-    'Escapistan': 'bg-sky-50',
-    'Escapistan (Solo)': 'bg-indigo-50',
+    'FIFA': 'bg-indigo-50',
     'Tech Tank': 'bg-slate-100',
     'Competitive Programming (High School)': 'bg-yellow-50',
     'Speed Debugging (High School)': 'bg-stone-100',
@@ -191,7 +190,7 @@ export default function RegistrationDataTable() {
             el.select()
             try {
                 document.execCommand('copy')
-            } catch {}
+            } catch { }
             document.body.removeChild(el)
             setCopiedId(rowId)
             setTimeout(() => setCopiedId(null), 2000)
@@ -212,11 +211,10 @@ export default function RegistrationDataTable() {
                         setSearchValue('')
                         setSearchColumn('')
                     }}
-                    className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 font-semibold rounded-lg transition-all ${
-                        activeTab === 'attendee'
-                            ? 'bg-white text-gray-900 shadow-sm'
-                            : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
-                    }`}
+                    className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 font-semibold rounded-lg transition-all ${activeTab === 'attendee'
+                        ? 'bg-white text-gray-900 shadow-sm'
+                        : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                        }`}
                 >
                     <User className="w-4 h-4" />
                     Attendees ({data.attendees.length})
@@ -227,11 +225,10 @@ export default function RegistrationDataTable() {
                         setSearchValue('')
                         setSearchColumn('')
                     }}
-                    className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 font-semibold rounded-lg transition-all ${
-                        activeTab === 'participant'
-                            ? 'bg-white text-gray-900 shadow-sm'
-                            : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
-                    }`}
+                    className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 font-semibold rounded-lg transition-all ${activeTab === 'participant'
+                        ? 'bg-white text-gray-900 shadow-sm'
+                        : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                        }`}
                 >
                     <Users className="w-4 h-4" />
                     Participants ({data.participants.length})
@@ -319,10 +316,10 @@ export default function RegistrationDataTable() {
                         <TableBody>
                             {filteredData.map((row, idx) => {
                                 // For participants, use module-based color; for attendees, alternate
-                                const rowBgClass = activeTab === 'participant' 
+                                const rowBgClass = activeTab === 'participant'
                                     ? getModuleRowColor(row as ParticipantRow)
                                     : (idx % 2 === 0 ? 'bg-white' : 'bg-gray-50')
-                                
+
                                 return (
                                     <TableRow key={idx} className={`${rowBgClass} hover:brightness-95 transition-all`}>
                                         {columns.map((col) => {
