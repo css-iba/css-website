@@ -20,13 +20,13 @@ import Confirmation from "../../../components/Home/Launch/Confirmation";
 type ParticipantFormData = z.infer<typeof participantSchema>
 
 interface Module {
-    name: string;
-    description: string;
-    minParticipants: number;
-    maxParticipants: number;
-    price: number;
-    guideLink: string;
-    category?: string;
+  name: string;
+  description: string;
+  minParticipants: number;
+  maxParticipants: number;
+  price: number;
+  guideLink: string;
+  category?: string;
 }
 
 export default function ParticipantForm() {
@@ -114,9 +114,9 @@ export default function ParticipantForm() {
 
     return hasModule && teamLeadEmailValid && p1Valid && areOptionalParticipantsValid();
   }, [selectedModule, form.watch('team_lead_email'), form.watch('participant1_name'), form.watch('participant1_phone'), form.watch('participant1_cnic'),
-      form.watch('participant2_name'), form.watch('participant2_phone'), form.watch('participant2_cnic'),
-      form.watch('participant3_name'), form.watch('participant3_phone'), form.watch('participant3_cnic'),
-      form.watch('participant4_name'), form.watch('participant4_phone'), form.watch('participant4_cnic')]);
+    form.watch('participant2_name'), form.watch('participant2_phone'), form.watch('participant2_cnic'),
+    form.watch('participant3_name'), form.watch('participant3_phone'), form.watch('participant3_cnic'),
+    form.watch('participant4_name'), form.watch('participant4_phone'), form.watch('participant4_cnic')]);
 
   const onSubmit = async (data: ParticipantFormData) => {
     setIsSubmitting(true)
@@ -161,11 +161,10 @@ export default function ParticipantForm() {
                 <div
                   key={mod.name}
                   onClick={() => setSelectedModule(mod)}
-                  className={`p-4 border rounded-xl cursor-pointer transition ${
-                    selectedModule?.name === mod.name 
-                      ? 'border-(--colour-secondary) ring-2 ring-(--colour-secondary) bg-blue-50' 
+                  className={`p-4 border rounded-xl cursor-pointer transition ${selectedModule?.name === mod.name
+                      ? 'border-(--colour-secondary) ring-2 ring-(--colour-secondary) bg-blue-50'
                       : 'border-gray-200 hover:shadow-md'
-                  }`}
+                    }`}
                 >
                   <div className="flex items-start justify-between">
                     <h3 className="font-semibold text-base text-gray-900">{mod.name}</h3>
@@ -216,9 +215,9 @@ export default function ParticipantForm() {
                 <Mail className="w-4 h-4 text-gray-600" />
                 Team Lead Email <span className="text-red-500">*</span>
               </label>
-              <Input 
+              <Input
                 type="email"
-                {...form.register('team_lead_email')} 
+                {...form.register('team_lead_email')}
                 placeholder="E.g., sample@example.com"
                 disabled={isSubmitting}
                 className="border-gray-300 focus:border-blue-500 transition"
@@ -234,11 +233,11 @@ export default function ParticipantForm() {
                 <User className="w-5 h-5 text-gray-700" />
                 Participant Details ({max} required)
               </h4>
-              
+
               {participantFields.slice(0, max).map((field, idx) => (
                 <div key={field.name} className="mb-6 pb-6 border-b last:border-b-0 last:pb-0 last:mb-0">
                   <h5 className="font-semibold text-base text-gray-800 mb-3">Participant {idx + 1} {idx === 0 && <span className="text-red-500">*</span>}</h5>
-                  
+
                   <div className="space-y-4">
                     <div className="space-y-2">
                       <label className="text-base font-semibold text-gray-900 flex items-center gap-2">
@@ -305,7 +304,7 @@ export default function ParticipantForm() {
                 <ArrowLeft className="w-5 h-5" />
                 Back
               </button>
-              <button 
+              <button
                 type="button"
                 onClick={() => setStage(3)}
                 disabled={isSubmitting || !isStage2Valid}
@@ -355,8 +354,8 @@ export default function ParticipantForm() {
                 <Building className="w-4 h-4 text-gray-600" />
                 Institute Name <span className="text-red-500">*</span>
               </label>
-              <Input 
-                {...form.register('institute_name')} 
+              <Input
+                {...form.register('institute_name')}
                 placeholder="E.g., IBA Karachi"
                 disabled={isSubmitting}
                 className="border-gray-300 focus:border-blue-500 transition"
@@ -372,8 +371,8 @@ export default function ParticipantForm() {
                 <Hash className="w-4 h-4 text-gray-600" />
                 Reference Number <span className="text-red-500">*</span>
               </label>
-              <Input 
-                {...form.register('reference_number')} 
+              <Input
+                {...form.register('reference_number')}
                 placeholder="Enter your payment reference number"
                 disabled={isSubmitting}
                 className="border-gray-300 focus:border-blue-500 transition"
@@ -382,7 +381,7 @@ export default function ParticipantForm() {
                 <p className="text-sm text-red-500">{form.formState.errors.reference_number.message}</p>
               )}
               <p className="text-sm text-gray-500 italic">
-                Enter the reference number you received after payment
+                Enter the reference number you received after payment in your email.
               </p>
             </div>
 
