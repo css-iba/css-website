@@ -16,13 +16,13 @@ import { Progress } from '@/components/ui/progress'
 import Confirmation from "../../../components/Home/Launch/Confirmation";
 
 type AttendeeFormData = {
-    name: string;
-    email: string;
-    phone_number: string;
-    cnic: string;
-    institute_name: string;
-    reference_number: string;
-    brand_ambassador_code?: string;
+  name: string;
+  email: string;
+  phone_number: string;
+  cnic: string;
+  institute_name: string;
+  reference_number: string;
+  brand_ambassador_code?: string;
 }
 
 export default function AttendeeForm() {
@@ -33,13 +33,13 @@ export default function AttendeeForm() {
     resolver: zodResolver(attendeeSchema),
     mode: 'onTouched',
     defaultValues: {
-        name: '',
-        email: '',
-        phone_number: '',
-        cnic: '',
-        institute_name: '',
-        reference_number: '',
-        brand_ambassador_code: '',
+      name: '',
+      email: '',
+      phone_number: '',
+      cnic: '',
+      institute_name: '',
+      reference_number: '',
+      brand_ambassador_code: '',
     }
   })
 
@@ -84,8 +84,8 @@ export default function AttendeeForm() {
             <User className="w-4 h-4 text-gray-600" />
             Full Name <span className="text-red-500">*</span>
           </label>
-          <Input 
-            {...form.register('name')} 
+          <Input
+            {...form.register('name')}
             placeholder="E.g., Abdullah Tariq"
             disabled={isSubmitting}
             className="border-gray-300 focus:border-blue-500 transition"
@@ -101,9 +101,9 @@ export default function AttendeeForm() {
             <Mail className="w-4 h-4 text-gray-600" />
             Email <span className="text-red-500">*</span>
           </label>
-          <Input 
+          <Input
             type="email"
-            {...form.register('email')} 
+            {...form.register('email')}
             placeholder="E.g., sample@example.com"
             disabled={isSubmitting}
             className="border-gray-300 focus:border-blue-500 transition"
@@ -119,8 +119,8 @@ export default function AttendeeForm() {
             <Phone className="w-4 h-4 text-gray-600" />
             Phone Number <span className="text-red-500">*</span>
           </label>
-          <Input 
-            {...form.register('phone_number')} 
+          <Input
+            {...form.register('phone_number')}
             placeholder="E.g., 03001234567"
             disabled={isSubmitting}
             className="border-gray-300 focus:border-blue-500 transition"
@@ -136,8 +136,8 @@ export default function AttendeeForm() {
             <IdCard className="w-4 h-4 text-gray-600" />
             CNIC (13 digits) <span className="text-red-500">*</span>
           </label>
-          <Input 
-            {...form.register('cnic')} 
+          <Input
+            {...form.register('cnic')}
             placeholder="E.g., 3520123456789"
             disabled={isSubmitting}
             className="border-gray-300 focus:border-blue-500 transition"
@@ -153,8 +153,8 @@ export default function AttendeeForm() {
             <Building className="w-4 h-4 text-gray-600" />
             Institute Name <span className="text-red-500">*</span>
           </label>
-          <Input 
-            {...form.register('institute_name')} 
+          <Input
+            {...form.register('institute_name')}
             placeholder="E.g., IBA Karachi"
             disabled={isSubmitting}
             className="border-gray-300 focus:border-blue-500 transition"
@@ -191,8 +191,8 @@ export default function AttendeeForm() {
             <Hash className="w-4 h-4 text-gray-600" />
             Reference Number <span className="text-red-500">*</span>
           </label>
-          <Input 
-            {...form.register('reference_number')} 
+          <Input
+            {...form.register('reference_number')}
             placeholder="Enter your payment reference number"
             disabled={isSubmitting}
             className="border-gray-300 focus:border-blue-500 transition"
@@ -201,7 +201,7 @@ export default function AttendeeForm() {
             <p className="text-sm text-red-500">{form.formState.errors.reference_number.message}</p>
           )}
           <p className="text-sm text-gray-500 italic">
-            Enter the reference number you received after payment
+            Enter the reference number you received after payment in your email.
           </p>
         </div>
 
