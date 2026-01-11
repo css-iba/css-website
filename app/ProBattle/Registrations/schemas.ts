@@ -10,7 +10,7 @@ const attendeeSchema = z.object({
   cnic: z.string().length(13, 'CNIC must be exactly 13 digits').regex(digitsOnly, 'CNIC must contain only digits'),
   institute_name: z.string().min(2, 'Institute name is required'),
   reference_number: z.string().min(1, 'Reference number is required'),
-  brand_ambassador_code: z.string().optional().refine(val => !val || val.length === 6, 'Brand ambassador code must be exactly 6 characters')
+  brand_ambassador_code: z.string().optional().refine(val => !val || val.length <= 15, 'Brand ambassador code must be less than 15 characters')
 })
 
 const participantSchema = z.object({
@@ -35,7 +35,7 @@ const participantSchema = z.object({
 
   institute_name: z.string().min(2, 'Institute name is required'),
   reference_number: z.string().min(1, 'Reference number is required'),
-  brand_ambassador_code: z.string().optional().refine(val => !val || val.length === 6, 'Brand ambassador code must be exactly 6 characters')
+  brand_ambassador_code: z.string().optional().refine(val => !val || val.length <= 15, 'Brand ambassador code must be less than 15 characters')
 })
 
 export { attendeeSchema, participantSchema }
