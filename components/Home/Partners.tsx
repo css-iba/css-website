@@ -16,6 +16,21 @@ const partnersData = [
     name: 'ACM NUCES',
     alt: 'ACM NUCES Logo',
     src: '/Home/acmnuces.png'
+  },
+  {
+    name: 'GDG MAJU',
+    alt: 'GDG MAJU Logo',
+    src: '/Home/GDG-MAJU.png'
+  },
+  {
+    name: 'GDG DHA Suffa',
+    alt: 'GDG DHA Suffa Logo',
+    src: '/Home/GDG-DHA-Suffa.png'
+  },
+  {
+    name: 'GDG JUW',
+    alt: 'GDG JUW Logo',
+    src: '/Home/GDG-JUW.png'
   }
 ];
 
@@ -26,16 +41,16 @@ const Partners: React.FC = () => {
         <h2 className="text-center text-2xl font-semibold font-heading">Our Trusted Partners</h2>
 
         <div className="mx-auto mt-10 max-w-lg sm:max-w-xl md:max-w-3xl lg:max-w-5xl flex flex-col md:flex-row flex-wrap items-center justify-center gap-10">
-            {partnersData.map((partner) => (
-              <div
-                key={partner.name}
-                className="w-[200px] h-[150px] flex items-center justify-center"
-              >
-                <div className="relative w-full h-full">
-                  <Image src={partner.src} alt={partner.alt} fill style={{ objectFit: 'contain' }} />
-                </div>
+          {partnersData.map((partner) => (
+            <div
+              key={partner.name}
+              className="w-[200px] h-[150px] flex items-center justify-center"
+            >
+              <div className="relative w-full h-full">
+                <Image src={partner.src} alt={partner.alt} fill style={{ objectFit: 'contain' }} />
               </div>
-            ))}
+            </div>
+          ))}
         </div>
       </div>
     </div>
