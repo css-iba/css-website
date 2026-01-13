@@ -31,6 +31,21 @@ const partnersData = [
     name: 'GDG JUW',
     alt: 'GDG JUW Logo',
     src: '/Home/GDG-JUW.png'
+  },
+  {
+    name: 'Bahria University',
+    alt: 'Bahria University Logo',
+    src: '/Home/Bahria.png'
+  },
+  {
+    name: 'BUDS',
+    alt: 'BUDS Logo',
+    src: '/Home/BUDS.png'
+  },
+  {
+    name: 'Techtics',
+    alt: 'Techtics Logo',
+    src: '/Home/Techtics.png'
   }
 ];
 
@@ -47,7 +62,13 @@ const Partners: React.FC = () => {
               className="w-[200px] h-[150px] flex items-center justify-center"
             >
               <div className="relative w-full h-full">
-                <Image src={partner.src} alt={partner.alt} fill style={{ objectFit: 'contain' }} />
+                <Image
+                  src={partner.src}
+                  alt={partner.alt}
+                  fill
+                  style={{ objectFit: 'contain' }}
+                  sizes="200px"
+                />
               </div>
             </div>
           ))}
