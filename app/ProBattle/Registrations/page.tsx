@@ -36,7 +36,7 @@ export default function ProBattle2026Page() {
             <p className="font-semibold text-red-500 font-heading text-[17px]">Important Note (Read this)</p>
 
             <p className="text-[15.5px] text-red-500/90 font-text mt-1">
-              Do not forget to fill the form after completing the payment. Incomplete Submissions won't be entertained.
+              Do not forget to fill the form after completing the payment. Incomplete Submissions won&apos;t be entertained.
             </p>
           </div>
         </div>
