@@ -4,7 +4,7 @@ import React from "react";
 import ParticipantForm from './ParticipantForm'
 import AttendeeForm from './AttendeeForm'
 import Link from "next/link";
-import { House, Users, User } from "lucide-react";
+import { House, Users, User, AlertTriangle } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function ProBattle2026Page() {
@@ -17,15 +17,29 @@ export default function ProBattle2026Page() {
           Back to ProBattle
         </Link>
       </div>
-      
+
       <div className="w-full max-w-2xl colour-box-secondary p-6 md:p-8 rounded-xl shadow-2xl border border-(--colour-secondary)">
         <h1 className="text-2xl md:text-4xl font-extrabold font-heading text-center mb-3 text-gray-900">
           ProBattle 2026 Registration
         </h1>
-        
+
         <p className="text-center text-base md:text-lg text-gray-700 font-text mb-8">
           Choose your registration type and complete the form below.
         </p>
+
+        {/* Important Note */}
+        <div
+          className="my-6 p-4 rounded-xl bg-red-500/10 border border-red-500/30 flex items-start gap-3"
+        >
+          <AlertTriangle className="w-6 h-6 text-red-500 shrink-0 mt-0.5" />
+          <div>
+            <p className="font-semibold text-red-500 font-heading text-[17px]">Important Note (Read this)</p>
+
+            <p className="text-[15.5px] text-red-500/90 font-text mt-1">
+              Do not forget to fill the form after completing the payment. Incomplete Submissions won't be entertained.
+            </p>
+          </div>
+        </div>
 
         {/* Shadcn Tabs */}
         <Tabs defaultValue="participant" className="w-full">
@@ -39,11 +53,11 @@ export default function ProBattle2026Page() {
               Attendee
             </TabsTrigger>
           </TabsList>
-          
+
           <TabsContent value="participant" className="mt-0">
             <ParticipantForm />
           </TabsContent>
-          
+
           <TabsContent value="attendee" className="mt-0">
             <AttendeeForm />
           </TabsContent>
