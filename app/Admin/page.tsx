@@ -72,7 +72,7 @@ export default function Admin() {
   const [authed, setAuthed] = useState<boolean>(false);
   const [rows, setRows] = useState<AnyCompetitionRecord[]>([]);
   const [error, setError] = useState<string | null>(null);
-  const [selectedCompetition, setSelectedCompetition] = useState<CompetitionKey>('Launch');
+  const [selectedCompetition, setSelectedCompetition] = useState<CompetitionKey>('ProBattle2026');
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
   // Check for existing session on mount
@@ -315,3 +315,4 @@ export default function Admin() {
     </main>
   );
 }
+
