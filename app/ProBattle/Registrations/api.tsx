@@ -24,17 +24,15 @@ interface ParticipantFormData {
     institute_name: string;
     reference_number: string;
     brand_ambassador_code?: string;
-}  
+}
 
 export async function insertParticipantRegistration(registrationData: ParticipantFormData) {
-  console.log('Attempting to insert registration data:', registrationData);
+    console.log('Attempting to insert registration data:', registrationData);
     try {
         // Use an array to insert a single record reliably and request the inserted row back
         const { data, error } = await supabase
             .from('probattle2026_participants')
-            .insert([registrationData])
-            .select()
-            .single();
+            .insert([registrationData]); // Removed .select().single() as data is not used
 
         if (error) {
             // console.error('Supabase Insertion Error (participants):', JSON.stringify(error, null, 2));
@@ -70,10 +68,8 @@ export async function insertAttendeeRegistration(registrationData: AttendeeFormD
         // Use an array to insert a single record reliably and request the inserted row back
         const { data, error } = await supabase
             .from('probattle2026_attendees')
-            .insert([registrationData])
-            .select()
-            .single();
-  
+            .insert([registrationData]); // Removed .select().single() as data is not used
+
         if (error) {
             // console.error('Supabase Insertion Error (attendees):', {
             //     message: (error as any).message,
