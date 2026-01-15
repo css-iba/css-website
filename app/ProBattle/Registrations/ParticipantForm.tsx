@@ -335,7 +335,7 @@ export default function ParticipantForm() {
               <h3 className="text-xl font-semibold font-heading text-gray-800">Payment Information</h3>
             </div>
 
-            {/* <p className="text-base text-gray-600 mb-4">
+            <p className="text-base text-gray-600 mb-4">
               Please complete your payment using the link below before submitting your registration.
             </p>
 
@@ -346,11 +346,11 @@ export default function ParticipantForm() {
               className="inline-block px-6 py-3 rounded-lg font-semibold transition colour-box-primary text-white hover:scale-[1.02] duration-200"
             >
               Go to Payment Portal →
-            </Link> */}
+            </Link>
 
-            <p className="text-base text-gray-600 mb-4">
+            {/* <p className="text-base text-gray-600 mb-4">
               For payment, please contact at <Link href="tel:+923323450675" className="text-blue-500 hover:underline">92 332 3450675</Link>. <span className="font-semibold">Use the reference number &apos;PR26&apos;</span>.
-            </p>
+            </p> */}
 
             {/* Institute Name */}
             <div className="space-y-2 mt-6">
