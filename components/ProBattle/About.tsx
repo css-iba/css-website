@@ -76,7 +76,7 @@ const About: React.FC = () => {
 
               {/* Register Now Button (Distinct Color) */}
               <Button asChild className="w-full backdrop-blur-sm bg-white/10 border border-white/20 hover:bg-white/20 transition-all duration-300 mt-6 text-xl">
-                <Link href="/register" className="flex items-center justify-center gap-2 w-full">
+                <Link href="/ProBattle/Registrations" className="flex items-center justify-center gap-2 w-full">
                   Register Now <LinkIcon className="size-5 text-[#19c8aa]" />
                 </Link>
               </Button>
