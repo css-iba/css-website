@@ -193,7 +193,7 @@ export default function AttendeeForm() {
         <div className="space-y-2 mt-6">
           <label className="text-base font-semibold text-gray-900 font-heading flex items-center gap-2">
             <Hash className="w-4 h-4 text-gray-600" />
-            Reference Number <span className="text-red-500">*</span>
+            Reference / Order Number <span className="text-red-500">*</span>
           </label>
           <Input
             {...form.register('reference_number')}
