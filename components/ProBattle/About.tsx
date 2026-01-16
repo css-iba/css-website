@@ -2,14 +2,14 @@
 
 import * as React from "react"
 import Image from "next/image"
-import { User, GraduationCap, Users, Layers, Presentation, Mic, Workflow, ArrowRight } from "lucide-react"
+import { User, GraduationCap, Users, Layers, Presentation, Mic, Workflow, ArrowRight, Link as LinkIcon } from "lucide-react"
 import { Button } from "../ui/button"
 import Link from "next/link"
 
 const About: React.FC = () => {
   return (
     <div className="relative isolate overflow-hidden colour-bg px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0 font-text colour-text">
-      
+
       {/* Background Pattern */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <svg
@@ -56,23 +56,30 @@ const About: React.FC = () => {
           <div className="lg:pr-4">
             <div className="lg:max-w-lg">
 
-              <p 
+              <p
                 className="text-base font-heading font-semibold text-[#19c8aa]"
               >
                 Introducing ProBattle &apos;26
               </p>
 
-              <h1 
+              <h1
                 className="mt-2 pb-2 text-4xl sm:text-5xl font-bold tracking-tight font-heading text-white"
               >
                 Bigger and Better
               </h1>
 
               <p className="mt-6 text-lg leading-relaxed text-justify">
-                Our initiative has expanded significantly—reaching more students, offering more modules, 
-                and delivering deeper hands-on learning. Whether you&apos;re in A Levels or an undergraduate program, 
+                Our initiative has expanded significantly—reaching more students, offering more modules,
+                and delivering deeper hands-on learning. Whether you&apos;re in A Levels or an undergraduate program,
                 our redesigned experience offers something meaningful for everyone.
               </p>
+
+              {/* Register Now Button (Distinct Color) */}
+              <Button asChild className="w-full backdrop-blur-sm bg-white/10 border border-white/20 hover:bg-white/20 transition-all duration-300 mt-6 text-xl">
+                <Link href="/register" className="flex items-center justify-center gap-2 w-full">
+                  Register Now <LinkIcon className="size-5 text-[#19c8aa]" />
+                </Link>
+              </Button>
 
             </div>
           </div>
@@ -80,7 +87,7 @@ const About: React.FC = () => {
 
         {/* Image */}
         <div className="lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden flex justify-center lg:block">
-            <Image alt="Program Overview" src="/ProBattle/about.jpg" width={1600} height={1600} className="
+          <Image alt="Program Overview" src="/ProBattle/about.jpg" width={1600} height={1600} className="
                 w-[300px]        /* mobile width */
                 sm:w-[300px]      /* small screens */
                 lg:w-[800px]      /* large screens */
@@ -94,7 +101,7 @@ const About: React.FC = () => {
                 brightness-90
                 contrast-100
                 "
-            />
+          />
         </div>
 
 
@@ -140,7 +147,7 @@ const About: React.FC = () => {
                 </h2>
 
                 <p className="mt-3 text-base leading-relaxed text-gray-300 text-justify">
-                  We now offer <strong className="text-[#19c8aa]">15+ diverse modules</strong>—covering everything from foundational 
+                  We now offer <strong className="text-[#19c8aa]">15+ diverse modules</strong>—covering everything from foundational
                   topics to advanced interdisciplinary subjects.
                 </p>
               </div>
