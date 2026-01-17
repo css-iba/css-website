@@ -142,7 +142,7 @@ const modulesData: ModuleCardProps[] = [
     minParticipants: 1,
     maxParticipants: 3,
     price: 1500,
-    guideLink: '',
+    guideLink: 'https://drive.google.com/file/d/14Ua5OsaN7zKz7L25uyplfid2D6vJgfQs/view?usp=sharing',
     category: 'Technical',
     Tier: [1]
   },
