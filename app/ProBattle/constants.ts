@@ -210,7 +210,7 @@ const modulesData: ModuleCardProps[] = [
     price: 1500,
     guideLink: '',
     category: 'Technical',
-    Tier: [1]
+    Tier: [2]
   },
   {
     name: 'Competitive Programming',
@@ -349,3 +349,4 @@ const modulesData: ModuleCardProps[] = [
 
 
 export { sponsors, contacts, modulesData };
+
