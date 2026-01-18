@@ -229,7 +229,7 @@ const modulesData: ModuleCardProps[] = [
       'Teams build and program robots to compete in sumo-style matches, aiming to push opponents out of a circular ring. The module emphasizes strategy, mechanical design, and precise control for effective competition.',
     minParticipants: 1,
     maxParticipants: 4,
-    price: 3000,
+    price: 2500,
     guideLink: 'https://drive.google.com/file/d/1pY95MdPKTR7v51bw9AnCzP2gPqoWeIVs/view?usp=drive_link',
     category: 'Robotics',
     Tier: [2, 3]
@@ -240,7 +240,7 @@ const modulesData: ModuleCardProps[] = [
       'This module challenges participants to design and program robots that can navigate a racecourse as quickly as possible. Speed, agility, and efficient pathfinding are key to winning the race.',
     minParticipants: 1,
     maxParticipants: 4,
-    price: 3000,
+    price: 2500,
     guideLink: 'https://drive.google.com/file/d/1VRP_E6TfLLULEpQhDYR-jN4JFBTBojNM/view?usp=drive_link',
     category: 'Robotics',
     Tier: [2, 3]
@@ -251,7 +251,7 @@ const modulesData: ModuleCardProps[] = [
       'This module combines robotics and strategy as teams build robots to compete in soccer matches. Participants focus on coordination, control systems, and teamwork-driven gameplay.',
     minParticipants: 1,
     maxParticipants: 4,
-    price: 3000,
+    price: 2500,
     guideLink: 'https://drive.google.com/file/d/1uhitvjEZDdea2Sa_6f-NnH2LN-R9QWIi/view?usp=drive_link',
     category: 'Robotics',
     Tier: [2, 3]
@@ -262,7 +262,7 @@ const modulesData: ModuleCardProps[] = [
       'Participants create robots that follow a predefined path using sensors and control algorithms. Precision, speed, and accuracy play a critical role in successfully completing the track.',
     minParticipants: 1,
     maxParticipants: 4,
-    price: 3000,
+    price: 2500,
     guideLink: 'https://drive.google.com/file/d/1gDhxdM82zDJARA4tlINwOlj5H5p46XUK/view?usp=drive_link',
     category: 'Robotics',
     Tier: [2, 3]
