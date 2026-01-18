@@ -287,7 +287,7 @@ const modulesData: ModuleCardProps[] = [
     price: 1500,
     guideLink: '',
     category: 'Non-Technical',
-    Tier: [3]
+    Tier: [2]
   },
 
   {
@@ -312,39 +312,39 @@ const modulesData: ModuleCardProps[] = [
     category: 'High School',
     Tier: [1]
   },
-  {
-    name: 'Speed Debugging (High School)',
-    description:
-      'This module introduces high school students to debugging by identifying and fixing simple coding errors. It strengthens understanding of code flow and logical reasoning.',
-    minParticipants: 1,
-    maxParticipants: 3,
-    price: 2500,
-    guideLink: '',
-    category: 'High School',
-    Tier: [2]
-  },
-  {
-    name: 'Innovate Lab',
-    description:
-      'A hands-on STEM experience where participants build and test creative structures and designs. The module encourages experimentation, teamwork, and innovative problem-solving.',
-    minParticipants: 1,
-    maxParticipants: 4,
-    price: 3000,
-    guideLink: 'https://drive.google.com/file/d/1LJydRh4T9yZyIM_v2Zp88e_b2UYZnYJi/view?usp=sharing',
-    category: 'High School',
-    Tier: [2, 3]
-  },
-  {
-    name: 'Cipher',
-    description:
-      'A mystery-based investigation module where participants analyze clues, uncover hidden patterns, and solve interconnected challenges using critical thinking and observation skills.',
-    minParticipants: 1,
-    maxParticipants: 3,
-    price: 2500,
-    guideLink: '',
-    category: 'High School',
-    Tier: [3]
-  },
+  // {
+  //   name: 'Speed Debugging (High School)',
+  //   description:
+  //     'This module introduces high school students to debugging by identifying and fixing simple coding errors. It strengthens understanding of code flow and logical reasoning.',
+  //   minParticipants: 1,
+  //   maxParticipants: 3,
+  //   price: 2500,
+  //   guideLink: '',
+  //   category: 'High School',
+  //   Tier: [2]
+  // },
+  // {
+  //   name: 'Innovate Lab',
+  //   description:
+  //     'A hands-on STEM experience where participants build and test creative structures and designs. The module encourages experimentation, teamwork, and innovative problem-solving.',
+  //   minParticipants: 1,
+  //   maxParticipants: 4,
+  //   price: 3000,
+  //   guideLink: 'https://drive.google.com/file/d/1LJydRh4T9yZyIM_v2Zp88e_b2UYZnYJi/view?usp=sharing',
+  //   category: 'High School',
+  //   Tier: [2, 3]
+  // },
+  // {
+  //   name: 'Cipher',
+  //   description:
+  //     'A mystery-based investigation module where participants analyze clues, uncover hidden patterns, and solve interconnected challenges using critical thinking and observation skills.',
+  //   minParticipants: 1,
+  //   maxParticipants: 3,
+  //   price: 2500,
+  //   guideLink: '',
+  //   category: 'High School',
+  //   Tier: [3]
+  // },
 ];
 
 
