@@ -9,7 +9,7 @@ const attendeeSchema = z.object({
   phone_number: z.string().length(11, 'Phone number must be exactly 11 digits').regex(digitsOnly, 'Phone number must contain only digits'),
   cnic: z.string().length(13, 'CNIC must be exactly 13 digits').regex(digitsOnly, 'CNIC must contain only digits'),
   institute_name: z.string().min(2, 'Institute name is required'),
-  reference_number: z.string().min(1, 'Reference number is required'),
+  reference_number: z.string().min(1, 'Reference number is required').refine(val => val.startsWith('17'), { message: '', path: ['reference_number'] }),
   brand_ambassador_code: z.string().optional().refine(val => !val || val.length <= 15, 'Brand ambassador code must be less than 15 characters')
 })
 
@@ -34,7 +34,7 @@ const participantSchema = z.object({
   participant4_cnic: z.string().optional().refine(val => !val || digitsOnly.test(val), 'CNIC must contain only digits').refine(val => !val || val.length === 13, 'CNIC must be exactly 13 digits'),
 
   institute_name: z.string().min(2, 'Institute name is required'),
-  reference_number: z.string().min(1, 'Reference number is required'),
+  reference_number: z.string().min(1, 'Reference number is required').refine(val => val.startsWith('17'), { message: '', path: ['reference_number'] }),
   brand_ambassador_code: z.string().optional().refine(val => !val || val.length <= 15, 'Brand ambassador code must be less than 15 characters')
 })
 
