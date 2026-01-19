@@ -6,8 +6,12 @@ import AttendeeForm from './AttendeeForm'
 import Link from "next/link";
 import { House, Users, User, AlertTriangle } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Card, CardContent } from "@/components/ui/card";
 
 export default function ProBattle2026Page() {
+  const attendeeRegistrationClosed: boolean = true; // Set to true to close attendee registration
+  const participantRegistrationClosed: boolean = false; // Set to true to close participant registration
+
   return (
     <main className="flex min-h-screen flex-col items-center p-4 sm:p-12 md:p-24 colour-bg">
       {/* Back button - top left */}
@@ -54,12 +58,36 @@ export default function ProBattle2026Page() {
             </TabsTrigger>
           </TabsList>
 
-          <TabsContent value="participant" className="mt-0">
+          <TabsContent value="participant" className="mt-0 relative">
             <ParticipantForm />
+            {participantRegistrationClosed && (
+              <div className="absolute inset-0 z-50 flex items-center justify-center rounded-xl overflow-hidden">
+                {/* translucent blurred backdrop that respects parent's rounded corners */}
+                <div className="absolute inset-0 bg-white/10 backdrop-blur-sm" />
+                <Card className="z-60 max-w-md mx-auto bg-[var(--colour-bg)]/80 border border-white/20 rounded-xl">
+                  <CardContent className="p-8 text-center">
+                    <h3 className="text-3xl md:text-4xl font-bold colour-text font-heading mb-2">Registrations are closed</h3>
+                    <p className="text-md md:text-lg colour-text font-text">Thank you for your interest — registrations are now closed.</p>
+                  </CardContent>
+                </Card>
+              </div>
+            )}
           </TabsContent>
 
-          <TabsContent value="attendee" className="mt-0">
+          <TabsContent value="attendee" className="mt-0 relative">
             <AttendeeForm />
+            {attendeeRegistrationClosed && (
+              <div className="absolute inset-0 z-50 flex items-center justify-center rounded-xl overflow-hidden">
+                {/* translucent blurred backdrop that respects parent's rounded corners */}
+                <div className="absolute inset-0 bg-white/10 backdrop-blur-sm" />
+                <Card className="z-60 max-w-md mx-auto bg-[var(--colour-bg)]/80 border border-white/20 rounded-xl">
+                  <CardContent className="p-8 text-center">
+                    <h3 className="text-3xl md:text-4xl font-bold colour-text font-heading mb-2">Registrations are closed</h3>
+                    <p className="text-md md:text-lg colour-text font-text">Thank you for your interest — attendee registrations are now closed.</p>
+                  </CardContent>
+                </Card>
+              </div>
+            )}
           </TabsContent>
         </Tabs>
       </div>
