@@ -130,7 +130,7 @@ const modulesData: ModuleCardProps[] = [
       'Participants will design and build a responsive full-stack web application focusing on clean UI, smooth functionality, and efficient code structure. This module emphasizes creativity, usability, and technical execution through hands-on development.',
     minParticipants: 1,
     maxParticipants: 3,
-    price: 2000,
+    price: 3000,
     guideLink: 'https://drive.google.com/file/d/12l9ynMDS7q3PbK1cFRn_0jSUV2-MDfth/view?usp=sharing',
     category: 'Technical',
     Tier: [1]
@@ -218,7 +218,7 @@ const modulesData: ModuleCardProps[] = [
       'Participants solve algorithmic problems that require speed, accuracy, and strong logical thinking. This module emphasizes efficient problem-solving techniques and performance under competitive conditions.',
     minParticipants: 1,
     maxParticipants: 2,
-    price: 2000,
+    price: 2500,
     guideLink: 'https://drive.google.com/file/d/1QE5UlhRTnGIf8ozD5ErXFFMHTqWdkp_H/view?usp=sharing',
     category: 'Technical',
     Tier: [3]
