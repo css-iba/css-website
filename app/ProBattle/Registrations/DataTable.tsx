@@ -99,7 +99,6 @@ const MODULE_COLORS: Record<string, string> = {
     'Cyber Warfare': 'bg-red-50',
     'Speed Debugging': 'bg-orange-50',
     'Competitive Programming': 'bg-lime-50',
-    'Maze Following Robot': 'bg-teal-50',
     'Robo Sumo': 'bg-green-50',
     'Robot Soccer': 'bg-violet-50',
     'Line Following Robot (University)': 'bg-fuchsia-50',
