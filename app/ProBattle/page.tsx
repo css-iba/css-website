@@ -10,6 +10,7 @@ import FAQs from "@/components/ProBattle/FAQs";
 import Details from "@/components/ProBattle/Details";
 import WorkshopNotification from "@/components/ProBattle/WorkshopNotification";
 import ItineraryShowcase from "@/components/ProBattle/ItineraryShowcase";
+import RoboticsModulesShowcase from "@/components/ProBattle/RoboticsModulesShowcase";
 
 const ProBattle: React.FC = () => {
   return (
@@ -18,6 +19,7 @@ const ProBattle: React.FC = () => {
       <Details />
       <ModulesSection />
       <RegisterCTA />
+      <RoboticsModulesShowcase />
       <WorkshopNotification />
       <ItineraryShowcase />
       <Contact />
