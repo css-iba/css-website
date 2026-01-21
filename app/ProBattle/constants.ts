@@ -124,105 +124,105 @@ const contacts: TeamContact[] = [
 ];
 
 const modulesData: ModuleCardProps[] = [
-  {
-    name: 'Web Development',
-    description:
-      'Participants will design and build a responsive full-stack web application focusing on clean UI, smooth functionality, and efficient code structure. This module emphasizes creativity, usability, and technical execution through hands-on development.',
-    minParticipants: 1,
-    maxParticipants: 3,
-    price: 3000,
-    guideLink: 'https://drive.google.com/file/d/12l9ynMDS7q3PbK1cFRn_0jSUV2-MDfth/view?usp=sharing',
-    category: 'Technical',
-    Tier: [1]
-  },
-  {
-    name: 'Business Intelligence',
-    description:
-      'This module focuses on transforming raw data into meaningful insights using data visualization and analytical tools. Participants will explore decision-making techniques and learn how data-driven strategies support business growth.',
-    minParticipants: 1,
-    maxParticipants: 3,
-    price: 2000,
-    guideLink: 'https://drive.google.com/file/d/14Ua5OsaN7zKz7L25uyplfid2D6vJgfQs/view?usp=sharing',
-    category: 'Technical',
-    Tier: [1]
-  },
-  {
-    name: 'Natural Language Processing',
-    description:
-      'Participants will work on building systems that understand and generate human language by combining information retrieval with language models. The module highlights context-aware responses and practical NLP applications.',
-    minParticipants: 1,
-    maxParticipants: 3,
-    price: 2000,
-    guideLink: 'https://drive.google.com/file/d/1GDIj6oJ7a-Vo8D6G8b099hjSOGhUhdQQ/view?usp=sharing',
-    category: 'Technical',
-    Tier: [1]
-  },
-  {
-    name: 'Machine Learning',
-    description:
-      'Teams will compete to build machine learning models using a provided dataset to achieve the best performance on unseen data. Rankings are based on evaluation metrics, encouraging innovation and strong modeling skills.',
-    minParticipants: 1,
-    maxParticipants: 3,
-    price: 2000,
-    guideLink: 'https://drive.google.com/file/d/1TE-QRuBZzXKMdIBsF1UpfFvc-po8Xpx7/view?usp=sharing',
-    category: 'Technical',
-    Tier: [1]
-  },
-  {
-    name: 'UI/UX Design',
-    description:
-      'This module challenges participants to redesign digital interfaces by improving usability, accessibility, and visual appeal. Teams analyze user journeys and propose design solutions that enhance overall user experience.',
-    minParticipants: 1,
-    maxParticipants: 3,
-    price: 2000,
-    guideLink: 'https://drive.google.com/file/d/1lBWwWJRy57faJDgDk3Qc_1wx8ckdKO_l/view?usp=sharing',
-    category: 'Technical',
-    Tier: [2]
-  },
-  {
-    name: 'Database Design',
-    description:
-      'Participants learn how to structure efficient database schemas and write meaningful queries using SQL. The focus is on data relationships, normalization, and building scalable, well-organized databases.',
-    minParticipants: 1,
-    maxParticipants: 3,
-    price: 2000,
-    guideLink: 'https://drive.google.com/file/d/1mIwGQO810BgQxwlt5LXYDzRxeXWsJ68w/view?usp=sharing',
-    category: 'Technical',
-    Tier: [2]
-  },
-  {
-    name: 'Cyber Warfare',
-    description:
-      'A cybersecurity-focused module where participants compete in a one-day cyber challenge featuring CTF clues, code-breaking puzzles, and cyber security trivia. Test your logic, speed, and teamwork in 5-6 hours of intense gameplay. Play smart. Play fast. Win big.',
-    minParticipants: 1,
-    maxParticipants: 3,
-    price: 2000,
-    guideLink: 'https://drive.google.com/file/d/14oIWz788aJ7kYQw2pKGq8iMTq9sBgyib/view?usp=sharing',
-    category: 'Technical',
-    Tier: [2]
-  },
-  {
-    name: 'Speed Debugging',
-    description:
-      'This module tests participants\' ability to quickly identify and fix errors in code. It strengthens code-reading skills, logical reasoning, and confidence in solving problems under time pressure.',
-    minParticipants: 1,
-    maxParticipants: 2,
-    price: 2000,
-    guideLink: 'https://drive.google.com/file/d/1Fs4xqgVoEyUCj4iMTueL8k0Mu9kTVK-8/view?usp=sharing',
-    category: 'Technical',
-    Tier: [2]
-  },
-  {
-    name: 'Competitive Programming',
-    description:
-      'Participants solve algorithmic problems that require speed, accuracy, and strong logical thinking. This module emphasizes efficient problem-solving techniques and performance under competitive conditions.',
-    minParticipants: 1,
-    maxParticipants: 2,
-    price: 2500,
-    guideLink: 'https://drive.google.com/file/d/1QE5UlhRTnGIf8ozD5ErXFFMHTqWdkp_H/view?usp=sharing',
-    category: 'Technical',
-    Tier: [3]
-  },
+  // {
+  //   name: 'Web Development',
+  //   description:
+  //     'Participants will design and build a responsive full-stack web application focusing on clean UI, smooth functionality, and efficient code structure. This module emphasizes creativity, usability, and technical execution through hands-on development.',
+  //   minParticipants: 1,
+  //   maxParticipants: 3,
+  //   price: 3000,
+  //   guideLink: 'https://drive.google.com/file/d/12l9ynMDS7q3PbK1cFRn_0jSUV2-MDfth/view?usp=sharing',
+  //   category: 'Technical',
+  //   Tier: [1]
+  // },
+  // {
+  //   name: 'Business Intelligence',
+  //   description:
+  //     'This module focuses on transforming raw data into meaningful insights using data visualization and analytical tools. Participants will explore decision-making techniques and learn how data-driven strategies support business growth.',
+  //   minParticipants: 1,
+  //   maxParticipants: 3,
+  //   price: 2000,
+  //   guideLink: 'https://drive.google.com/file/d/14Ua5OsaN7zKz7L25uyplfid2D6vJgfQs/view?usp=sharing',
+  //   category: 'Technical',
+  //   Tier: [1]
+  // },
+  // {
+  //   name: 'Natural Language Processing',
+  //   description:
+  //     'Participants will work on building systems that understand and generate human language by combining information retrieval with language models. The module highlights context-aware responses and practical NLP applications.',
+  //   minParticipants: 1,
+  //   maxParticipants: 3,
+  //   price: 2000,
+  //   guideLink: 'https://drive.google.com/file/d/1GDIj6oJ7a-Vo8D6G8b099hjSOGhUhdQQ/view?usp=sharing',
+  //   category: 'Technical',
+  //   Tier: [1]
+  // },
+  // {
+  //   name: 'Machine Learning',
+  //   description:
+  //     'Teams will compete to build machine learning models using a provided dataset to achieve the best performance on unseen data. Rankings are based on evaluation metrics, encouraging innovation and strong modeling skills.',
+  //   minParticipants: 1,
+  //   maxParticipants: 3,
+  //   price: 2000,
+  //   guideLink: 'https://drive.google.com/file/d/1TE-QRuBZzXKMdIBsF1UpfFvc-po8Xpx7/view?usp=sharing',
+  //   category: 'Technical',
+  //   Tier: [1]
+  // },
+  // {
+  //   name: 'UI/UX Design',
+  //   description:
+  //     'This module challenges participants to redesign digital interfaces by improving usability, accessibility, and visual appeal. Teams analyze user journeys and propose design solutions that enhance overall user experience.',
+  //   minParticipants: 1,
+  //   maxParticipants: 3,
+  //   price: 2000,
+  //   guideLink: 'https://drive.google.com/file/d/1lBWwWJRy57faJDgDk3Qc_1wx8ckdKO_l/view?usp=sharing',
+  //   category: 'Technical',
+  //   Tier: [2]
+  // },
+  // {
+  //   name: 'Database Design',
+  //   description:
+  //     'Participants learn how to structure efficient database schemas and write meaningful queries using SQL. The focus is on data relationships, normalization, and building scalable, well-organized databases.',
+  //   minParticipants: 1,
+  //   maxParticipants: 3,
+  //   price: 2000,
+  //   guideLink: 'https://drive.google.com/file/d/1mIwGQO810BgQxwlt5LXYDzRxeXWsJ68w/view?usp=sharing',
+  //   category: 'Technical',
+  //   Tier: [2]
+  // },
+  // {
+  //   name: 'Cyber Warfare',
+  //   description:
+  //     'A cybersecurity-focused module where participants compete in a one-day cyber challenge featuring CTF clues, code-breaking puzzles, and cyber security trivia. Test your logic, speed, and teamwork in 5-6 hours of intense gameplay. Play smart. Play fast. Win big.',
+  //   minParticipants: 1,
+  //   maxParticipants: 3,
+  //   price: 2000,
+  //   guideLink: 'https://drive.google.com/file/d/14oIWz788aJ7kYQw2pKGq8iMTq9sBgyib/view?usp=sharing',
+  //   category: 'Technical',
+  //   Tier: [2]
+  // },
+  // {
+  //   name: 'Speed Debugging',
+  //   description:
+  //     'This module tests participants\' ability to quickly identify and fix errors in code. It strengthens code-reading skills, logical reasoning, and confidence in solving problems under time pressure.',
+  //   minParticipants: 1,
+  //   maxParticipants: 2,
+  //   price: 2000,
+  //   guideLink: 'https://drive.google.com/file/d/1Fs4xqgVoEyUCj4iMTueL8k0Mu9kTVK-8/view?usp=sharing',
+  //   category: 'Technical',
+  //   Tier: [2]
+  // },
+  // {
+  //   name: 'Competitive Programming',
+  //   description:
+  //     'Participants solve algorithmic problems that require speed, accuracy, and strong logical thinking. This module emphasizes efficient problem-solving techniques and performance under competitive conditions.',
+  //   minParticipants: 1,
+  //   maxParticipants: 2,
+  //   price: 2500,
+  //   guideLink: 'https://drive.google.com/file/d/1QE5UlhRTnGIf8ozD5ErXFFMHTqWdkp_H/view?usp=sharing',
+  //   category: 'Technical',
+  //   Tier: [3]
+  // },
   {
     name: 'Robo Sumo',
     description:
@@ -267,51 +267,51 @@ const modulesData: ModuleCardProps[] = [
     category: 'Robotics',
     Tier: [2, 3]
   },
-  {
-    name: 'Tech Tank',
-    description:
-      'A pitching competition where teams present innovative tech ideas to a panel of judges. Projects are evaluated based on creativity, feasibility, impact, and presentation quality.',
-    minParticipants: 1,
-    maxParticipants: 4,
-    price: 3000,
-    guideLink: 'https://drive.google.com/file/d/1Y5NUSuWBST1VohevTIFqZe14zPYn07DL/view?usp=sharing',
-    category: 'Non-Technical',
-    Tier: [3]
-  },
-  {
-    name: 'FIFA',
-    description:
-      'A competitive gaming module where participants showcase their skills in FIFA matches. It emphasizes strategy, teamwork, and quick decision-making in a fast-paced virtual environment.',
-    minParticipants: 0,
-    maxParticipants: 1,
-    price: 1500,
-    guideLink: '',
-    category: 'Non-Technical',
-    Tier: [2]
-  },
+  // {
+  //   name: 'Tech Tank',
+  //   description:
+  //     'A pitching competition where teams present innovative tech ideas to a panel of judges. Projects are evaluated based on creativity, feasibility, impact, and presentation quality.',
+  //   minParticipants: 1,
+  //   maxParticipants: 4,
+  //   price: 3000,
+  //   guideLink: 'https://drive.google.com/file/d/1Y5NUSuWBST1VohevTIFqZe14zPYn07DL/view?usp=sharing',
+  //   category: 'Non-Technical',
+  //   Tier: [3]
+  // },
+  // {
+  //   name: 'FIFA',
+  //   description:
+  //     'A competitive gaming module where participants showcase their skills in FIFA matches. It emphasizes strategy, teamwork, and quick decision-making in a fast-paced virtual environment.',
+  //   minParticipants: 0,
+  //   maxParticipants: 1,
+  //   price: 1500,
+  //   guideLink: '',
+  //   category: 'Non-Technical',
+  //   Tier: [2]
+  // },
 
-  {
-    name: 'Vibe Coding',
-    description:
-      'An interactive coding module where participants explore programming through creativity and experimentation. From small projects to animations, it focuses on logic-building and creative expression.',
-    minParticipants: 1,
-    maxParticipants: 2,
-    price: 2500,
-    guideLink: 'https://drive.google.com/file/d/1SKD8iVb4Jq0g_ftQ5ukIsgby2WAOwbyk/view?usp=sharing',
-    category: 'Non-Technical',
-    Tier: [1]
-  },
-  {
-    name: 'Competitive Programming (High School)',
-    description:
-      'A beginner-friendly competitive programming module designed for high school students. It focuses on logical thinking, problem-solving techniques, and improving coding confidence.',
-    minParticipants: 1,
-    maxParticipants: 3,
-    price: 2500,
-    guideLink: 'https://drive.google.com/file/d/1QE5UlhRTnGIf8ozD5ErXFFMHTqWdkp_H/view?usp=sharing',
-    category: 'High School',
-    Tier: [1]
-  },
+  // {
+  //   name: 'Vibe Coding',
+  //   description:
+  //     'An interactive coding module where participants explore programming through creativity and experimentation. From small projects to animations, it focuses on logic-building and creative expression.',
+  //   minParticipants: 1,
+  //   maxParticipants: 2,
+  //   price: 2500,
+  //   guideLink: 'https://drive.google.com/file/d/1SKD8iVb4Jq0g_ftQ5ukIsgby2WAOwbyk/view?usp=sharing',
+  //   category: 'Non-Technical',
+  //   Tier: [1]
+  // },
+  // {
+  //   name: 'Competitive Programming (High School)',
+  //   description:
+  //     'A beginner-friendly competitive programming module designed for high school students. It focuses on logical thinking, problem-solving techniques, and improving coding confidence.',
+  //   minParticipants: 1,
+  //   maxParticipants: 3,
+  //   price: 2500,
+  //   guideLink: 'https://drive.google.com/file/d/1QE5UlhRTnGIf8ozD5ErXFFMHTqWdkp_H/view?usp=sharing',
+  //   category: 'High School',
+  //   Tier: [1]
+  // },
   // {
   //   name: 'Speed Debugging (High School)',
   //   description:
