@@ -9,7 +9,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function ProBattle2026Page() {
-  const attendeeRegistrationClosed: boolean = false; // Set to true to close attendee registration
+  const attendeeRegistrationClosed: boolean = true; // Set to true to close attendee registration
   const participantRegistrationClosed: boolean = false; // Set to true to close participant registration
 
   return (
@@ -94,9 +94,3 @@ export default function ProBattle2026Page() {
     </main>
   )
 }
-
-
-
-
-
-
