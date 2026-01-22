@@ -157,17 +157,17 @@ const modulesData: ModuleCardProps[] = [
   //   category: 'Technical',
   //   Tier: [1]
   // },
-  // {
-  //   name: 'Machine Learning',
-  //   description:
-  //     'Teams will compete to build machine learning models using a provided dataset to achieve the best performance on unseen data. Rankings are based on evaluation metrics, encouraging innovation and strong modeling skills.',
-  //   minParticipants: 1,
-  //   maxParticipants: 3,
-  //   price: 2000,
-  //   guideLink: 'https://drive.google.com/file/d/1TE-QRuBZzXKMdIBsF1UpfFvc-po8Xpx7/view?usp=sharing',
-  //   category: 'Technical',
-  //   Tier: [1]
-  // },
+  {
+    name: 'Machine Learning',
+    description:
+      'Teams will compete to build machine learning models using a provided dataset to achieve the best performance on unseen data. Rankings are based on evaluation metrics, encouraging innovation and strong modeling skills.',
+    minParticipants: 1,
+    maxParticipants: 3,
+    price: 2000,
+    guideLink: 'https://drive.google.com/file/d/1TE-QRuBZzXKMdIBsF1UpfFvc-po8Xpx7/view?usp=sharing',
+    category: 'Technical',
+    Tier: [1]
+  },
   // {
   //   name: 'UI/UX Design',
   //   description:
