@@ -9,8 +9,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function ProBattle2026Page() {
-  const attendeeRegistrationClosed: boolean = false; // Set to true to close attendee registration
-  const participantRegistrationClosed: boolean = false; // Set to true to close participant registration
+  const attendeeRegistrationClosed: boolean = true; // Set to true to close attendee registration
+  const participantRegistrationClosed: boolean = true; // Set to true to close participant registration
 
   return (
     <main className="flex min-h-screen flex-col items-center p-4 sm:p-12 md:p-24 colour-bg">
