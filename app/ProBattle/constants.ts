@@ -111,14 +111,14 @@ const contacts: TeamContact[] = [
     name: "Muhammad Arrayyan Asad",
     title: "EC Operations/Logistics",
     email: "M.Arrayyan.30557@khi.iba.edu.pk",
-    phone: "(+92) 311-4976336",
+    phone: "",
     avatarUrl: ""
   },
   {
     name: "Abdul Haseeb",
     title: "EC Registrations",
     email: "",
-    phone: "(+92) 332-3450675",
+    phone: "",
     avatarUrl: ""
   }
 ];
