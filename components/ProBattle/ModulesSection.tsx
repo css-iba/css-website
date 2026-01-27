@@ -151,7 +151,6 @@ export default function ModulesSection() {
               {/* Module participant limit reached notice */}
               <div className="mt-5">
                 <span className="font-semibold text-red-600 font-heading text-[20px]">Registrations closed</span>
-                <span className="ml-2 font-bold text-red-500 text-[20px]">Only accepting robotics registrations</span>
               </div>
 
             </div>
