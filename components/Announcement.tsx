@@ -45,7 +45,7 @@ const AnnouncementBar: React.FC = () => {
           <svg viewBox="0 0 2 2" aria-hidden="true" className="mx-2 inline size-2 fill-gray-900">
             <circle r={1} cx={1} cy={1} />
           </svg>
-          ProBattle &apos;26 on 24<sup>th</sup> - 25<sup>th</sup> January. <strong>Registrations have been closed, only robotics registrations are going on.</strong>
+          ProBattle &apos;26 has concluded. <strong> Thank You for your participation.</strong>
         </p>
         <Link
           href="/ProBattle"
