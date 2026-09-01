@@ -1,0 +1,111 @@
+---
+interface Props {
+  variant?: 'default' | 'magenta' | 'violet' | 'cyan' | 'outline';
+  size?: 'sm' | 'md';
+  font?: 'tech' | 'pixel' | 'body';
+  class?: string;
+}
+
+const {
+  variant = 'default',
+  size = 'sm',
+  font = 'tech',
+  class: className = '',
+} = Astro.props;
+---
+
+<span class={`badge badge-${variant} badge-${size} font-${font} ${className}`}>
+  <slot />
+</span>
+
+<style>
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  .font-tech {
+    font-family: var(--font-tech);
+    font-weight: 700;
+  }
+
+  .font-pixel {
+    font-family: var(--font-pixel);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+    font-weight: 600;
+  }
+
+  .badge-sm {
+    padding: 0.35rem 0.65rem;
+  }
+
+  .badge-sm.font-tech {
+    font-size: 1.05rem;
+  }
+
+  .badge-sm.font-pixel {
+    font-size: 0.65rem;
+  }
+
+  .badge-sm.font-body {
+    font-size: 0.75rem;
+  }
+
+  .badge-md {
+    padding: 0.45rem 0.85rem;
+  }
+
+  .badge-md.font-tech {
+    font-size: 1.2rem;
+  }
+
+  .badge-md.font-pixel {
+    font-size: 0.75rem;
+  }
+
+  .badge-md.font-body {
+    font-size: 0.85rem;
+  }
+
+  .badge-default {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-muted);
+    border: 1px solid var(--border-subtle);
+  }
+
+  .badge-magenta {
+    background: rgba(217, 70, 239, 0.15);
+    color: #f472b6;
+    border: 1px solid rgba(217, 70, 239, 0.4);
+    box-shadow: 0 0 12px rgba(217, 70, 239, 0.25);
+  }
+
+  .badge-violet {
+    background: rgba(124, 42, 232, 0.15);
+    color: #c084fc;
+    border: 1px solid rgba(124, 42, 232, 0.4);
+    box-shadow: 0 0 12px rgba(124, 42, 232, 0.25);
+  }
+
+  .badge-cyan {
+    background: rgba(38, 198, 218, 0.15);
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.25);
+  }
+
+  .badge-outline {
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px dashed rgba(255, 255, 255, 0.3);
+  }
+</style>

@@ -1,0 +1,908 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CubeLogo from '../components/CubeLogo.astro';
+import Button from '../components/Button.astro';
+import Card from '../components/Card.astro';
+import Badge from '../components/Badge.astro';
+import TerminalWindow from '../components/TerminalWindow.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+
+const managementTeamFormUrl = 'https://forms.gle/Hz9rqKgk6PmQYFEZ8';
+---
+
+<Layout
+  title="IBA Computer Science Society"
+  description="Official website of the Computer Science Society at IBA Karachi. Open to all programs and everyone across campus for Session 2026-2027!"
+>
+  <Header />
+
+  <main>
+    <section class="hero-section bg-void">
+      <div class="poster-smoke-band"></div>
+
+      <div class="container hero-container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="hero-badge-row">
+              <Badge variant="magenta" size="md" font="tech">
+                SESSION 2026-2027 :: ACTIVE
+              </Badge>
+              <Badge variant="outline" size="md" font="tech">
+                IBA KARACHI
+              </Badge>
+            </div>
+
+            <div class="hero-poster-header">
+              <h1 class="hero-poster-title poster-stack">
+                CSS IS <br />
+                <span class="text-gradient">BACK</span>
+              </h1>
+              <div class="hero-poster-year font-display">2026–2027</div>
+            </div>
+
+            <div class="hero-desc font-body">
+              <p class="hero-desc-lead">
+                We’re the <strong>Computer Science Society (CSS) at IBA</strong
+                >, and this year we’re giving it a full reboot.
+              </p>
+            </div>
+
+            <div class="hero-actions">
+              <Button href="#join" variant="primary" size="lg">
+                INTERESTED IN JOINING?
+              </Button>
+              <Button href="#coming-soon" variant="outline" size="lg">
+                COMING SOON
+              </Button>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="cube-stage">
+              <CubeLogo
+                size={260}
+                glow={true}
+                alt="CSS IBA 3D Faceted Cube Logo"
+              />
+              <div class="cube-caption font-tech">
+                COMPUTER SCIENCE SOCIETY // 2026-2027
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-terminal-row">
+          <TerminalWindow />
+        </div>
+      </div>
+    </section>
+
+    <section id="vision" class="section-padding bg-void vision-section">
+      <div class="container">
+        <SectionHeader
+          tag="CORE FOUNDATION"
+          title="OUR VISION?"
+          subtitle="Building an empowered, tech-driven student community centered around three fundamental pillars."
+        />
+
+        <div class="vision-cards-grid">
+          <Card accent="violet" class="vision-card">
+            <div class="vision-card-header">
+              <span class="vision-pillar-num font-tech">01 // PILLAR</span>
+              <Badge variant="violet" size="sm" font="pixel">INCLUSIVITY</Badge>
+            </div>
+            <h3 class="vision-card-title font-display">OPEN TO ALL</h3>
+            <p class="vision-card-desc font-body">
+              CSS is for <strong>everyone across all academic programs</strong>.
+              No prior coding experience required, whether you're in CS, BBA,
+              Social Sciences, or Accounting, you belong here.
+            </p>
+            <div class="vision-card-footer font-tech">
+              <span class="vision-tag-dot">●</span> ALL MAJORS & SKILL LEVELS
+            </div>
+          </Card>
+
+          <Card accent="magenta" class="vision-card">
+            <div class="vision-card-header">
+              <span class="vision-pillar-num font-tech">02 // PILLAR</span>
+              <Badge variant="magenta" size="sm" font="pixel">INNOVATION</Badge>
+            </div>
+            <h3 class="vision-card-title font-display">BUILD & EXPERIMENT</h3>
+            <p class="vision-card-desc font-body">
+              From high-energy <strong>hackathons and founder keynotes</strong> to
+              hands-on workshops and developer build sessions, we provide the runway
+              to launch real projects.
+            </p>
+            <div class="vision-card-footer font-tech">
+              <span class="vision-tag-dot">●</span> HACKATHONS & FOUNDER TALKS
+            </div>
+          </Card>
+
+          <Card accent="pink" class="vision-card">
+            <div class="vision-card-header">
+              <span class="vision-pillar-num font-tech">03 // PILLAR</span>
+              <Badge variant="cyan" size="sm" font="pixel">IMPACT</Badge>
+            </div>
+            <h3 class="vision-card-title font-display">REAL-WORLD GROWTH</h3>
+            <p class="vision-card-desc font-body">
+              Direct access to <strong
+                >CEOs, YC founders, industry leaders, and tech mentors</strong
+              >. Gain real leadership experience, build network equity, and
+              shape your career trajectory.
+            </p>
+            <div class="vision-card-footer font-tech">
+              <span class="vision-tag-dot">●</span> CAREER EQUITY & MENTORSHIP
+            </div>
+          </Card>
+        </div>
+      </div>
+    </section>
+
+    <!-- RECRUITMENT SECTION (Poster 2 Retro OS Theme) -->
+    <section id="join" class="section-padding bg-smoke-band">
+      <div class="container">
+        <SectionHeader
+          tag="RECRUITMENT"
+          title="INTERESTED IN JOINING?"
+          subtitle="Explore official membership and leadership roles for Session 2026-2027. Open to all students across every academic discipline."
+        />
+
+        <div class="join-cards-grid">
+          <Card
+            accent="none"
+            class="join-role-card disabled-card retro-window-card"
+          >
+            <div class="retro-window-bar muted-bar">
+              <span class="retro-win-title font-tech"
+                >SYS_WIN // EC_RECRUITMENT.EXE</span
+              >
+              <div class="retro-win-controls">
+                <span class="retro-win-btn font-pixel">_</span>
+                <span class="retro-win-btn font-pixel">□</span>
+                <span class="retro-win-btn close font-pixel">✕</span>
+              </div>
+            </div>
+
+            <div class="card-inner-padding">
+              <div class="card-top-row">
+                <Badge variant="outline" size="md" font="pixel">
+                  SOPHOMORES & JUNIORS
+                </Badge>
+              </div>
+
+              <div class="retro-hazard-banner hazard-muted font-pixel">
+                <span class="hazard-icon">⚠️</span> APPLICATIONS CLOSED
+              </div>
+
+              <h3 class="role-title font-display role-title-muted">
+                EXECUTIVE COUNCIL
+              </h3>
+
+              <p class="role-desc font-body text-muted">
+                Lead society divisions across <strong
+                  >Operations, Marketing & Creatives, Technology, External
+                  Relations, Registration,</strong
+                > and <strong>Programs & Development</strong>. ECs drive
+                strategy, lead core initiatives, gain real-world leadership
+                experience, connect with industry leaders, and enjoy full
+                society perks beyond just the work.
+              </p>
+
+              <div class="role-cta">
+                <Button variant="outline" size="lg" disabled={true}>
+                  APPLICATIONS CLOSED
+                </Button>
+              </div>
+            </div>
+          </Card>
+
+          <Card accent="magenta" class="join-role-card retro-window-card">
+            <div class="retro-window-bar">
+              <span class="retro-win-title font-tech"
+                >SYS_WIN // MT_RECRUITMENT.EXE</span
+              >
+              <div class="retro-win-controls">
+                <span class="retro-win-btn font-pixel">_</span>
+                <span class="retro-win-btn font-pixel">□</span>
+                <span class="retro-win-btn close font-pixel">✕</span>
+              </div>
+            </div>
+
+            <div class="card-inner-padding">
+              <div class="card-top-row">
+                <Badge variant="magenta" size="md" font="pixel">
+                  FOR FRESHMEN
+                </Badge>
+                <div class="speech-bubble font-pixel">NOW LIVE!</div>
+              </div>
+
+              <div class="retro-hazard-banner font-pixel">
+                <span class="hazard-icon">⚠️</span> HELP BUILD & SHAPE CSS
+              </div>
+
+              <h3 class="role-title font-display">MANAGEMENT TEAM</h3>
+
+              <p class="role-desc font-body">
+                Work alongside ECs across <strong
+                  >Operations, Marketing & Creatives, Technology, External
+                  Relations, Registration,</strong
+                > and <strong>Programs & Development</strong>. MTs gain hands-on
+                execution experience, direct mentorship, technical growth, and
+                full society benefits as we build together.
+              </p>
+
+              <div class="role-cta">
+                <Button
+                  href={managementTeamFormUrl}
+                  target="_blank"
+                  variant="primary"
+                  size="lg"
+                >
+                  APPLY FOR MANAGEMENT TEAM
+                </Button>
+              </div>
+            </div>
+          </Card>
+        </div>
+      </div>
+    </section>
+
+    <section id="coming-soon" class="section-padding bg-smoke-band">
+      <div class="container">
+        <SectionHeader
+          tag="We're so back 🔥"
+          title="COMING SOON"
+          subtitle="We have a lot of exciting things planned for this year!"
+        />
+
+        <div class="announcement-banner">
+          <Card accent="magenta" class="announcement-card">
+            <div class="announcement-badge font-tech">
+              <span class="pulse-dot"></span> SESSION 2026-2027 // ANNOUNCEMENTS DROPPING
+              HERE
+            </div>
+
+            <h3 class="announcement-headline font-display">
+              STAY TUNED FOR WHAT'S NEXT
+            </h3>
+
+            <p class="announcement-text font-body">
+              We have a lot planned for this year! All event registrations,
+              workshop schedules, and competition signups will be announced
+              right here coming soon. Stay tuned!
+            </p>
+
+            <div class="announcement-status font-body">
+              <span class="eligibility-arrow">▶</span> SNEAK PEEK: Currently preparing
+              our official launch event & upcoming sessions!
+            </div>
+          </Card>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .section-padding {
+    padding-top: 5.5rem;
+    padding-bottom: 5.5rem;
+  }
+
+  .bg-void {
+    background-color: var(--bg-void);
+  }
+
+  .hero-section {
+    padding-top: 5rem;
+    padding-bottom: 5.5rem;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--bg-void);
+    contain: layout paint;
+  }
+
+  .hero-container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 3.5rem;
+    align-items: center;
+  }
+
+  .hero-badge-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-poster-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-poster-title {
+    font-size: clamp(3.2rem, 7.5vw, 6.2rem);
+    font-weight: 900;
+    line-height: 0.88;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+  }
+
+  .hero-poster-year {
+    font-size: clamp(2rem, 4.5vw, 3.8rem);
+    font-weight: 900;
+    line-height: 1;
+    color: var(--text-primary);
+    margin-top: 0.5rem;
+    letter-spacing: 0.02em;
+  }
+
+  .hero-desc {
+    max-width: 620px;
+    margin-bottom: 2rem;
+  }
+
+  .hero-desc-lead {
+    font-size: 1.15rem;
+    color: var(--text-primary);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    opacity: 0.95;
+  }
+
+  .hero-desc-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-subtle);
+    border-radius: 6px;
+    padding: 0.85rem 1.1rem;
+  }
+
+  .hero-desc-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.98rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  .hero-item-bullet {
+    color: var(--accent-magenta);
+    font-size: 1.1rem;
+    line-height: 1.2;
+    flex-shrink: 0;
+  }
+
+  .hero-desc-tagline {
+    font-size: 1.05rem;
+    color: var(--accent-pink);
+    font-weight: 500;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-terminal-row {
+    margin-top: 2.25rem;
+    width: 100%;
+  }
+
+  .hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .cube-stage {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cube-caption {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--accent-magenta);
+    letter-spacing: 0.08em;
+    margin-top: 1.75rem;
+    text-shadow: 0 0 12px rgba(192, 38, 211, 0.4);
+    text-align: center;
+  }
+
+  .join-cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: stretch;
+  }
+
+  .join-role-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex: 1;
+  }
+
+  .card-top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .role-status-active {
+    font-size: 0.65rem;
+    font-family: var(--font-pixel);
+    font-weight: 400;
+    color: #4ade80;
+    text-shadow: 0 0 2px rgba(74, 222, 128, 0.4);
+    letter-spacing: 0.05em;
+  }
+
+  .role-status-disabled {
+    font-size: 0.65rem;
+    font-family: var(--font-pixel);
+    font-weight: 400;
+    color: #a1a1aa;
+    text-shadow: 0 0 2px rgba(161, 161, 170, 0.3);
+    letter-spacing: 0.05em;
+  }
+
+  .role-title {
+    font-size: clamp(1.35rem, 4.2vw, 2rem);
+    font-weight: 900;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    line-height: 1.05;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .role-title-muted {
+    color: #a1a1aa;
+  }
+
+  .role-desc {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 1.75rem;
+    flex-grow: 1;
+  }
+
+  .role-cta {
+    display: flex;
+    margin-top: auto;
+    width: 100%;
+  }
+
+  .role-cta :global(.btn) {
+    width: 100%;
+  }
+
+  .disabled-card {
+    opacity: 0.75;
+  }
+
+  .coming-soon-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .teaser-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .teaser-title {
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: var(--text-primary);
+    margin-bottom: 0.85rem;
+    line-height: 1.15;
+  }
+
+  .teaser-desc {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+  }
+
+  .teaser-status {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #e879f9;
+    padding-top: 0.85rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    letter-spacing: 0.02em;
+  }
+
+  .announcement-banner {
+    width: 100%;
+  }
+
+  .announcement-card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem 2rem;
+  }
+
+  .announcement-badge {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #f472b6;
+    margin-bottom: 1rem;
+    letter-spacing: 0.06em;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .announcement-headline {
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    font-weight: 900;
+    color: var(--text-primary);
+    margin-bottom: 1.25rem;
+    line-height: 1.1;
+  }
+
+  .announcement-text {
+    font-size: 1.15rem;
+    color: var(--text-primary);
+    line-height: 1.65;
+    max-width: 680px;
+    margin-bottom: 1.75rem;
+    opacity: 0.95;
+  }
+
+  .announcement-status {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #e879f9;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    letter-spacing: 0.02em;
+  }
+
+  /* OUR VISION SECTION STYLES */
+  .vision-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    align-items: stretch;
+  }
+
+  .vision-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .vision-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .vision-pillar-num {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.06em;
+  }
+
+  .vision-card-title {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    line-height: 1.1;
+  }
+
+  .vision-card-desc {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+  }
+
+  .vision-card-footer {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--accent-magenta);
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    letter-spacing: 0.04em;
+  }
+
+  .vision-tag-dot {
+    color: var(--accent-pink);
+    font-size: 0.8rem;
+  }
+
+  /* RETRO OS WINDOW STYLES (Poster 2 Theme) */
+  .retro-window-card {
+    padding: 0 !important;
+  }
+
+  .retro-window-bar {
+    background: linear-gradient(90deg, #1e3a8a, #7c2ae8);
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .retro-window-bar.muted-bar {
+    background: #181824;
+  }
+
+  .retro-win-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.06em;
+  }
+
+  .retro-win-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .retro-win-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    font-size: 0.65rem;
+    border-radius: 2px;
+    cursor: default;
+  }
+
+  .retro-win-btn.close {
+    background: #ef4444;
+    color: #ffffff;
+  }
+
+  .card-inner-padding {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .speech-bubble {
+    background: #ffffff;
+    color: #1e3a8a;
+    font-size: 0.65rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+    position: relative;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+  }
+
+  .speech-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 12px;
+    border-width: 5px 5px 0;
+    border-style: solid;
+    border-color: #ffffff transparent;
+    display: block;
+    width: 0;
+  }
+
+  .retro-hazard-banner {
+    background: rgba(234, 179, 8, 0.12);
+    border: 1px solid rgba(234, 179, 8, 0.4);
+    color: #fde047;
+    font-size: 0.7rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    letter-spacing: 0.05em;
+  }
+
+  .hazard-icon {
+    font-size: 0.85rem;
+  }
+
+  .hazard-muted {
+    background: rgba(161, 161, 170, 0.1);
+    border-color: rgba(161, 161, 170, 0.25);
+    color: #a1a1aa;
+  }
+
+  @media (max-width: 960px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .hero-badge-row {
+      justify-content: center;
+    }
+
+    .hero-actions {
+      justify-content: center;
+    }
+
+    .hero-desc {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .join-cards-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .vision-cards-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .coming-soon-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .section-padding {
+      padding-top: 3.5rem;
+      padding-bottom: 3.5rem;
+    }
+
+    .hero-section {
+      padding-top: 3.5rem;
+      padding-bottom: 3.5rem;
+    }
+
+    .hero-poster-title {
+      font-size: clamp(2.4rem, 9vw, 6.2rem);
+    }
+
+    .hero-poster-year {
+      font-size: clamp(1.6rem, 6vw, 3.8rem);
+    }
+
+    .hero-desc {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+    }
+
+    .hero-desc-lead {
+      font-size: 1.05rem;
+    }
+
+    .hero-desc-item {
+      font-size: 0.92rem;
+    }
+
+    .role-title {
+      font-size: clamp(1.2rem, 5.5vw, 1.55rem);
+      letter-spacing: -0.01em;
+    }
+
+    .card-inner-padding {
+      padding: 1.25rem 0.95rem;
+    }
+
+    .announcement-text {
+      flex-direction: column;
+      width: 100%;
+      gap: 0.85rem;
+    }
+
+    .hero-actions {
+      flex-direction: column;
+      width: 100%;
+      gap: 0.85rem;
+    }
+
+    .hero-actions :global(.btn) {
+      width: 100%;
+    }
+
+    .hero-badge-row {
+      flex-wrap: wrap;
+    }
+
+    .cube-stage {
+      max-width: 100%;
+    }
+
+    .cube-caption {
+      font-size: 0.95rem;
+      margin-top: 1.25rem;
+    }
+
+    .announcement-card {
+      padding: 1.75rem 1rem;
+    }
+
+    .announcement-badge {
+      font-size: 0.95rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .announcement-headline {
+      font-size: clamp(1.6rem, 5.5vw, 3.2rem);
+    }
+
+    .announcement-text {
+      font-size: 1.05rem;
+    }
+
+    .announcement-status {
+      font-size: 0.88rem;
+    }
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(0.95);
+      opacity: 0.8;
+    }
+    50% {
+      transform: scale(1.25);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0.95);
+      opacity: 0.8;
+    }
+  }
+</style>

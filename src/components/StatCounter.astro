@@ -1,0 +1,94 @@
+---
+interface Props {
+  value: string;
+  label: string;
+  sub?: string;
+  accent?: 'violet' | 'magenta' | 'pink' | 'cyan';
+  class?: string;
+}
+
+const {
+  value,
+  label,
+  sub,
+  accent = 'magenta',
+  class: className = '',
+} = Astro.props;
+---
+
+<div class={`stat-box stat-accent-${accent} ${className}`}>
+  <div class="stat-value font-tech">{value}</div>
+  <div class="stat-label font-pixel">{label}</div>
+  {sub && <div class="stat-sub font-body">{sub}</div>}
+</div>
+
+<style>
+  .stat-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem;
+    background: var(--bg-panel);
+    border: 1px solid var(--border-subtle);
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .stat-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--border-subtle);
+    transition: background 0.3s ease;
+  }
+
+  .stat-box:hover {
+    background: var(--bg-panel-hover);
+    transform: translateY(-3px);
+  }
+
+  .stat-accent-magenta::before {
+    background: var(--accent-magenta);
+  }
+
+  .stat-accent-violet::before {
+    background: var(--accent-violet);
+  }
+
+  .stat-accent-pink::before {
+    background: var(--accent-pink);
+  }
+
+  .stat-accent-cyan::before {
+    background: #38bdf8;
+  }
+
+  .stat-value {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--text-primary);
+    letter-spacing: 0.02em;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-label {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .stat-sub {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 0.35rem;
+    opacity: 0.8;
+  }
+</style>

@@ -1,0 +1,64 @@
+---
+interface Props {
+  size?: number;
+  class?: string;
+  glow?: boolean;
+  alt?: string;
+}
+
+const {
+  size = 44,
+  class: className = '',
+  glow = true,
+  alt = 'CSS IBA Logo',
+} = Astro.props;
+---
+
+<div
+  class={`cube-logo-wrapper ${glow ? 'has-glow' : ''} ${className}`}
+  style={`width: ${size}px; height: ${size}px;`}
+>
+  <picture class="cube-picture">
+    <source srcset="/images/css-cube.webp" type="image/webp" />
+    <img
+      src="/images/css-cube.png"
+      alt={alt}
+      width={size}
+      height={size}
+      class="cube-img"
+      loading="eager"
+      decoding="async"
+    />
+  </picture>
+</div>
+
+<style>
+  .cube-logo-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .has-glow {
+    filter: drop-shadow(0 0 14px rgba(192, 38, 211, 0.45));
+  }
+
+  .cube-logo-wrapper:hover {
+    transform: scale(1.06) rotate(3deg);
+  }
+
+  .cube-picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .cube-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+</style>

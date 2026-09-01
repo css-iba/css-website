@@ -1,0 +1,230 @@
+---
+import CubeLogo from './CubeLogo.astro';
+---
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand font-tech">
+      <CubeLogo size={22} glow={false} />
+      <span>COMPUTER SCIENCE SOCIETY // IBA</span>
+    </div>
+
+    <div class="footer-socials font-body">
+      <a
+        href="https://www.instagram.com/css.iba/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="social-link"
+        aria-label="Instagram"
+      >
+        <svg
+          class="social-icon"
+          viewBox="0 0 24 24"
+          width="15"
+          height="15"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+        <span>Instagram</span>
+      </a>
+      <a
+        href="https://www.linkedin.com/company/iba-computer-science-society/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="social-link"
+        aria-label="LinkedIn"
+      >
+        <svg
+          class="social-icon"
+          viewBox="0 0 24 24"
+          width="15"
+          height="15"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+          ></path>
+          <rect x="2" y="9" width="4" height="12"></rect>
+          <circle cx="4" cy="4" r="2"></circle>
+        </svg>
+        <span>LinkedIn</span>
+      </a>
+      <a
+        href="mailto:ComputerSciencesSociety@khi.iba.edu.pk"
+        class="social-link"
+        aria-label="Email"
+      >
+        <svg
+          class="social-icon"
+          viewBox="0 0 24 24"
+          width="15"
+          height="15"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+          ></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+        <span>Email</span>
+      </a>
+    </div>
+
+    <div class="footer-telemetry font-tech">
+      <span class="status-pulse"></span>
+      <span class="telemetry-label">SYS :: OPERATIONAL</span>
+      <span class="telemetry-divider">|</span>
+      <span id="sys-ping">12ms</span>
+      <span id="sys-tz" class="telemetry-tz">[KARACHI]</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const pingEl = document.getElementById('sys-ping');
+  const tzEl = document.getElementById('sys-tz');
+
+  if (tzEl) {
+    try {
+      const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      const city = tz.split('/')[1] || 'KARACHI';
+      tzEl.textContent = `[${city.replace(/_/g, ' ').toUpperCase()}]`;
+    } catch {
+      tzEl.textContent = '[KARACHI]';
+    }
+  }
+
+  async function measurePing() {
+    if (!pingEl) return;
+    try {
+      const start = performance.now();
+      await fetch(window.location.href, { method: 'HEAD', cache: 'no-cache' });
+      const duration = Math.round(performance.now() - start);
+      pingEl.textContent = `${Math.max(4, Math.min(duration, 99))}ms`;
+    } catch {
+      pingEl.textContent = '14ms';
+    }
+  }
+
+  measurePing();
+  setInterval(measurePing, 8000);
+</script>
+
+<style>
+  .footer {
+    background: #040406;
+    border-top: 1px solid var(--border-subtle);
+    padding: 1.35rem 0;
+    position: relative;
+    z-index: 10;
+  }
+
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--accent-magenta);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+  }
+
+  .footer-socials {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .social-link:hover {
+    color: var(--text-primary);
+  }
+
+  .social-icon {
+    color: var(--accent-magenta);
+  }
+
+  .footer-telemetry {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    background: rgba(13, 13, 18, 0.6);
+    border: 1px solid var(--border-subtle);
+    padding: 0.35rem 0.75rem;
+    border-radius: 4px;
+    letter-spacing: 0.04em;
+  }
+
+  .status-pulse {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #22c55e;
+    box-shadow: 0 0 6px #22c55e;
+    display: inline-block;
+  }
+
+  .telemetry-label {
+    color: #4ade80;
+  }
+
+  .telemetry-divider {
+    color: var(--border-subtle);
+  }
+
+  .telemetry-tz {
+    color: var(--accent-violet);
+  }
+
+  @media (max-width: 640px) {
+    .footer-inner {
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      gap: 1rem;
+    }
+
+    .footer-socials {
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer-telemetry {
+      font-size: 0.95rem;
+      padding: 0.3rem 0.6rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+</style>

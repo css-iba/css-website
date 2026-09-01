@@ -1,0 +1,401 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+---
+
+<div
+  class={`terminal-shell font-tech ${className}`}
+  id="terminal-shell"
+  tabindex="0"
+>
+  <div class="shell-body" id="shell-body">
+    <div id="shell-output" class="shell-output">
+      <div class="term-line term-output">CSS IBA Shell [v2026.1]</div>
+      <div class="term-line term-hint">
+        Type 'help' or 'joke' to execute shell commands.
+      </div>
+    </div>
+
+    <div class="term-input-line">
+      <span class="term-prompt">user@css-iba:~$</span>
+      <span id="shell-typed" class="term-typed"></span>
+      <span class="term-block-cursor">▌</span>
+      <input
+        type="text"
+        id="shell-hidden-input"
+        class="shell-hidden-input"
+        autocomplete="off"
+        spellcheck="false"
+        aria-label="Terminal command prompt"
+      />
+    </div>
+  </div>
+</div>
+
+<script>
+  const shell = document.getElementById('terminal-shell') as HTMLDivElement;
+  const body = document.getElementById('shell-body') as HTMLDivElement;
+  const output = document.getElementById('shell-output') as HTMLDivElement;
+  const typedSpan = document.getElementById('shell-typed') as HTMLSpanElement;
+  const hiddenInput = document.getElementById(
+    'shell-hidden-input'
+  ) as HTMLInputElement;
+
+  const MT_FORM_URL = 'https://forms.gle/Hz9rqKgk6PmQYFEZ8';
+
+  let cmdHistory: string[] = [];
+  let historyIdx = -1;
+
+  function scrollToBottom() {
+    requestAnimationFrame(() => {
+      body.scrollTop = body.scrollHeight;
+    });
+  }
+
+  function appendLine(
+    text: string,
+    cls: 'prompt' | 'cmd' | 'output' | 'error' | 'hint' = 'output'
+  ) {
+    const line = document.createElement('div');
+    line.className = `term-line term-${cls}`;
+    line.textContent = text;
+    output.appendChild(line);
+    scrollToBottom();
+  }
+
+  function appendPromptCmd(cmd: string) {
+    const line = document.createElement('div');
+    line.className = 'term-line term-cmd-line';
+    line.innerHTML = `<span class="term-prompt">user@css-iba:~$</span> <span class="term-cmd-text">${escapeHtml(cmd)}</span>`;
+    output.appendChild(line);
+    scrollToBottom();
+  }
+
+  function escapeHtml(str: string) {
+    return str
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;');
+  }
+
+  async function fetchJokeOrFact(): Promise<string> {
+    try {
+      const res = await fetch(
+        'https://v2.jokeapi.dev/joke/Programming?single=true'
+      );
+      if (res.ok) {
+        const data = await res.json();
+        if (data.joke) return data.joke;
+        if (data.setup && data.delivery)
+          return `${data.setup} ... ${data.delivery}`;
+      }
+    } catch {
+      // offline fallback
+    }
+    const fallbackFacts = [
+      "There are 10 types of people in the world: those who understand binary, and those who don't.",
+      'The first computer bug was an actual moth found trapped inside the Harvard Mark II computer in 1947.',
+      'Git was created by Linus Torvalds in just 10 days to manage the Linux kernel development.',
+      'The first website ever built (http://info.cern.ch) was launched by Tim Berners-Lee in August 1991.',
+      "Python was named after the British comedy series 'Monty Python's Flying Circus', not the snake!",
+    ];
+    return fallbackFacts[Math.floor(Math.random() * fallbackFacts.length)];
+  }
+
+  async function runCommand(rawCmd: string) {
+    const cmd = rawCmd.trim();
+    if (!cmd) {
+      appendPromptCmd('');
+      return;
+    }
+
+    appendPromptCmd(cmd);
+    cmdHistory.push(cmd);
+    historyIdx = cmdHistory.length;
+
+    const lower = cmd.toLowerCase();
+
+    if (lower === 'help') {
+      appendLine('Available commands:', 'output');
+      appendLine('  help     - Display available shell commands', 'output');
+      appendLine(
+        '  about    - Print CSS IBA society vision & mission',
+        'output'
+      );
+      appendLine(
+        '  join mt  - Apply for Management Team (Freshmen)',
+        'output'
+      );
+      appendLine(
+        '  join ec  - View Executive Council recruitment info (Closed)',
+        'output'
+      );
+      appendLine(
+        '  joke     - Fetch a random programming joke or fun fact',
+        'output'
+      );
+      appendLine('  clear    - Clear terminal output buffer', 'output');
+    } else if (lower === 'about') {
+      appendLine(
+        'We are the Computer Science Society (CSS) at IBA Karachi.',
+        'output'
+      );
+      appendLine(
+        'This year, we are giving it a full reboot, open to all academic programs and everyone across campus.',
+        'output'
+      );
+    } else if (lower === 'join ec' || lower === 'join executive council') {
+      appendLine(
+        'Executive Council applications are now closed for Session 2026-2027.',
+        'error'
+      );
+      const joinEl = document.getElementById('join');
+      joinEl?.scrollIntoView({ behavior: 'smooth' });
+    } else if (lower === 'join mt' || lower === 'join management team') {
+      appendLine(
+        'Opening Management Team Application Form (Freshmen)...',
+        'hint'
+      );
+      window.open(MT_FORM_URL, '_blank');
+      const joinEl = document.getElementById('join');
+      joinEl?.scrollIntoView({ behavior: 'smooth' });
+    } else if (lower === 'join') {
+      appendLine(
+        'Usage: join mt (Freshmen - Open) | join ec (Sophomores & Juniors - Closed)',
+        'hint'
+      );
+      appendLine("Type 'join mt' to open the application form.", 'output');
+    } else if (lower === 'joke' || lower === 'fact') {
+      appendLine('Fetching a random CS joke / fact...', 'hint');
+      const jokeText = await fetchJokeOrFact();
+      appendLine(jokeText, 'output');
+    } else if (lower === 'clear' || lower === 'cls') {
+      output.innerHTML = '';
+    } else {
+      appendLine(`shell: command not found: ${cmd}`, 'error');
+      appendLine("type 'help' to view available commands", 'hint');
+    }
+  }
+
+  if (shell && hiddenInput && typedSpan) {
+    shell.addEventListener('click', () => {
+      hiddenInput.focus();
+    });
+
+    hiddenInput.addEventListener('input', () => {
+      typedSpan.textContent = hiddenInput.value;
+      scrollToBottom();
+    });
+
+    hiddenInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        const val = hiddenInput.value;
+        hiddenInput.value = '';
+        typedSpan.textContent = '';
+        runCommand(val);
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        if (cmdHistory.length > 0) {
+          if (historyIdx > 0) {
+            historyIdx--;
+          }
+          hiddenInput.value = cmdHistory[historyIdx] || '';
+          typedSpan.textContent = hiddenInput.value;
+        }
+      } else if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        if (cmdHistory.length > 0) {
+          if (historyIdx < cmdHistory.length - 1) {
+            historyIdx++;
+            hiddenInput.value = cmdHistory[historyIdx];
+          } else {
+            historyIdx = cmdHistory.length;
+            hiddenInput.value = '';
+          }
+          typedSpan.textContent = hiddenInput.value;
+        }
+      }
+    });
+  }
+</script>
+
+<style>
+  .terminal-shell {
+    background: var(--bg-panel);
+    border: 1px solid var(--border-subtle);
+    border-radius: 6px;
+    padding: 2.25rem 2.85rem;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    position: relative;
+    contain: content;
+    box-shadow:
+      0 16px 48px rgba(0, 0, 0, 0.6),
+      0 0 24px rgba(124, 42, 232, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    cursor: text;
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .terminal-shell:hover,
+  .terminal-shell:focus-within {
+    border-color: rgba(192, 38, 211, 0.35);
+    box-shadow:
+      0 16px 48px rgba(0, 0, 0, 0.7),
+      0 0 32px rgba(192, 38, 211, 0.22),
+      inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  }
+
+  .shell-body {
+    min-height: 340px;
+    max-height: 480px;
+    overflow-y: auto;
+    overflow-x: auto;
+    white-space: nowrap;
+    font-family: var(--font-tech), monospace;
+    font-size: 1.35rem;
+    font-weight: 500;
+    line-height: 1.65;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+  }
+
+  .shell-output {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .term-input-line {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    white-space: nowrap;
+    font-family: var(--font-tech), monospace;
+    width: 100%;
+  }
+
+  .term-prompt {
+    color: var(--accent-magenta);
+    font-weight: 700;
+    margin-right: 0.4rem;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+
+  .term-typed {
+    color: #ffffff;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    white-space: pre;
+  }
+
+  .term-block-cursor {
+    display: inline-block;
+    color: var(--accent-pink);
+    font-weight: 900;
+    font-size: 1.25rem;
+    margin-left: 2px;
+    line-height: 1;
+    animation: blink 0.9s step-end infinite;
+    user-select: none;
+  }
+
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .shell-hidden-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: auto;
+    cursor: text;
+    font-family: inherit;
+    z-index: 5;
+  }
+
+  .term-line {
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    font-family: var(--font-tech), monospace;
+  }
+
+  .term-cmd-line {
+    color: #ffffff;
+  }
+
+  .term-cmd-text {
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  .term-output {
+    color: var(--text-muted);
+  }
+
+  .term-error {
+    color: var(--accent-pink);
+    font-weight: 600;
+  }
+
+  .term-hint {
+    color: var(--accent-pink);
+    opacity: 0.95;
+  }
+
+  .shell-body::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .shell-body::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+  }
+  .shell-body::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 3px;
+  }
+  .shell-body::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-magenta);
+  }
+
+  @media (max-width: 640px) {
+    .terminal-shell {
+      padding: 1.25rem 1rem;
+    }
+
+    .shell-body {
+      font-size: 1.05rem;
+      min-height: 240px;
+      max-height: 380px;
+    }
+
+    .term-line {
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .term-input-line {
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+  }
+</style>

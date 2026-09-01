@@ -1,0 +1,66 @@
+---
+interface Props {
+  class?: string;
+  glowOnHover?: boolean;
+  accent?: 'violet' | 'magenta' | 'pink' | 'blue' | 'none';
+}
+
+const {
+  class: className = '',
+  glowOnHover = true,
+  accent = 'none',
+} = Astro.props;
+---
+
+<div
+  class={`card accent-${accent} ${glowOnHover ? 'hover-glow' : ''} ${className}`}
+>
+  <slot />
+</div>
+
+<style>
+  .card {
+    background: var(--bg-panel);
+    border: 1px solid var(--border-subtle);
+    border-radius: 6px;
+    padding: 1.75rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .hover-glow:hover {
+    background: var(--bg-panel-hover);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-4px);
+  }
+
+  .accent-violet.hover-glow:hover {
+    border-color: rgba(124, 42, 232, 0.4);
+    box-shadow: 0 10px 30px -10px rgba(124, 42, 232, 0.3);
+  }
+
+  .accent-magenta.hover-glow:hover {
+    border-color: rgba(192, 38, 211, 0.4);
+    box-shadow: 0 10px 30px -10px rgba(192, 38, 211, 0.3);
+  }
+
+  .accent-pink.hover-glow:hover {
+    border-color: rgba(236, 72, 153, 0.4);
+    box-shadow: 0 10px 30px -10px rgba(236, 72, 153, 0.3);
+  }
+
+  .accent-blue.hover-glow:hover {
+    border-color: rgba(30, 58, 138, 0.6);
+    box-shadow: 0 10px 30px -10px rgba(30, 58, 138, 0.4);
+  }
+
+  @media (max-width: 640px) {
+    .card {
+      padding: 1.35rem 1.15rem;
+    }
+  }
+</style>

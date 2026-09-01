@@ -1,0 +1,102 @@
+---
+interface Props {
+  tag?: string;
+  title: string;
+  subtitle?: string;
+  align?: 'left' | 'center';
+  class?: string;
+}
+
+const {
+  tag,
+  title,
+  subtitle,
+  align = 'left',
+  class: className = '',
+} = Astro.props;
+---
+
+<div class={`section-header align-${align} ${className}`}>
+  {
+    tag && (
+      <div class="section-tag font-pixel">
+        <span class="tag-prefix">//</span> {tag}
+      </div>
+    )
+  }
+  <h2 class="section-title font-display">
+    {title}
+  </h2>
+  {subtitle && <p class="section-subtitle font-body">{subtitle}</p>}
+</div>
+
+<style>
+  .section-header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3rem;
+  }
+
+  .align-center {
+    align-items: center;
+    text-align: center;
+  }
+
+  .align-left {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .section-tag {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent-magenta);
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .tag-prefix {
+    color: var(--accent-violet);
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    position: relative;
+  }
+
+  .section-subtitle {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    max-width: 680px;
+    margin-top: 1rem;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 640px) {
+    .section-header {
+      margin-bottom: 2rem;
+    }
+
+    .section-tag {
+      font-size: 0.85rem;
+      flex-wrap: wrap;
+    }
+
+    .section-title {
+      font-size: clamp(1.65rem, 7vw, 3.5rem);
+    }
+
+    .section-subtitle {
+      font-size: 0.95rem;
+      margin-top: 0.75rem;
+    }
+  }
+</style>
