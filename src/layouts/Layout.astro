@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Analytics from '@vercel/analytics/astro';
 
 interface Props {
   title?: string;
@@ -20,6 +21,7 @@ const {
     <link rel="icon" type="image/png" href="/images/css-cube.png" />
     <link rel="apple-touch-icon" href="/images/css-cube.png" />
     <meta name="generator" content={Astro.generator} />
+    <Analytics />
 
     <title>{title}</title>
     <meta name="description" content={description} />
